@@ -1,26 +1,29 @@
 .banner {
-  height: 400px;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $neutral-100-violet;
+  .container {
+    display: flex;
+    height: 100%;
+  }
   p {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 }
 
-.banner-text-container {
+.banner-text {
   width: 60%;
+  display: flex;
+  align-items: center;
 }
 
-.banner-img-container {
+.img-banner {
   width: 40%;
-  background-image: url(https://i.postimg.cc/g2n61P8s/3-Grad-Hat.png);
-  background-size: 75%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.banner-content-container {
-  width: 100%;
-  position: relative;
+  display: flex;
+  justify-content: end;
+  img {
+    width: 325px;
+  }
 }

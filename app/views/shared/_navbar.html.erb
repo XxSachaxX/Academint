@@ -1,13 +1,13 @@
 <nav class="navbar">
   <div class="container container-navbar">
-    <a href="/" id="logo">Academint</a>
+    <%= link_to 'Academint', root_path, id: 'logo' %>
     <div>
       <%= render "shared/search_bar" %>
-    </div>
+    </div>  
     <ul>
       <li><a href="#" class="btn-secondary">Enseigner</a></li>
       <li><a href="#" class="btn-secondary">Mes cours</a></li>
-      <li><a href="#" class="btn-main">Se connecter</a></li>
+      <li><%= link_to 'Se connecter', new_user_session_path, class: 'btn-main' %></li>
     </ul>
   </div>
 </nav>
