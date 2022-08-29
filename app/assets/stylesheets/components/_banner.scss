@@ -1,0 +1,26 @@
+.banner {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin-bottom: 3rem;
+  }
+}
+
+.banner-text-container {
+  width: 60%;
+}
+
+.banner-img-container {
+  width: 40%;
+  background-image: url(https://i.postimg.cc/g2n61P8s/3-Grad-Hat.png);
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner-content-container {
+  width: 100%;
+  position: relative;
+}

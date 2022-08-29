@@ -1,0 +1,60 @@
+.btn-main {
+  background-color: $primary-violet;
+  color: $neutral-0;
+  padding: 10px 35px;
+  border: none;
+  border-radius: $border-radius-main;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.03rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background-color: $primary-violet-hover;
+  }
+}
+
+.btn-secondary-fill {
+  background-color: $secondary-dark;
+  color: $neutral-0;
+  padding: 8px 25px;
+  border-radius: $border-radius-main;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background-color: $secondary-dark-hover;
+  }
+}
+
+.btn-secondary {
+  color: $primary-violet;
+  padding: 8px 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: $primary-violet-hover;
+  }
+}
+
+.btn-secondary-border {
+  color: $primary-violet;
+  border: 1px solid $primary-violet;
+  border-radius: $border-radius-main;
+  padding: 8px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: $neutral-0;
+    background-color: $primary-violet-hover;
+    border: none;
+  }
+}

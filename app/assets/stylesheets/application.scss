@@ -1,6 +1,7 @@
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
+@import "config/style";
 
 // External libraries
 @import "font-awesome";
@@ -8,3 +9,77 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  font-family: $body-font;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+.content-wrapper {
+  padding-bottom: 300px;
+}
+
+// Fonts
+h1 {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.03rem;
+  color: $neutral-1000;
+  font-weight: 700;
+}
+
+.hero {
+  // to be applied to h1
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: -0.03rem;
+  color: $neutral-1000;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  line-height:32px;
+  letter-spacing: -0.03rem;
+  color: $neutral-1000;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.03rem;
+  color: $neutral-1000;
+  font-weight: 700;
+}
+
+p {
+  font-size: 14px;
+  line-height: auto;
+  color: $neutral-1000;
+  font-weight: 400;
+}
+
+.large-paragraph {
+  // to be applied to <p>
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.medium-paragraph {
+  // to be applied to <p>
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.label {
+  // to be applied to <p>
+  font-weight: 600;
+}
+
+a {
+  color: $primary-violet;
+  font-weight: 600;
+}
