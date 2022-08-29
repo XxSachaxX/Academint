@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_125032) do
   end
 
   create_table "lectures", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "lesson_id", null: false
     t.datetime "created_at", null: false
