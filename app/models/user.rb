@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :lessons, through: :lectures
   has_many :designed_chapters, through: :designed_courses, source: :chapters
   has_many :designed_lessons, through: :designed_chapters, source: :lessons
-  validates :username, presence: true
+  has_one_attached :photo
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
