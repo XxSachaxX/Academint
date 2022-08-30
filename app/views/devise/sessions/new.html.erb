@@ -12,15 +12,13 @@
                       class: 'd-none-label',
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
-        </div>
-        <div class="input-no-label">
         <%= f.input :password,
                     placeholder: 'Mot de passe',
                     required: false,
                     class: 'd-none-label',
                     input_html: { autocomplete: "current-password" } %>
         </div>
-        <%= f.button :submit, "Log in", class: 'btn-main w-100' %>
+        <%= f.button :submit, "S'identifier", class: 'btn-main w-100' %>
         <%# <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
       <% end %>
