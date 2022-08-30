@@ -2,10 +2,10 @@
   <%= form_with url: courses_path, method: :get, class: "search-bar-form" do %>
     <%= text_field_tag :query,
       params[:query],
-      placeholder: "Rechercher",
+      placeholder: "Rechercher un cours",
       class: ""
     %>
-    <%= button_tag type: 'submit', class: "" do %>
+    <%= button_tag type: 'submit', class: "btn-none" do %>
       <i class="fa-solid fa-magnifying-glass"></i>
     <% end %>
   <% end %>

@@ -6,6 +6,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+.link-card {
   text-decoration: none;
 }
 
@@ -42,7 +45,7 @@
 .card-author {
   display: flex;
   p {
-    padding-left: 1rem;
+    padding-left: 0.5rem;
     color: $primary-violet;
   }
 }

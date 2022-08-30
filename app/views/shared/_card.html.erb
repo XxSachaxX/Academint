@@ -1,22 +1,25 @@
-<div class="card-main">
-  <div class="card-main-img">
-    <%= image_tag 'https://images.unsplash.com/photo-1639815188546-c43c240ff4df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
-        alt: "text"
-    %>
-  </div>
-  <div class="card-main-content">
-    <div class="card-main-top-text">
-      <h3>NFT 101 - Qu'est-ce qu'un NFT ?</h3>
-      <p>Découvrez l'univers des NFTs dont vous avez sûrement entendu parler</p>
+
+<%= link_to root_path, class: 'link-card' do %>
+  <div class="card-main">
+    <div class="card-main-img">
+      <%= image_tag 'https://images.unsplash.com/photo-1639815188546-c43c240ff4df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
+          alt: "text"
+      %>
     </div>
-    <div class="card-main-bottom">
-      <div class="card-author">
-        <%= image_tag 'Avatar_baponcet.png', alt: "Avatar de l'auteur", class: 'avatar' %>
-        <p class="label">Academint</p>
+    <div class="card-main-content">
+      <div class="card-main-top-text">
+        <h3>NFT 101 - Qu'est-ce qu'un NFT ?</h3>
+        <p>Découvrez l'univers des NFTs dont vous avez sûrement entendu parler</p>
       </div>
-      <div class="card-level">
-        <button class="badge badge-beginner">Beginner</button>
+      <div class="card-main-bottom">
+        <div class="card-author">
+          <%= image_tag 'Avatar_baponcet.png', alt: "Avatar de l'auteur", class: 'avatar' %>
+          <p class="label">Academint</p>
+        </div>
+        <div class="card-level">
+          <button class="badge badge-beginner">Beginner</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
