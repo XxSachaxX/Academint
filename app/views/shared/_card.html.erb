@@ -8,8 +8,8 @@
     </div>
     <div class="card-main-content">
       <div class="card-main-top-text">
-        <h3>NFT 101 - Qu'est-ce qu'un NFT ?</h3>
-        <p>Découvrez l'univers des NFTs dont vous avez sûrement entendu parler</p>
+        <h3><%= course.name %></h3>
+        <p class="text-ellipsis--2"><%= course.description %></p>
       </div>
       <div class="card-main-bottom">
         <div class="card-author">
@@ -17,7 +17,7 @@
           <p class="label">Academint</p>
         </div>
         <div class="card-level">
-          <button class="badge badge-beginner">Beginner</button>
+          <button class="badge badge-beginner"><%= course.level %></button>
         </div>
       </div>
     </div>
