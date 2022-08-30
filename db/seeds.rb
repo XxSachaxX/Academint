@@ -34,7 +34,7 @@ puts "All users created"
 
 puts "Creating courses..."
 puts "Creating course 1"
-course1 = Course.new(name: 'COURS 1: Comprendre les NFT',
+course1 = Course.new(name: 'Comprendre les NFT',
                      description: '*Les tokens non fongibles, ou NFT en abrégé, sont devenus très populaires ces
                      dernières années en raison de leur capacité à donner une valeur symbolique (la tokenisation)
                      à presque tout. Ils confèrent également à leurs détenteurs la véritable propriété de leurs actifs
@@ -44,14 +44,14 @@ course1 = Course.new(name: 'COURS 1: Comprendre les NFT',
 course1.save!
 
 puts "Creating course 2"
-course2 = Course.new(name: 'COURS 2 : Comprendre la Blockchain?',
+course2 = Course.new(name: 'Comprendre la Blockchain?',
                      description: "Ce cours a pour but de faire comprendre de manière simple ce qu'est la blockchain
                      et ses usages.", level: 'débutant',
                      user_id: user1.id)
 course2.save!
 
 puts "Creating course 3"
-course3 = Course.new(name: 'COURS 3 : Introduction à ETHEREUM',
+course3 = Course.new(name: 'Introduction à ETHEREUM',
                      description: "Comprendre ce qu'est Ethereum, comment cette blockchain fonctionne et les différentes
                      technologies et fonctionnalités qui y sont attachées.", level: 'débutant',
                      user_id: user1.id)
@@ -61,62 +61,62 @@ puts "All courses created"
 
 puts "Creating chapters..."
 puts "Creating course 1 chapter 1"
-course1_chapter1 = Chapter.create(name: 'Chapitre 1: Que sont les tokens non fongibles?', description: 'Notions
+course1_chapter1 = Chapter.create(name: 'Que sont les tokens non fongibles?', description: 'Notions
                                   élémentaires pour comprendre les NFT', course_id: course1.id)
 course1_chapter1.save!
 
 puts "Creating course 1 chapter 2"
-course1_chapter2 = Chapter.create(name: 'Chapitre 2: Pourquoi certains tokens non fongibles ont-ils de la valeur ?',
+course1_chapter2 = Chapter.create(name: 'Pourquoi certains tokens non fongibles ont-ils de la valeur ?',
                                   description: 'Notions de valeur des NFT', course_id: course1.id)
 course1_chapter2.save!
 
 puts "Creating course 1 chapter 3"
-course1_chapter3 = Chapter.create(name: 'Chapitre 3: Recevoir, stocker et envoyer des tokens non fongibles',
+course1_chapter3 = Chapter.create(name: 'Recevoir, stocker et envoyer des tokens non fongibles',
                                   description: "La notion d'échange appliquée aux NFT", course_id: course1.id)
 course1_chapter3.save!
 
 puts "Creating course 1 chapter 4"
-course1_chapter4 = Chapter.create(name: 'Chapitre 4: Comment les tokens non fongibles sont utilisés ?', description:
+course1_chapter4 = Chapter.create(name: 'Comment les tokens non fongibles sont utilisés ?', description:
                                   "Les used-cases des NFT", course_id: course1.id)
 course1_chapter4.save!
 
 puts "Creating course 2 chapter 1"
-course2_chapter1 = Chapter.create(name: 'Chapitre 1: Explication de la blockchain', description: "Comprendre ce qu'est
+course2_chapter1 = Chapter.create(name: 'Explication de la blockchain', description: "Comprendre ce qu'est
                                   concrètement une blockchain", course_id: course2.id)
 course2_chapter1.save!
 
 puts "Creating course 2 chapter 2"
-course2_chapter2 = Chapter.create(name: 'Chapitre 2: Pourquoi la blockchain a t-elle été créée?', description:
+course2_chapter2 = Chapter.create(name: 'Pourquoi la blockchain a t-elle été créée?', description:
                                   'Création de la technologie blockchain', course_id: course2.id)
 course2_chapter2.save!
 
 puts "Creating course 2 chapter 3"
-course2_chapter3 = Chapter.create(name: 'Chapitre 3: Fonctionnement du pair à pair', description:
+course2_chapter3 = Chapter.create(name: 'Fonctionnement du pair à pair', description:
                                   "Comprendre ce qu'est le pair-a-pair et son usage", course_id: course2.id)
 course2_chapter3.save!
 
 puts "Creating course 2 chapter 4"
-course2_chapter4 = Chapter.create(name: 'Chapitre 4: Les applications de la blockchain', description:
+course2_chapter4 = Chapter.create(name: 'Les applications de la blockchain', description:
                                   'Comprendre quand et comment la blockchain est utilisée', course_id: course2.id)
 course2_chapter4.save!
 
 puts "Creating course 3 chapter 1"
-course3_chapter1 = Chapter.create(name: 'Chapitre 1: Introduction à la technologie Blockchain & Ethereum', description:
+course3_chapter1 = Chapter.create(name: 'Introduction à la technologie Blockchain & Ethereum', description:
                                   "Comprendre ce qu'est Ethereum", course_id: course3.id)
 course3_chapter1.save!
 
 puts "Creating course 3 chapter 2"
-course3_chapter2 = Chapter.create(name: 'Chapitre 2: Explication de l’algorithme Proof of Work', description:
+course3_chapter2 = Chapter.create(name: 'Explication de l’algorithme Proof of Work', description:
                                   "Comprendre ce qu'est Proof of Work", course_id: course3.id)
 course3_chapter2.save!
 
 puts "Creating course 3 chapter 3"
-course3_chapter3 = Chapter.create(name: 'Chapitre 3: Anatomie d’une transaction Ethereum', description:
+course3_chapter3 = Chapter.create(name: 'Anatomie d’une transaction Ethereum', description:
                                   'Comment fonctionnent les transactions sur Ethereum', course_id: course3.id)
 course3_chapter3.save!
 
 puts "Creating course 3 chapter 4"
-course3_chapter4 = Chapter.create(name: 'Chapitre 4:  Les différents réseaux d’Ethereum', description:
+course3_chapter4 = Chapter.create(name: 'Les différents réseaux d’Ethereum', description:
                                   'Aller plus loin sur Ethereum', course_id: course3.id)
 course3_chapter4.save!
 

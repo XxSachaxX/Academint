@@ -9,3 +9,13 @@
     </div>
   </div>
 </div>
+
+<% @courses.each do |course| %>
+<ul>
+<li>
+<h2><%= course.name %></h2>
+<p><%= course.description %></p>
+<p><%= course.level %></p>
+</li>
+</ul>
+<% end %>
