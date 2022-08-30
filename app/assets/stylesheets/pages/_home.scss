@@ -8,3 +8,24 @@
   display: flex;
   justify-content: space-between;
 }
+
+.block-home {
+  margin: 7rem 0;
+}
+
+.block-text-home {
+  width: 60%;
+  line-height: 1.5rem;
+}
+
+.block-img-home {
+  width: 40%;
+  img {
+    width: 65%;
+    object-fit: cover;
+  }
+}
+
+.nft-block {
+  display: flex;
+}
