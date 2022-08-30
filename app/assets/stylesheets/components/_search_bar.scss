@@ -2,19 +2,32 @@
   width: 400px;
   border-radius: $border-radius-search;
   background-color: $neutral-100-violet;
-  display: flex;
   justify-content: space-between;
   border: 1px solid $primary-violet;
   box-shadow: $box-shadow-search;
   input {
-    padding: 10px 15px;
+    padding: 0.5rem 0.7rem;
     margin: 0;
+    background-color: transparent;
+    color: $neutral-1000;
+    border: none;
+    &:focus {
+      outline: none;
+    }
   }
   i {
     color: $primary-violet;
+    padding: 0.5rem 0.7rem;
   }
+}
+
+.btn-none {
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .search-bar-form {
   display: flex;
+  justify-content: space-between;
 }

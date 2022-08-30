@@ -3,11 +3,25 @@
     <%= link_to 'Academint', root_path, id: 'logo' %>
     <div>
       <%= render "shared/search_bar" %>
-    </div>  
+    </div>
     <ul>
       <li><a href="#" class="btn-secondary">Enseigner</a></li>
       <li><a href="#" class="btn-secondary">Mes cours</a></li>
-      <li><%= link_to 'Se connecter', new_user_session_path, class: 'btn-main' %></li>
+      <% if user_signed_in? %>
+        <div class="profile-navbar" data-controller="dropdown" data-action="click->dropdown#showDropdown">
+          <%= image_tag 'Avatar_baponcet.png', alt: "Avatar de l'utilisateur", class: 'avatar' %>
+          <div class="dropdown-menu d-none" data-dropdown-target="dropdownMenu">
+            <ul>
+              <li><%= link_to 'Mon profil', root_path %></li>
+              <li><%= link_to 'Mes cours',  root_path %></li>
+              <li><%= link_to 'Connexion portefeuille', root_path %></li>
+              <li><%= link_to 'Déconnexion', destroy_user_session_path, data: {turbo_method: :delete} %></li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <li><%= link_to 'Se connecter', new_user_session_path, class: 'btn-main' %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
