@@ -1,0 +1,26 @@
+.banner {
+  height: 450px;
+  background-color: $neutral-100-violet;
+  .container {
+    display: flex;
+    height: 100%;
+  }
+  p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.banner-text {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.img-banner {
+  width: 40%;
+  display: flex;
+  justify-content: end;
+  img {
+    width: 325px;
+  }
+}
