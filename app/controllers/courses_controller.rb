@@ -1,7 +1,12 @@
 class CoursesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def index
-    @courses = policy_scope(:courses)
+    @courses = policy_scope(Course)
+    if params[:query].present?
+      @courses = Course.global_search(params[:query])
+    else
+      @courses = Course.all
+    end
   end
 
   def show
@@ -34,6 +39,6 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :description, :level)
+    params.require(:course).permit(:name, :description, :level, :photo)
   end
 end
