@@ -1,0 +1,32 @@
+.login {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  img {
+    position: absolute;
+    margin: auto;
+    z-index: -1;
+    object-fit: cover;
+    top: -5rem;
+    left: -10rem;
+  }
+}
+
+.form-check {
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input {
+    margin: 0 0.5rem;
+    width: 1rem;
+  }
+}
+
+fieldset {
+  outline: none;
+  border: none;
+  padding: 0;
+}
