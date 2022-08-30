@@ -1,0 +1,14 @@
+.login {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  img {
+    position: absolute;
+    margin: auto;
+    z-index: -1;
+    object-fit: cover;
+    top: -5rem;
+    left: -10rem;
+  }
+}
