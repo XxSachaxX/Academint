@@ -9,6 +9,7 @@
 
 <div id="courses">
   <% @courses.each do |course| %>
+   <%= cl_image_tag(course.photo.key, :width => 400, :crop => "fill") %>
     <h4><%= course.name %></h4>
     <p><%= course.description %></p>
     <p><%= course.level %></p>
