@@ -8,6 +8,7 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
         <div class="input-no-label">
+          <%= f.input :username, placeholder: 'Username', required: true, autofocus: true, input_html: { autocomplete: "username" }  %>
           <%= f.input :email,
                       placeholder: 'Email',
                       required: true,
