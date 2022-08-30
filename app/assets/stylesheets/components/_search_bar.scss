@@ -1,0 +1,16 @@
+.search-bar {
+  width: 400px;
+  border-radius: $border-radius-search;
+  background-color: $neutral-100-violet;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid $primary-violet;
+  box-shadow: $box-shadow-search;
+  p {
+    padding: 10px 15px;
+    margin: 0;
+  }
+  i {
+    color: $primary-violet;
+  }
+}
