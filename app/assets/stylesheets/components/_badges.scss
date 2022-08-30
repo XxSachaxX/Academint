@@ -1,0 +1,22 @@
+.badge {
+  padding: 5px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: $border-radius-search;
+  background-color: transparent;
+}
+
+.badge-beginner {
+  color: $level-beginner;
+  border: 1px solid $level-beginner;
+}
+
+.badge-intermediate {
+  color: $level-intermediate;
+  border: 1px solid $level-intermediate;
+}
+
+.badge-expert {
+  color: $level-expert;
+  border: 1px solid $level-expert;
+}
