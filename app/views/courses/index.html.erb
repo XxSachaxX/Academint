@@ -1,2 +1,19 @@
 <h1>Courses#index</h1>
 <p>Find me in app/views/courses/index.html.erb</p>
+
+<%= form_with url: courses_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    placeholder: "Rechercher"
+  %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
+<div id="courses">
+  <% @courses.each do |course| %>
+    <h4><%= course.name %></h4>
+    <p><%= course.description %></p>
+    <p><%= course.level %></p>
+  <% end %>
+</div>
