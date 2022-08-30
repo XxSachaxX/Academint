@@ -1,4 +1,12 @@
 <div class="search-bar">
-  <p>Chercher un cours</p>
-  <p><i class="fa-solid fa-magnifying-glass"></i></p>
+  <%= form_with url: courses_path, method: :get, class: "search-bar-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Rechercher",
+      class: ""
+    %>
+    <%= button_tag type: 'submit', class: "" do %>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
+  <% end %>
 </div>
