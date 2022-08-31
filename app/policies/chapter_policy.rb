@@ -17,4 +17,5 @@ class ChapterPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
 end
