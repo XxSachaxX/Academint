@@ -10,9 +10,9 @@ class ClassroomsController < ApplicationController
     @classroom.user = current_user
     @classroom.course = @course
     if @classroom.save
-      redirect_to dashboard_path, flash.alert = "Vous suivez un nouveau cour"
+      redirect_to dashboard_path, notice: "#{@course.name} a été ajouté à vos cours !"
     else
-      redirect_to dashboard_path
+      redirect_to dashboard_path, notice: "#{@course.name} est déjà dans votre liste de cours !"
     end
     authorize @classroom
   end
