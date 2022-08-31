@@ -1,11 +1,19 @@
 
+<%# Cours rattaché à la classroom, les titres des chapitres, les noms des lecons et leur contenu %>
+
+
 <div class='container'>
   <div class='course' data-controller="tabs">
     <div class='course-summary'>
       <div class='course-summary-content'>
-        <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
+        <p class='chapter-name' >Introduction</p>
         <% @course.chapters.each_with_index do |chapter, index| %>
           <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
+            <% lesson_number = 0 %>
+            <% chapter.lessons.each do |lesson| %>
+              <% lesson_number += 1 %>
+              <p class='lesson-title' data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab"><%= lesson_number %> - <%= lesson.title %></p>
+            <% end %>
         <% end %>
       </div>
     </div>

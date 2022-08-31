@@ -1,27 +1,30 @@
 <%= render "shared/banner" %>
 <div class="home-content">
   <div class="container">
-  <div class='block-home'>
-    <h2>Notre sélection de cours</h2>
-    <div class="display-cards">
-      <% @courses.each do |course| %>
-        <%= render "shared/card", course: course %>
-      <% end %>
-  </div>
-  <div class='block-home nft-block'>
-    <div class="block-img-home">
-      <%= image_tag 'home_nft_explanation.svg', alt: "Une étudiante qui travaille" %>
+    <div class='block-home'>
+      <h2>Notre sélection de cours</h2>
+        <div class="display-cards">
+          <% @courses.each do |course| %>
+            <%= render "shared/card", course: course %>
+          <% end %>
+        </div>
+      <div class='block-home nft-block'>
+        <div class="block-img-home">
+          <%= image_tag 'home_nft_explanation.svg', alt: "Une étudiante qui travaille" %>
+        </div>
+        <div class="block-text-home">
+          <h2>Pourquoi une certification NFT ?</h2>
+          <p class="large-paragraph">
+            De plus en plus d’universités utilisent les NFT pour <strong>la délivrance de titres </strong> et aussi pour <strong>travailler dans des environnements d'apprentissage à distance</strong>. Une pratique notamment préconisée par le MIT pour authentifier les certificats d’éducation.
+          </p>
+          <p class="large-paragraph">
+            Aujourd’hui, ils peuvent être utilisés sur le marché du travail pour valoriser une expertise au même titre qu’un diplôme classique.
+          </p>
+        </div>
+      </div>
+
+      <h2>Comment obtenir des certificats NFT ?</h2>
+      <%= render "shared/steps_card"%>
     </div>
-    <div class="block-text-home">
-      <h2>Pourquoi une certification NFT ?</h2>
-      <p class="large-paragraph">
-        De plus en plus d’universités utilisent les NFT pour <strong>la délivrance de titres </strong> et aussi pour <strong>travailler dans des environnements d'apprentissage à distance</strong>. Une pratique notamment préconisée par le MIT pour authentifier les certificats d’éducation.
-      </p>
-      <p class="large-paragraph">
-        Aujourd’hui, ils peuvent être utilisés sur le marché du travail pour valoriser une expertise au même titre qu’un diplôme classique.
-      </p>
-    </div>
-  </div>
-  </div>
   </div>
 </div>

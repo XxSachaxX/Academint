@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import WalletController from "./wallet_controller"
 application.register("wallet", WalletController)
+
+import TabsController from "./tabs_controller"
+application.register("tabs", TabsController)
