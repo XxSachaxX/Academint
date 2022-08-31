@@ -1,27 +1,77 @@
 <%= render "shared/banner" %>
 <div class="home-content">
   <div class="container">
-  <div class='block-home'>
-    <h2>Notre sélection de cours</h2>
-    <div class="display-cards">
-      <% @courses.each do |course| %>
-        <%= render "shared/card", course: course %>
-      <% end %>
-  </div>
-  <div class='block-home nft-block'>
-    <div class="block-img-home">
-      <%= image_tag 'home_nft_explanation.svg', alt: "Une étudiante qui travaille" %>
+    <div class='block-home'>
+      <h2>Notre sélection de cours</h2>
+        <div class="display-cards">
+          <% @courses.each do |course| %>
+            <%= render "shared/card", course: course %>
+          <% end %>
+        </div>
+      <div class='block-home nft-block'>
+        <div class="block-img-home">
+          <%= image_tag 'home_nft_explanation.svg', alt: "Une étudiante qui travaille" %>
+        </div>
+        <div class="block-text-home">
+          <h2>Pourquoi une certification NFT ?</h2>
+          <p class="large-paragraph">
+            De plus en plus d’universités utilisent les NFT pour <strong>la délivrance de titres </strong> et aussi pour <strong>travailler dans des environnements d'apprentissage à distance</strong>. Une pratique notamment préconisée par le MIT pour authentifier les certificats d’éducation.
+          </p>
+          <p class="large-paragraph">
+            Aujourd’hui, ils peuvent être utilisés sur le marché du travail pour valoriser une expertise au même titre qu’un diplôme classique.
+          </p>
+        </div>
+      </div>
+
+      <h2>Comment obtenir des certificats NFT ?</h2>
+      <div class="card-horizontal" style="background-color: white;">
+        <div class="img-card-horizontal" >
+          <%= image_tag("hp_step_1") %>
+        </div>
+        <div class="content-card-horizontal" style= "justify-content:center">
+          <div class="content-top-card-horizontal">
+          <h3>STEP 1: Sélectionnez votre cours en ligne</h3>
+          <p>Accédez à un catalogue de cours de haute qualité dispensés par des experts de l'écosystème WEB3, qui comprend des cours sur NFT, les cryptomonnaies ou encore la blockchain !</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-horizontal" style="background-color: white;">
+        <div class="img-card-horizontal">
+           <%= image_tag("hp_step_2") %>
+        </div>
+        <div class="content-card-horizontal" style= "justify-content:center">
+          <div class="content-top-card-horizontal">
+          <h3>STEP 2: Commencez votre apprentissage </h3>
+          <p>Inscrivez-vous gratuitement sur votre cours en ligne et suivez-le à votre rythme.
+             La durée des cours nécessite quelques heures de votre temps et peut être suivi sur quelques jours si vous le souhaitez.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-horizontal" style="background-color: white;">
+        <div class="img-card-horizontal">
+          <%= image_tag("hp_step_3") %>
+        </div>
+        <div class="content-card-horizontal" style= "justify-content:center">
+          <div class="content-top-card-horizontal">
+          <h3>STEP 3: Validez vos connaissances</h3>
+          <p>Il est temps de vous tester !
+             À la fin de chaque cours complet, nos professeurs vous invitent à répondre à un test en ligne de 40mn pour évaluer votre niveau. Cette étape est obligatoire pour obtenir votre certification.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-horizontal" style="background-color: white;">
+        <div class="img-card-horizontal">
+          <%= image_tag("hp_step_4") %>
+        </div>
+        <div class="content-card-horizontal" style= "justify-content:center">
+          <div class="content-top-card-horizontal">
+          <h3>STEP 4: Obtenez votre certificat NFT</h3>
+          <p>Vous avez obtenu un score d’au moins 90 % de réussite à l'évaluation de votre cours ? Félicitations !
+             Vous pouvez à présent générer votre certificat NFT en cliquant sur le bouton de validation !</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="block-text-home">
-      <h2>Pourquoi une certification NFT ?</h2>
-      <p class="large-paragraph">
-        De plus en plus d’universités utilisent les NFT pour <strong>la délivrance de titres </strong> et aussi pour <strong>travailler dans des environnements d'apprentissage à distance</strong>. Une pratique notamment préconisée par le MIT pour authentifier les certificats d’éducation.
-      </p>
-      <p class="large-paragraph">
-        Aujourd’hui, ils peuvent être utilisés sur le marché du travail pour valoriser une expertise au même titre qu’un diplôme classique.
-      </p>
-    </div>
-  </div>
-  </div>
   </div>
 </div>
