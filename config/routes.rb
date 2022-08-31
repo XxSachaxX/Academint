@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   resources :courses do
     resources :classrooms, only: :show
-    resources :chapters, only: %i[new create edit destroy] do
+    resources :chapters, only: %i[new create edit destroy show] do
       resources :lessons, only: %i[new create edit destroy] do
         resources :lectures, only: %i[new create]
       end
