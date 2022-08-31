@@ -11,31 +11,31 @@ User.destroy_all
 
 puts "Creating 5 users...."
 puts "Creating user 1"
-user1 = User.new(email: 'academint@gmail.com', password: '123456')
+user1 = User.new(email: 'academint@gmail.com', password: '123456', username: 'academint')
 avatar1 = URI.open("https://moeara.com/wp-content/uploads/2022/03/Bob-Iger-Joins-Web3-Metaverse-Avatar-Company-Genies-The.jpg")
 user1.photo.attach(io: avatar1, filename: 'John Webber', content_type: "image/jpg")
 user1.save!
 
 puts "Creating user 2"
-user2 = User.new(email: 'b.poncet@gmail.com', password: '123456')
+user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'B.PONCET')
 avatar2 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
 user2.photo.attach(io: avatar2, filename: 'Baptiste Poncet', content_type: "image/jpg")
 user2.save!
 
 puts "Creating user 3"
-user3 = User.new(email: 's.villebrun@gmail.com', password: '123456')
+user3 = User.new(email: 's.villebrun@gmail.com', password: '123456', username: 'S.VILLEBRUN')
 avatar3 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NK7993ST-f2719ded36c6-512")
 user3.photo.attach(io: avatar3, filename: 'Sebastien Villebrun', content_type: "image/jpg")
 user3.save!
 
 puts "Creating user 4"
-user4 = User.new(email: 's.gotainer@gmail.com', password: '123456')
+user4 = User.new(email: 's.gotainer@gmail.com', password: '123456', username: 'S.GOTAINER')
 avatar4 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NA1WF0TX-dff6dafc9e44-512")
 user4.photo.attach(io: avatar4, filename: 'Sasha Gotainer', content_type: "image/jpg")
 user4.save!
 
 puts "Creating user 5"
-user5 = User.new(email: 'f.shah@gmail.com', password: '123456')
+user5 = User.new(email: 'f.shah@gmail.com', password: '123456', username: 'F.SHAH')
 avatar5 = URI.open("https://ca.slack-edge.com/T02NE0241-U03P6G5NK9P-bdc0ee480f0e-512")
 user5.photo.attach(io: avatar5, filename: 'Fariha Shah', content_type: "image/jpg")
 user5.save!
