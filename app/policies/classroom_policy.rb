@@ -9,4 +9,8 @@ class ClassroomPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def follow_course?
+    true
+  end
 end
