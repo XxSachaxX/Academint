@@ -5,24 +5,21 @@
     <div class="form-container">
       <h2>Se connecter</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-        <div class="input-no-label">
+        <div class="input-label">
           <%= f.input :email,
-                      placeholder: 'Email',
                       required: false,
                       class: 'd-none-label',
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
         <%= f.input :password,
-                    placeholder: 'Mot de passe',
                     required: false,
                     class: 'd-none-label',
                     input_html: { autocomplete: "current-password" } %>
         </div>
         <%= f.button :submit, "S'identifier", class: 'btn-main w-100' %>
-        <%# <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
       <% end %>
-      <div class="mt-1">
+      <div class="bottom-links">
         <%= render "devise/shared/links" %>
       </div>
     </div>
