@@ -6,9 +6,14 @@ class ClassroomsController < ApplicationController
 
   def create
     @classroom = Classroom.new
+    @course = Course.find(params[:course_id])
     @classroom.user = current_user
-    @course = course.find(params[:course_id])
     @classroom.course = @course
+    if @classroom.save
+      redirect_to dashboard_path, flash.alert = "Vous suivez un nouveau cour"
+    else
+      redirect_to dashboard_path
+    end
     authorize @classroom
   end
 
@@ -17,5 +22,4 @@ class ClassroomsController < ApplicationController
     @course = Course.find(params[:course_id])
     authorize @classroom
   end
-
 end
