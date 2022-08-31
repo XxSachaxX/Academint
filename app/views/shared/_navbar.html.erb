@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" data-controller="wallet">
   <div class="container container-navbar">
     <%= link_to 'Academint', root_path, id: 'logo' %>
     <div>
@@ -10,12 +10,23 @@
       <% if user_signed_in? %>
         <div class="avatar-menu" data-controller="dropdown" data-action="click->dropdown#showDropdown">
           <i class="fa-solid fa-bars"></i>
-          <%= cl_image_tag(current_user.photo.key, class: 'avatar') %>
-          <div class="dropdown-menu d-none" data-dropdown-target="dropdownMenu">
+            <%= cl_image_tag(current_user.photo.key, class: 'avatar') %>
+              <div class="status-navbar" data-wallet-target="status">
+              </div>
+          <div class="dropdown-menu d-none" data-dropdown-target="dropdownMenu" >
             <ul>
               <li><%= link_to 'Mon profil', root_path %></li>
               <li><%= link_to 'Mes cours',  root_path %></li>
-              <li><%= link_to 'Connexion portefeuille', root_path %></li>
+              <li data-wallet-target="login">
+                <button data-action="click->wallet#connectWallet">
+                  Connecter portefeuille
+                </button>
+              </li>
+              <li class="d-none" data-wallet-target="logout">
+                <button class="disconnect-wallet"data-action="click->wallet#disconnectWallet">
+                  Déconnecter portefeuille
+                </button>
+              </li>
               <li><%= link_to 'Déconnexion', destroy_user_session_path, data: {turbo_method: :delete}, class: 'red' %></li>
             </ul>
           </div>
