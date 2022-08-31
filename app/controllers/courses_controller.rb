@@ -16,6 +16,7 @@ class CoursesController < ApplicationController
 
   def show
     authorize @course
+    @classroom = Classroom.new
   end
 
   def new
