@@ -12,8 +12,10 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
-  def follow_course
-    @classroom = Classroom.find(params[:classroom_id])
+  def show
+    @classroom = Classroom.find(params[:id])
+    @course = Course.find(params[:course_id])
     authorize @classroom
   end
+
 end
