@@ -1,19 +1,36 @@
 
-
-<% if params[:query].present? %>
-  <h1><%= pluralize( @courses.count, 'cour' ) %> pour '<%= params[:query] %>' :</h1>
-<% else %>
-  <h1>Tous nos cours :</h1>
-<% end %>
-
-
-<div id="courses">
-  <% @courses.each do |course| %>
-   <%= cl_image_tag(course.photo.key, :width => 400, :crop => "fill") %>
-    <h4><%= course.name %></h4>
-    <p><%= course.description %></p>
-    <p><%= course.level %></p>
-    <p><%= course.user[:email] %></p>
-    <%= link_to "Découvrir", course_path(course) %>
+<div class="container mt-2">
+  <% if params[:query].present? %>
+    <h1><%= pluralize( @courses.count, 'cour' ) %> pour '<%= params[:query] %>'</h1>
+  <% else %>
+    <h1>Notre sélection de cours</h1>
   <% end %>
+
+
+  <% @courses.each do |course| %>
+    <%= link_to course_path(course), class: 'link-card' do %>
+      <div class="card-horizontal">
+        <div class="img-card-horizontal">
+          <%= cl_image_tag(course.photo.key) %>
+        </div>
+        <div class="content-card-horizontal">
+          <div class="content-top-card-horizontal">
+          <h3><%= course.name %></h3>
+          <p><%= course.description %></p>
+          </div>
+          <div class="content-bottom-card-horizontal">
+            <div class="card-author">
+              <%= cl_image_tag(course.user.photo.key, class: 'avatar') %>
+              <p class="label"><%= course.user.username.capitalize %></p>
+            </div>
+            <div>
+              <button class="badge badge-beginner"><%= course.level %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+
 </div>

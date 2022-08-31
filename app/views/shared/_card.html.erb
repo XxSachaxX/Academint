@@ -1,10 +1,8 @@
 
-<%= link_to root_path, class: 'link-card' do %>
+<%= link_to course_path(course), class: 'link-card' do %>
   <div class="card-main">
     <div class="card-main-img">
-      <%= image_tag 'https://images.unsplash.com/photo-1639815188546-c43c240ff4df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
-          alt: "text"
-      %>
+      <%= cl_image_tag(course.photo.key) %>
     </div>
     <div class="card-main-content">
       <div class="card-main-top-text">
@@ -13,8 +11,8 @@
       </div>
       <div class="card-main-bottom">
         <div class="card-author">
-          <%= image_tag 'Avatar_baponcet.png', alt: "Avatar de l'auteur", class: 'avatar' %>
-          <p class="label">Academint</p>
+          <%= cl_image_tag(course.user.photo.key, class: 'avatar') %>
+          <p class="label"><%= course.user.username.capitalize %></p>
         </div>
         <div class="card-level">
           <button class="badge badge-beginner"><%= course.level %></button>
