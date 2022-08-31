@@ -7,7 +7,7 @@
       <h2>S'inscrire</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
-        <div class="input-no-label">
+        <div class="input-label">
           <%= f.input :username, placeholder: 'Username', required: true, autofocus: true, input_html: { autocomplete: "username" }  %>
           <%= f.input :email,
                       placeholder: 'Email',
@@ -25,7 +25,7 @@
         </div>
           <%= f.button :submit, "S'enregistrer", class: 'btn-main' %>
       <% end %>
-      <div class="mt-1">
+      <div class="bottom-links">
         <%= render "devise/shared/links" %>
       </div>
     </div>
