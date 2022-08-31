@@ -1,10 +1,5 @@
 class ChaptersController < ApplicationController
-  before_action :set_chapter, only: %i[show edit update destroy]
-
-  def show
-    authorize @chapter
-    @course = Course.find(params[:course_id])
-  end
+  before_action :set_chapter, only: %i[edit update destroy]
 
   def new
     @chapter = Chapter.new

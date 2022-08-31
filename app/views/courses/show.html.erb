@@ -1,25 +1,30 @@
 
 <div class='container'>
-  <div class='course'>
+  <div class='course' data-controller="tabs">
     <div class='course-summary'>
       <div class='course-summary-content'>
-        <%= link_to "Home", course_path(@course.id) %>
-        <% @course.chapters.each do |chapter| %>
-          <p class='chapter-name'><%= link_to chapter.name, course_chapter_path(@course.id, chapter) %></p>
-          <% lesson_number = 0 %>
-          <% chapter.lessons.each do |lesson| %>
-            <% lesson_number += 1 %>
-            <p class='lesson-title'><%= lesson_number %> - <%= lesson.title %></p>
-          <% end %>
+        <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
+        <% @course.chapters.each_with_index do |chapter, index| %>
+          <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
         <% end %>
       </div>
     </div>
     <div class='course-display'>
-      <%= cl_image_tag(@course.photo.key) %>
-      <div class='course-display-content'>
-        <h1><%= @course.name %></h1>
-        <p><%= @course.description %></p>
+      <div data-tabs-target="content">
+        <%= cl_image_tag(@course.photo.key) %>
+        <div class='course-display-content'>
+          <h1><%= @course.name %></h1>
+          <p><%= @course.description %></p>
+        </div>
       </div>
+      <% @course.chapters.each do |chapter| %>
+        <div class='d-none' data-tabs-target='content'>
+          <%= render 'chapter', chapter: chapter %>
+        </div>
+      <% end %>
     </div>
+  </div>
+  <div class="course-footer">
+    <%= button_to 'Commencer', course_path(params[:id]) %>
   </div>
 </div>
