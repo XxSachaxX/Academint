@@ -3,5 +3,5 @@ class Lecture < ApplicationRecord
   belongs_to :classroom
   has_one :chapter, through: :lesson
   has_one :course, through: :chapter
-  enum status: { inactive: 0, démarrée: 1, terminée: 2 }
+  enum status: { pending: 0, ongoing: 1, done: 2 }
 end
