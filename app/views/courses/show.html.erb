@@ -26,7 +26,7 @@
   </div>
   <div class="course-footer">
     <% if @user_has_course %>
-      <%= button_to 'Continuer', course_classrooms_path(@course) %>
+      <%= button_to 'Continuer', dashboard_path %>
     <% else %>
       <%= button_to 'Commencer', course_classrooms_path(@course) %>
     <% end %>
