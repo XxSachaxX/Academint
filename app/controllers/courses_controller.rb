@@ -17,6 +17,7 @@ class CoursesController < ApplicationController
   def show
     authorize @course
     @classroom = Classroom.new
+    @skip_footer = true
     @user_has_course = user_has_course?
   end
 
