@@ -19,6 +19,7 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
+    @course = Course.find(params[:course_id])
     authorize @classroom
   end
 
