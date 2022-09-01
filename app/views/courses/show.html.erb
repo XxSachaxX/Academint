@@ -24,12 +24,12 @@
     </div>
   </div>
 </div>
-<div class="container container-footer-course">
-  <div class="course-footer">
+<div class="course-footer">
+  <div class="container container-footer-course">
     <% if @user_has_course %>
        <%= link_to 'Continuer', dashboard_path, class: 'btn-main' %>
     <% else %>
-       <%= link_to 'Commencer', course_classrooms_path(@course), class: 'btn-main' %>
+       <%= button_to 'Commencer', course_classrooms_path(@course), class: 'btn-main' %>
     <% end %>
   </div>
 </div>
