@@ -4,7 +4,7 @@
     <div>
       <h1 class="hero">Qui sommes-nous?</h1>
       <p class="large-paragraph">Academint est une plateforme collaborative d'éducation dont la mission est de rendre accessible l’apprentissage Web3 grâce à la blockchain. </p>
-      <a href="#" class="btn-secondary-fill">Apprenez maintenant</a>
+      <%= link_to "Apprenez maintenant", root_path, class: 'btn-secondary-fill'%>
     </div>
     </div>
     <div class="img-banner">
@@ -20,9 +20,10 @@
         </div>
         <div class="block-text-about">
           <h2>Qu'est ce qu' Academint ?</h2>
-          <p class="large-paragraph">
+          <p class="large-paragraph" style="margin-bottom:6%">
              Les utilisateurs peuvent aussi bien créer du contenu éducatif pour le partager auprès de notre communauté, que suivre des cours en ligne. Les formations Academint bénéficient d’une certification sous forme de NFT pour valoriser votre expertise sur le marché de l’emploi.
           </p>
+          <%= link_to "M'inscrire", new_user_registration_path, class: 'btn-secondary-fill'%>
         </div>
       </div>
     </div>
@@ -31,9 +32,32 @@
  <div class="container">
   <div class="banner-middle-main-content">
     <p class="large-paragraph"> Accès rapide </p>
-    <div><a href="#" class="btn-secondary-fill">Apprenez maintenant</a></div>
-    <div><a href="#" class="btn-secondary-fill">Devenir enseignant</a></div>
-    <div><a href="#" class="btn-secondary-fill">Page d'acceuil</a></div>
+    <%= link_to 'Apprenez maintenant', new_user_registration_path, class: 'btn-secondary-fill'%>
+    <%= link_to 'Devenir enseignant', new_user_registration_path, class: 'btn-secondary-fill'%>
+    <%= link_to "Page d'acceuil", root_path, class: 'btn-secondary-fill'%>
   </div>
  </div>
 </div>
+  <div class="container">
+    <div class='block-about'>
+      <div class='block-about academint-block'>
+        <div class="block-text-about" style= "width: 100%">
+          <h2>Qu'est ce que le Web3 ?</h2>
+            <p class="large-paragraph">
+              Pour comprendre le concept du <strong> Web3 </strong> , il faut d’abord définir le Web1 et 2. En effet, tous ces termes sont liés et montrent une certaine évolution.
+              Le Web1 est un portail d’information qui permet aux utilisateurs de recevoir des informations sans pouvoir interagir avec. Cela veut dire que vous ne pouvez que lire le contenu publié sur un site internet sans pouvoir contribuer et échanger avec le contenu et les internautes. Le web1 est aussi appelé le ”Web statique” qui ne permet que la distribution d’informations et qui ne va que dans un seul sens.
+              Le Web2 est une amélioration du Web1 puisqu’en plus de pouvoir consulter les informations, les internautes peuvent aussi participer, alimenter et partager les informations. L’exemple très concret sont les réseaux sociaux qui permettent aux utilisateurs de poster et communiquer avec les autres sur internet. L’internet sous le Web2 est plus concentré par la création de contenu par les utilisateurs et pour les utilisateurs. Cette génération de web est aussi appelée le web participatif qui montre la différence avec le Web2.
+              <strong>Le Web3 est une nouvelle génération d’internet qui sera basée sur l’immersion et la décentralisation des données.</strong>  C’est la dernière génération d’applications et de services internet qui est aussi appelée “web décentralisé”.
+
+            </p>
+            <h2>Qu'apporte le Web3 ?</h2>
+            <p class="large-paragraph">
+
+            Les plateformes en ligne sont aujourd'hui trop centralisées et contrôlées par quelques grandes sociétés. Ces entreprises ont collecté de grandes quantités de données personnelles et de contenus sans que les utilisateurs en aient véritablement le contrôle.
+           <strong> L’objectif du web3 est de redonner du pouvoir aux internautes en créant un web « décentralisé » </strong>, où ceux-ci peuvent « transporter » leurs données d'un service à l'autre. Le Web3 vise ainsi à supprimer les intermédiaires que sont les grandes entreprises tech.
+            Il s’agit de l'avenir d'Internet. C'est l'ère où les utilisateurs peuvent non seulement lire et écrire du contenu, mais aussi avoir leur mot à dire sur la propriété. C'est l'ère du Web décentralisé, qui repose principalement sur la technologie blockchain.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
