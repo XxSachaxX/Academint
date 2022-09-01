@@ -10,7 +10,11 @@
       <% if user_signed_in? %>
         <div class="avatar-menu" data-controller="dropdown" data-action="click->dropdown#showDropdown">
           <i class="fa-solid fa-bars"></i>
-            <%= cl_image_tag(current_user.photo.key, class: 'avatar') %>
+            <% if current_user.photo.present? %>
+              <%= cl_image_tag(current_user.photo.key, class: 'avatar') %>
+            <% else %>
+              <img class="avatar" src="/assets/default_avatar_small">
+            <% end %>
               <div class="status-navbar" data-wallet-target="status">
               </div>
           <div class="dropdown-menu d-none" data-dropdown-target="dropdownMenu" >
