@@ -55,6 +55,8 @@ class CoursesController < ApplicationController
   end
 
   def user_has_course?
-    Classroom.where(user_id: current_user.id, course_id: @course.id).any?
+    if current_user
+      Classroom.where(user_id: current_user.id, course_id: @course.id).any?
+    end
   end
 end

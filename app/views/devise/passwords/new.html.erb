@@ -9,7 +9,7 @@
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
 
-        <div class="input-no-label">
+        <div class="input-label">
             <%= f.input :email,
                         placeholder: 'Email',
                         required: true,

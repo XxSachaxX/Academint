@@ -6,7 +6,7 @@
     </div>
     <ul>
       <li><a href="#" class="btn-secondary">Enseigner</a></li>
-      <li><a href="#" class="btn-secondary">Mes cours</a></li>
+      <li><%= link_to 'Mes cours', dashboard_path, class: 'btn-secondary' %></li>
       <% if user_signed_in? %>
         <div class="avatar-menu" data-controller="dropdown" data-action="click->dropdown#showDropdown">
           <i class="fa-solid fa-bars"></i>

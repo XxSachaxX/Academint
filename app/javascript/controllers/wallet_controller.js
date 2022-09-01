@@ -5,7 +5,7 @@ let provider = null;
 
 (async function init() {
 
-  const clientId = "YOUR_CLIENT_ID_HERE"; // get your clientId from https://dashboard.web3auth.io
+  const clientId = "BKw42hjnzAcnwhm4SRkx1a0gxmia6lNZtl-gyaf66aOkEMf2AY-_KGyrOLnEBNdW0exZFWc85W8BU0Z4vnXVgwI"; // get your clientId from https://dashboard.web3auth.io
 
   web3auth = new window.Web3auth.Web3Auth({
   clientId,

@@ -14,6 +14,11 @@
   &:hover {
     background-color: $primary-violet-hover;
   }
+  &:disabled {
+    background-color: $neutral-300;
+    color: $neutral-0;
+    cursor: default;
+  }
 }
 
 .btn-secondary-fill {
