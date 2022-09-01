@@ -10,6 +10,7 @@
   font-weight: 700;
   text-decoration: none;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
   &:hover {
     background-color: $primary-violet-hover;
   }
