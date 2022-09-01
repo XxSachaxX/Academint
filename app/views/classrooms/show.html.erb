@@ -9,6 +9,7 @@
           <div class='d-none' data-tabs-target='content'>
             <h4><%= lesson.title %></h4>
             <p><%= lesson.content %></p>
+            <%= link_to "Next lesson", course_next_path(@classroom)%>
       </div>
         <% end %>
       <% end %>
