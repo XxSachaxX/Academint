@@ -13,13 +13,21 @@
         <p class="large-paragraph">Mes cours en progression</p>
         <div class="display-cards-dashboard">
           <% current_user.classrooms.each do |classroom| %>
-            <%= render "shared/card_dashboard", course: classroom.course, classroom: classroom %>
+            <% unless classroom.finished? %>
+              <%= render "shared/card_dashboard_unfinished", course: classroom.course, classroom: classroom %>
+            <% end %>
           <% end %>
         </div>
       </div>
       <div class="finished-courses">
         <p class="large-paragraph">Mes cours terminés</p>
-        <p><em>Pas de cour terminé pour l'instant</em></p>
+        <div class="display-cards-dashboard">
+          <% current_user.classrooms.each do |classroom| %>
+            <% if classroom.finished? %>
+              <%= render "shared/card_dashboard_finished", course: classroom.course, classroom: classroom %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
