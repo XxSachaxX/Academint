@@ -81,9 +81,9 @@
     }
   }
   .red {
-    color: $level-expert;
+    color: $red-300;
     &:hover {
-      color: $level-expert;
+      color: $red-300;
     }
   }
 }
@@ -101,5 +101,5 @@
 }
 
 .status-logged {
-  background-color: $level-beginner;
+  background-color: $green-300;
 }

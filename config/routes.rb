@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   get "/about", to: "pages#about", as: :about
   resources :courses do
-    resources :classrooms, only: %i[new create show]
+    resources :classrooms, only: %i[new create show] do
+      member do
+        get :next
+      end
+    end
     resources :chapters, only: %i[new create edit destroy] do
       resources :lessons, only: %i[new create edit destroy] do
         resources :lectures, only: %i[new create]

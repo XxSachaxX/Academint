@@ -1,11 +1,10 @@
-
 <div class='container'>
   <div class='course' data-controller="tabs">
     <div class='course-summary'>
       <div class='course-summary-content'>
-        <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
+        <p class="selected-tab tab-font clickable" data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
         <% @course.chapters.each_with_index do |chapter, index| %>
-          <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
+          <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
         <% end %>
       </div>
     </div>
@@ -14,7 +13,7 @@
         <%= cl_image_tag(@course.photo.key) %>
         <div class='course-display-content'>
           <h1><%= @course.name %></h1>
-          <p><%= @course.description %></p>
+          <p class="large-paragraph"><%= @course.description %></p>
         </div>
       </div>
       <% @course.chapters.each do |chapter| %>
@@ -24,7 +23,13 @@
       <% end %>
     </div>
   </div>
+</div>
+<div class="container container-footer-course">
   <div class="course-footer">
-    <%= button_to 'Commencer', course_classrooms_path(@course) %>
+    <% if @user_has_course %>
+       <%= link_to 'Continuer', dashboard_path, class: 'btn-main' %>
+    <% else %>
+       <%= link_to 'Commencer', course_classrooms_path(@course), class: 'btn-main' %>
+    <% end %>
   </div>
 </div>

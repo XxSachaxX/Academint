@@ -17,6 +17,8 @@ class CoursesController < ApplicationController
   def show
     authorize @course
     @classroom = Classroom.new
+    @skip_footer = true
+    @user_has_course = user_has_course?
   end
 
   def new
@@ -50,5 +52,9 @@ class CoursesController < ApplicationController
 
   def set_course
     @course = Course.find(params[:id])
+  end
+
+  def user_has_course?
+    Classroom.where(user_id: current_user.id, course_id: @course.id).any?
   end
 end
