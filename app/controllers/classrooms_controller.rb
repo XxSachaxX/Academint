@@ -22,4 +22,5 @@ class ClassroomsController < ApplicationController
     @course = Course.find(params[:course_id])
     authorize @classroom
   end
+
 end
