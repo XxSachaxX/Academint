@@ -1,5 +1,5 @@
 <%= link_to course_classroom_path(course, classroom), class: 'link-card' do %>
-  <div class="dashboard-card">
+  <div class="dashboard-card-finished">
     <div class="dashboard-card-text">
     <h3><%= course.name %></h3>
     <p class="text-ellipsis--2"><%= course.description %></p>
@@ -12,6 +12,7 @@
       <% elsif course.level == 'expert' %>
         <button class="badge badge-expert"><%= course.level.capitalize %></button>
       <% end %>
+      <p class="green">Terminé à <strong><%= (classroom.completed_percentage * 100).round %>%</strong></p>
     </div>
   </div>
 <% end %>

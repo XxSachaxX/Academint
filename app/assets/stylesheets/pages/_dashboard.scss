@@ -14,6 +14,11 @@
     list-style: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    :not(.active-tab) {
+      &:hover {
+        color: $primary-violet;
+      }
+    }
   }
 }
 
@@ -25,6 +30,7 @@
     margin-top: 0.5rem;
     margin-bottom: 2rem;
   }
+
 }
 
 .active-tab {
@@ -47,4 +53,13 @@
 
 .finished-courses {
   margin-top: 2.5rem;
+}
+
+.dashboard-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  p {
+    margin: 0;
+  }
 }
