@@ -1,11 +1,10 @@
-
 <div class='container'>
   <div class='course' data-controller="tabs">
     <div class='course-summary'>
       <div class='course-summary-content'>
-        <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
+        <p class="selected-tab tab-font clickable" data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
         <% @course.chapters.each_with_index do |chapter, index| %>
-          <p class='chapter-name' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
+          <p class='large-paragraph clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
         <% end %>
       </div>
     </div>
@@ -14,7 +13,7 @@
         <%= cl_image_tag(@course.photo.key) %>
         <div class='course-display-content'>
           <h1><%= @course.name %></h1>
-          <p><%= @course.description %></p>
+          <p class="medium-paragraph"><%= @course.description %></p>
         </div>
       </div>
       <% @course.chapters.each do |chapter| %>
@@ -24,7 +23,9 @@
       <% end %>
     </div>
   </div>
-  <div class="course-footer">
-    <%= button_to 'Commencer', course_classrooms_path(@course) %>
+</div>
+<div class="course-footer">
+  <div class="container container-footer-course">
+    <%= link_to 'Commencer', course_classrooms_path(@course), class: 'btn-main' %>
   </div>
 </div>
