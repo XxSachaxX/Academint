@@ -13,7 +13,7 @@
             <% if current_user.photo.present? %>
               <%= cl_image_tag(current_user.photo.key, class: 'avatar') %>
             <% else %>
-              <img class="avatar" src="/assets/default_avatar_small">
+              <%= image_tag "default_avatar_small.png" %>
             <% end %>
               <div class="status-navbar" data-wallet-target="status">
               </div>
