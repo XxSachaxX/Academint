@@ -6,26 +6,20 @@
         <% index = 0 %>
         <% @course.chapters.each do |chapter| %>
           <p class='tab-font'><%= chapter.name %></p>
-          <% lesson_number = 0 %>
-          <% chapter.lessons.each do |lesson| %>
-            <% lesson_number += 1 %>
-            <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index += 1 %>" data-tabs-target="tab"><%= lesson_number %> - <%= lesson.title %></p>
+          <% chapter.lessons.each_with_index do |lesson, i| %>
+            <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index += 1 %>" data-tabs-target="tab"><%= i + 1 %> - <%= lesson.title %></p>
           <% end %>
         <% end %>
       </div>
     </div>
     <div class='course-display'>
       <div data-tabs-target="content">
-        <%= cl_image_tag(@course.photo.key) %>
-        <div class='course-display-content'>
-          <h1><%= @course.name %></h1>
-          <p class="large-paragraph"><%= @course.description %></p>
-        </div>
+        <%= render 'introduction', course: @course %>
       </div>
       <% @course.chapters.each do |chapter| %>
         <% chapter.lessons.each do |lesson| %>
           <div class='d-none' data-tabs-target='content'>
-            <%= render 'lesson', lesson: lesson %>
+            <%= render 'lesson', lesson: lesson, classroom: @classroom %>
           </div>
         <% end %>
       <% end %>
