@@ -5,16 +5,18 @@
         <h2 class='chapter-name'  data-tabs-index-param="0" data-tabs-target="tab"><%= @classroom.course.name %></h2>
         <% @classroom.course.chapters.each_with_index do |chapter, index| %>
           <h3 data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%=chapter.name  %></h3>
-        <% chapter.lessons.each do |lesson| %>
-          <div class='d-none' data-tabs-target='content'>
-            <h4><%= lesson.title %></h4>
-            <p><%= lesson.content %></p>
-      </div>
+          <% chapter.lessons.each do |lesson| %>
+            <div class='d-none' data-tabs-target='content'>
+              <h4><%= lesson.title %></h4>
+              <p><%= lesson.content %></p>
+              <%= link_to "Next lesson",  next_course_classroom_path(@classroom.course, @classroom, lesson: lesson.id) %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
   </div>
+
 
 
 

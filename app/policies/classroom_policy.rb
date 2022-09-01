@@ -13,4 +13,8 @@ class ClassroomPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def next?
+    true
+  end
 end
