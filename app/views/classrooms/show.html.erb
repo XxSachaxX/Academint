@@ -26,3 +26,18 @@
     </div>
   </div>
 </div>
+
+
+<%# TODO: Create a route to get the value from the answers  %>
+<div class="container">
+  <%= form_with url: "", method: :get do |form| %>
+    <% Answer.all.each do |answer| %>
+    <h3><%= answer.question.content %></h3>
+    <% answer.content.split(',').each do |word| %>
+      <%= form.check_box :"#{word}" %>
+      <%= form.label :"#{word}", word %>
+      <% end %>
+    <% end %>
+    <%= form.submit "Validate your answers" %>
+  <% end %>
+</div>

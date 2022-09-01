@@ -32,7 +32,6 @@ class ClassroomsController < ApplicationController
     authorize @classroom
     redirect_to course_classroom_path(@classroom.course, @classroom)
   end
-
   private
 
   def create_lectures
