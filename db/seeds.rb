@@ -247,6 +247,105 @@ course1_chapter4_lesson1 = Lesson.new(title: "Les usages NFT", media: "texte",
                                           investisseurs expérimentés.")
 course1_chapter4_lesson1.save!
 
+puts "Creating Course 1 Chapter 4 Lesson 2"
+course1_chapter4_lesson2 = Lesson.new(quizz_answers: "3, 1, 3, 1, 1, 1, 2, 1, 4, 1", chapter_id: course1_chapter4.id, content: "Quizz:")
+course1_chapter4_lesson2.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 1"
+course1_chapter4_lesson2_question1 = Question.new(content: "Le token non fongible est une unité de donnée stockée dans
+                                                   _________.", lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question1.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 1 Answers"
+course1_chapter4_lesson2_question1_answers = Answer.new(content: "Un programme, Un trackeur, La blockchain", question_id: course1_chapter4_lesson2_question1.id)
+course1_chapter4_lesson2_question1_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 2"
+course1_chapter4_lesson2_question2 = Question.new(content: "Les NFTs sont non échangeables:",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question2.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 2 Answers"
+course1_chapter4_lesson2_question2_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question2.id)
+course1_chapter4_lesson2_question2_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 3"
+course1_chapter4_lesson2_question3 = Question.new(content: "Un NFT est stocké dans un espace digital appelé  __________.",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question3.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 3 Answers"
+course1_chapter4_lesson2_question3_answers = Answer.new(content: "Locker, Container, Ledger", question_id: course1_chapter4_lesson2_question3.id)
+course1_chapter4_lesson2_question3_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 4"
+course1_chapter4_lesson2_question4 = Question.new(content: "Les NFT ont besoin d'un moyen d'échange pour être
+                                                  transférés d'une personne à une autre",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question4.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 4 Answers"
+course1_chapter4_lesson2_question4_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question4.id)
+course1_chapter4_lesson2_question4_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 5"
+course1_chapter4_lesson2_question5 = Question.new(content: "Quel est le NFT associé Ethereum ?",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question5.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 5 Answers"
+course1_chapter4_lesson2_question5_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question5.id)
+course1_chapter4_lesson2_question5_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 6"
+course1_chapter4_lesson2_question6 = Question.new(content: "Une ___________ est une monnaie numérique conçue pour
+                                                  fonctionner comme moyen d'échange via un réseau informatique.",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question6.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 6 Answers"
+course1_chapter4_lesson2_question6_answers = Answer.new(content: "Cryptomonnaie, Cratomonnaie, Les deux", question_id: course1_chapter4_lesson2_question6.id)
+course1_chapter4_lesson2_question6_answers.save!
+
+
+puts "Creating course 1 chapter 4 lesson 2 Question 7"
+course1_chapter4_lesson2_question7 = Question.new(content: "Les NFTs sont similaires aux Bitcoins.",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question7.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 7 Answers"
+course1_chapter4_lesson2_question7_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question7.id)
+course1_chapter4_lesson2_question7_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 8"
+course1_chapter4_lesson2_question8 = Question.new(content: "Les NFT ont-ils le droit d'auteur sur les fichiers
+                                                  numériques qui leur appartiennent?",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question8.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 8 Answers"
+course1_chapter4_lesson2_question8_answers = Answer.new(content: "Oui, Non", question_id: course1_chapter4_lesson2_question8.id)
+course1_chapter4_lesson2_question8_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 9"
+course1_chapter4_lesson2_question9 = Question.new(content: "Quels sont les exemples de cas d’usage des NFTs?",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question9.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 9 Answers"
+course1_chapter4_lesson2_question9_answers = Answer.new(content: "Nom de domaine, Actif-in Game, Oeuvres d’arts, Toutes les réponses", question_id: course1_chapter4_lesson2_question9.id)
+course1_chapter4_lesson2_question9_answers.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 10"
+course1_chapter4_lesson2_question10 = Question.new(content: "_________ a été le premier jeu connu à
+                                                   utiliser les technologies de la blockchain.",
+                                                  lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question10.save!
+
+puts "Creating course 1 chapter 4 lesson 2 Question 10 Answers"
+course1_chapter4_lesson2_question10_answers = Answer.new(content: "CryptoKitties, CryptoBlades, Elementos", question_id: course1_chapter4_lesson2_question10.id)
+course1_chapter4_lesson2_question10_answers.save!
+
 puts "Creating Course 2 Chapter 1 Lesson 1"
 course2_chapter1_lesson1 = Lesson.new(title: "Définition", media: "texte",
                                         chapter_id: course2_chapter1.id, content: "La plupart du temps, les gens
