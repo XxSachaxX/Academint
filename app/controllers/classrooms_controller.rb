@@ -28,7 +28,7 @@ class ClassroomsController < ApplicationController
     @lecture = @classroom.lectures.find_by(status: 'ongoing')
     @lecture.done! unless !@lecture
     @next_lecture = Lecture.find_by(status: "pending", classroom: @classroom)
-    @next_lecture.ongoing! unless !@lecture
+    @next_lecture.ongoing! unless !@next_lecture
     authorize @classroom
     redirect_to course_classroom_path(@classroom.course, @classroom)
   end
