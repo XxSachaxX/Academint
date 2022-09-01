@@ -1,5 +1,5 @@
 <div class='course-display-content'>
   <h1><%= lesson.title %></h1>
   <p class="large-paragraph"><%= lesson.content %></p>
-  <%= link_to "Next lesson",  next_course_classroom_path(@classroom.course, @classroom, lesson: lesson.id) %>
+  <%= link_to "Next lesson",  next_course_classroom_path(classroom.course, classroom, lesson: lesson.id) %>
 </div>

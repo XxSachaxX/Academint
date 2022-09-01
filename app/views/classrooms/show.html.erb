@@ -25,7 +25,7 @@
       <% @course.chapters.each do |chapter| %>
         <% chapter.lessons.each do |lesson| %>
           <div class='d-none' data-tabs-target='content'>
-            <%= render 'lesson', lesson: lesson %>
+            <%= render 'lesson', lesson: lesson, classroom: @classroom %>
           </div>
         <% end %>
       <% end %>
