@@ -3,20 +3,22 @@
   font-weight: 600;
   font-size: 14px;
   border-radius: $border-radius-search;
-  background-color: transparent;
 }
 
 .badge-beginner {
-  color: $green-200;
-  border: 1px solid $green-200;
+  color: $green-300;
+  border: 1px solid $green-300;
+  background-color: $green-0;
 }
 
 .badge-intermediate {
   color: $orange-200;
   border: 1px solid $orange-200;
+  background-color: $orange-0;
 }
 
 .badge-expert {
   color: $red-200;
   border: 1px solid $red-200;
+  background-color: $red-0;
 }
