@@ -1,10 +1,10 @@
 <div class='course-display-content'>
   <h1><%= chapter.name %></h1>
-  <p><%= chapter.description %></p>
-  <h5>Ce cours comprend <%= pluralize(chapter.lessons.length, 'leçon') %>:</h5>
+  <p class="large-paragraph"><%= chapter.description %></p>
+  <h3>Ce cours comprend <%= pluralize(chapter.lessons.length, 'leçon') %>:</h3>
   <% lesson_number = 0 %>
   <% chapter.lessons.each do |lesson| %>
     <% lesson_number += 1 %>
-    <p class='lesson-title'><%= lesson_number %> - <%= lesson.title %></p>
+    <p class='large-paragraph'><%= lesson_number %> - <%= lesson.title %></p>
   <% end %>
 </div>

@@ -4,7 +4,7 @@
       <div class='course-summary-content'>
         <p class="selected-tab tab-font clickable" data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
         <% @course.chapters.each_with_index do |chapter, index| %>
-          <p class='large-paragraph clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
+          <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index + 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
         <% end %>
       </div>
     </div>
@@ -13,7 +13,7 @@
         <%= cl_image_tag(@course.photo.key) %>
         <div class='course-display-content'>
           <h1><%= @course.name %></h1>
-          <p class="medium-paragraph"><%= @course.description %></p>
+          <p class="large-paragraph"><%= @course.description %></p>
         </div>
       </div>
       <% @course.chapters.each do |chapter| %>

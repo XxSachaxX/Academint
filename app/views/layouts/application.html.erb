@@ -11,12 +11,16 @@
   </head>
 
   <body>
-    <div class="content-wrapper">
+    <% unless @skip_footer %>
+      <div class="content-wrapper">
+    <% end %>
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <%= yield %>
-      <%= render "shared/footer" %>
-    </div>
+      <%= render "shared/footer" unless @skip_footer %>
+    <% unless @skip_footer %>
+      </div>
+    <% end %>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/buffer@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/@web3auth/web3auth@1.1.1/dist/web3auth.umd.min.js"></script>
