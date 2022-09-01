@@ -1,0 +1,8 @@
+<%= cl_image_tag(course.photo.key) %>
+<div class='course-display-content'>
+  <h1><%= course.name %></h1>
+  <p class="large-paragraph"><%= course.description %></p>
+  <% @course.chapters.each do |chapter| %>
+    <p class='tab-font'><%= chapter.name %></p>
+  <% end %>
+</div>
