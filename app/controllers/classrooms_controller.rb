@@ -11,8 +11,6 @@ class ClassroomsController < ApplicationController
     @classroom.course = @course
     if @classroom.save
       redirect_to dashboard_path, notice: "#{@course.name} a été ajouté à vos cours !"
-    else
-      redirect_to dashboard_path, notice: "#{@course.name} est déjà dans votre liste de cours !"
     end
     authorize @classroom
   end
@@ -22,5 +20,4 @@ class ClassroomsController < ApplicationController
     @course = Course.find(params[:course_id])
     authorize @classroom
   end
-
 end
