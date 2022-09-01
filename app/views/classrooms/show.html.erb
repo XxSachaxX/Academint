@@ -5,11 +5,11 @@
         <p class="selected-tab tab-font clickable" data-action='click->tabs#display' data-tabs-index-param="0" data-tabs-target="tab">Introduction</p>
         <% index = 0 %>
         <% @course.chapters.each do |chapter| %>
-          <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index += 1 %>" data-tabs-target="tab"><%= chapter.name %></p>
+          <p class='tab-font'><%= chapter.name %></p>
           <% lesson_number = 0 %>
           <% chapter.lessons.each do |lesson| %>
             <% lesson_number += 1 %>
-            <p class='selected-tab clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index += 1 %>" data-tabs-target="tab"><%= lesson_number %> - <%= lesson.title %></p>
+            <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index += 1 %>" data-tabs-target="tab"><%= lesson_number %> - <%= lesson.title %></p>
           <% end %>
         <% end %>
       </div>
@@ -23,9 +23,6 @@
         </div>
       </div>
       <% @course.chapters.each do |chapter| %>
-        <div class='d-none' data-tabs-target='content'>
-          <%= render 'chapter', chapter: chapter %>
-        </div>
         <% chapter.lessons.each do |lesson| %>
           <div class='d-none' data-tabs-target='content'>
             <%= render 'lesson', lesson: lesson %>
