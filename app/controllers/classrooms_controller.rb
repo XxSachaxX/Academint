@@ -23,8 +23,4 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
-  def next_course
-
-
-  end
 end
