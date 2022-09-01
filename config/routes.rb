@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   resources :courses do
-    resources :classrooms, only: %i[new create show]
-    get "/classrooms/:id", to: "classrooms#next_course", as: :next
+    resources :classrooms, only: %i[new create show] do
+      member do
+        get :next
+      end
+    end
     resources :chapters, only: %i[new create edit destroy] do
       resources :lessons, only: %i[new create edit destroy] do
         resources :lectures, only: %i[new create]

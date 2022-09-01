@@ -22,6 +22,16 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
+  def next
+    @classroom = Classroom.find(params[:id])
+    @lecture = @classroom.lectures.find_by(status: 'démarrée')
+    @lecture.update(status: "terminée")
+    @next_lecture = Lecture.find_by(status: "inactive", classroom: @classroom)
+    @next_lecture.update(status: "démarrée")
+    authorize @classroom
+    redirect_to course_classroom_path(@classroom.course, @classroom)
+  end
+
   private
 
   def create_lectures
@@ -35,13 +45,5 @@ class ClassroomsController < ApplicationController
   def start_course
     @lecture = @classroom.lectures.first
     @lecture.update(status: "démarrée")
-  end
-
-  def next_course
-    @classroom = Classroom.find(params[:id])
-    @lecture = Lecture.find_by(status: "démarrée")
-    @lecture.update(status: "terminée")
-    @next_lecture = Lecture.find_by(status: "inactive")
-    @next_lecture.update(status: "démarrée")
   end
 end
