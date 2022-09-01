@@ -24,10 +24,10 @@ class ClassroomsController < ApplicationController
 
   def next
     @classroom = Classroom.find(params[:id])
-    @lecture = @classroom.lectures.find_by(status: 'démarrée')
-    @lecture.update(status: "terminée")
+    @lecture = @classroom.lectures.find_by(status: 'ongoing')
+    @lecture.update(status: "done")
     @next_lecture = Lecture.find_by(status: "inactive", classroom: @classroom)
-    @next_lecture.update(status: "démarrée")
+    @next_lecture.update(status: "pending")
     authorize @classroom
     redirect_to course_classroom_path(@classroom.course, @classroom)
   end
