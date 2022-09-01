@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="dashboard-container">
+    <h1>Bienvenue <%= current_user.username.downcase %> !</h1>
+    <%# <p class="paragraph-large">Tu peux retrouver toutes les informations sur tes cours et tes certifications ici.</p> %>
+    <div class="dashboard">
+      <div class="tabs-dashboard">
+        <ul>
+          <li class="active-tab">Mes cours</li>
+          <li>Certifications NFT</li>
+        </ul>
+      </div>
+      <div class="non-finished-courses">
+        <p class="large-paragraph">Mes cours en progression</p>
+        <div class="display-cards-dashboard">
+          <% current_user.classrooms.each do |classroom| %>
+            <%= render "shared/card_dashboard", course: classroom.course, classroom: classroom %>
+          <% end %>
+        </div>
+      </div>
+      <div class="finished-courses">
+        <p class="large-paragraph">Mes cours terminés</p>
+        <p><em>Pas de cour terminé pour l'instant</em></p>
+      </div>
+    </div>
+  </div>
+</div>

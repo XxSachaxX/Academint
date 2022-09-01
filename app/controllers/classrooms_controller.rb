@@ -6,14 +6,44 @@ class ClassroomsController < ApplicationController
 
   def create
     @classroom = Classroom.new
+    @course = Course.find(params[:course_id])
     @classroom.user = current_user
-    @course = course.find(params[:course_id])
     @classroom.course = @course
+    if @classroom.save
+      create_lectures
+      start_course
+      redirect_to dashboard_path, notice: "#{@course.name} a été ajouté à vos cours !"
+    end
     authorize @classroom
   end
 
-  def follow_course
-    @classroom = Classroom.find(params[:classroom_id])
+  def show
+    @classroom = Classroom.find(params[:id])
     authorize @classroom
+  end
+
+  def next
+    @classroom = Classroom.find(params[:id])
+    @lecture = @classroom.lectures.find_by(status: 'démarrée')
+    @lecture.update(status: "terminée")
+    @next_lecture = Lecture.find_by(status: "inactive", classroom: @classroom)
+    @next_lecture.update(status: "démarrée")
+    authorize @classroom
+    redirect_to course_classroom_path(@classroom.course, @classroom)
+  end
+
+  private
+
+  def create_lectures
+    @classroom.course.chapters.each do |chapter|
+      chapter.lessons.each do |lesson|
+        Lecture.create(classroom_id: @classroom.id, lesson_id: lesson.id)
+      end
+    end
+  end
+
+  def start_course
+    @lecture = @classroom.lectures.first
+    @lecture.update(status: "démarrée")
   end
 end

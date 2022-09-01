@@ -1,0 +1,17 @@
+<%= link_to course_classroom_path(course, classroom), class: 'link-card' do %>
+  <div class="dashboard-card">
+    <div class="dashboard-card-text">
+    <h3><%= course.name %></h3>
+    <p class="text-ellipsis--2"><%= course.description %></p>
+    </div>
+    <div class="dashboard-card-bottom">
+      <% if course.level == 'débutant' %>
+        <button class="badge badge-beginner"><%= course.level.capitalize %></button>
+      <% elsif course.level == 'intermédiaire' %>
+        <button class="badge badge-intermediate"><%= course.level.capitalize %></button>
+      <% elsif course.level == 'expert' %>
+        <button class="badge badge-expert"><%= course.level.capitalize %></button>
+      <% end %>
+    </div>
+  </div>
+<% end %>

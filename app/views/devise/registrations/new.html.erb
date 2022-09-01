@@ -7,25 +7,27 @@
       <h2>S'inscrire</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
-        <div class="input-no-label">
-          <%= f.input :username, placeholder: 'Username', required: true, autofocus: true, input_html: { autocomplete: "username" }  %>
+        <div class="input-label">
+          <%= f.input :username, label: 'Nom d\'utilisateur', placeholder: 'Nom d\'utilisateur', required: true, autofocus: true, input_html: { autocomplete: "username" }  %>
           <%= f.input :email,
                       placeholder: 'Email',
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
           <%= f.input :password,
+                      label: 'Mot de passe',
                       placeholder: 'Mot de passe',
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
-                      placeholder: 'Confirmation du mot de passe',
+                      label: 'Confirmation du mot de passe',
+                      placeholder: 'Mot de passe',
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
           <%= f.button :submit, "S'enregistrer", class: 'btn-main' %>
       <% end %>
-      <div class="mt-1">
+      <div class="bottom-links">
         <%= render "devise/shared/links" %>
       </div>
     </div>

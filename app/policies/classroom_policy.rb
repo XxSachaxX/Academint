@@ -10,7 +10,11 @@ class ClassroomPolicy < ApplicationPolicy
     true
   end
 
-  def follow_course?
+  def show?
+    true
+  end
+
+  def next?
     true
   end
 end

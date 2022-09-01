@@ -1,0 +1,20 @@
+.banner-middle {
+  height: 150px;
+  background-color: #524FFF;
+  .container {
+    display: flex;
+    height: 100%;
+  }
+  p {
+    color:white;
+    font-weight: bolder;
+    font-size: 24px;
+  }
+}
+
+.banner-middle-main-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}

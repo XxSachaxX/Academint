@@ -1,0 +1,51 @@
+.dashboard {
+  margin-top: 3rem;
+}
+
+.tabs-dashboard {
+  margin-top: 1rem;
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  li {
+    list-style: none;
+    margin-right: 2rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.dashboard-container {
+  h1 {
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.active-tab {
+  border-bottom: 2px solid $primary-violet;
+  letter-spacing: -0.03rem;
+  font-weight: 600;
+}
+
+.display-cards-dashboard {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.non-finished-courses {
+  margin-top: 2.5rem;
+
+}
+
+.finished-courses {
+  margin-top: 2.5rem;
+}
