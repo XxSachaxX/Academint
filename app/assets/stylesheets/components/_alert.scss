@@ -3,4 +3,14 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  padding: 1rem;
+  background-color: rgba($color: $neutral-200-violet, $alpha: 0.7);
+  backdrop-filter: $backdrop-blur;
+  color: $neutral-1000;
+  border-radius: $border-radius-main;
+  i {
+    color: $neutral-1000;
+    padding: 0 0.5rem;
+    cursor: pointer;
+  }
 }
