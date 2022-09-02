@@ -352,7 +352,7 @@ course2_chapter1_lesson1 = Lesson.new(title: "Définition", media: "texte",
                                         parlent de blockchains décentralisées ou publiques, à l’instar de Bitcoin.
                                         Il convient toutefois de mentionner que cette technologie peut également être
                                         utilisée pour développer des blockchains centralisées, qui présentent des
-                                        avantages pour les entreprises par rapport aux blockchains publiques.
+                                        avantages pour les entreprises par rapport aux blockchains publiques.&&
 
                                         Une blockchain est un registre distribué, similaire à une base de données.
                                         Toutefois, au lieu d’être contrôlé par une autorité centrale (une société comme
@@ -361,17 +361,12 @@ course2_chapter1_lesson1 = Lesson.new(title: "Définition", media: "texte",
                                         avec aux commandes quiconque disposant d’une connexion Internet.
                                         Une blockchain est essentiellement un registre par le biais duquel des données
                                         sont ajoutées et mises à jour en temps réel via le consensus des différents
-                                        nœuds exécutant le logiciel sur le réseau.
+                                        nœuds exécutant le logiciel sur le réseau.&&
 
                                         En revanche, une fois ajoutées au registre, les données ne peuvent être ni
                                         supprimées ni modifiées, contrairement à une base de données.
                                         C’est le résultat même de la conception globale des blockchains.")
 course2_chapter1_lesson1.save!
-
-puts "Creating Course 2 Chapter 1 Lesson 2"
-course2_chapter1_lesson2 = Lesson.new(title: "Illustration blockchain", media: "texte",
-                                        chapter_id: course2_chapter1.id, content: "Vidéo à venir!")
-course2_chapter1_lesson2.save!
 
 puts "Creating Course 2 Chapter 1 Lesson 3"
 course2_chapter1_lesson3 = Lesson.new(title: "Pourquoi une chaîne? ", media: "texte",
@@ -380,7 +375,7 @@ course2_chapter1_lesson3 = Lesson.new(title: "Pourquoi une chaîne? ", media: "t
                                         qui grandit en permanence sur une période donnée. Si une transaction est
                                         intégrée profondément dans une blockchain (c’est-à-dire au début de la chaîne),
                                         il devient exceptionnellement difficile d’en modifier les données. De ce fait,
-                                        les blockchains constituent un moyen unique de stocker des données précieuses.
+                                        les blockchains constituent un moyen unique de stocker des données précieuses.&&
 
                                         Imaginez une tour numérique composée de blocs, au sommet de laquelle un nouveau
                                         bloc de données est ajouté toutes les 10 minutes, en partant du bloc « Genesis»
