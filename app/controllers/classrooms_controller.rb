@@ -12,7 +12,7 @@ class ClassroomsController < ApplicationController
     if @classroom.save
       create_lectures
       start_course
-      redirect_to dashboard_path, notice: "#{@course.name} a été ajouté à vos cours !"
+      redirect_to course_classroom_path(@course, @classroom), notice: "#{@course.name} a été ajouté à vos cours !"
     end
     authorize @classroom
   end
