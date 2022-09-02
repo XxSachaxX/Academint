@@ -5,7 +5,7 @@
   <% end %>
   <div class="btn-lesson-next" data-action='click->tabs#nextLesson' data-tabs-index-param="<%= index + 1 %>">
     <%=
-      link_to "Next lesson",
+      link_to "Leçon suivante",
       next_course_classroom_path(classroom.course, classroom, lesson: lesson.id),
       data: { tabs_target: "link" },
       class: 'btn-secondary-fill btn-lesson'
