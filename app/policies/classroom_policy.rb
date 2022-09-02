@@ -17,4 +17,8 @@ class ClassroomPolicy < ApplicationPolicy
   def next?
     true
   end
+
+  def quizz?
+    true
+  end
 end

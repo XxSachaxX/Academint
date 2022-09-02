@@ -32,6 +32,13 @@ class ClassroomsController < ApplicationController
     authorize @classroom
     redirect_to course_classroom_path(@classroom.course, @classroom)
   end
+
+  def quizz
+    @user_answers = params[:user_answers].values.map { |hash| hash.key("1") }.join(',')
+    @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
+    @lecture.update!(user_answers: @user_answers)
+  end
+
   private
 
   def create_lectures

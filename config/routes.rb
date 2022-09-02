@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :classrooms, only: %i[new create show] do
       member do
         get :next
+        post :quizz
       end
     end
     resources :chapters, only: %i[new create edit destroy] do
