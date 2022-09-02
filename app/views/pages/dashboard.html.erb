@@ -10,7 +10,11 @@
         </ul>
       </div>
       <div class="non-finished-courses">
-        <p class="large-paragraph">Mes cours en progression</p>
+        <p class="large-paragraph">Mes cours en progression <strong><em>(<%= @count_unfinished %>)</em></strong></p>
+        <% if @count_unfinished == 0 %>
+          <p><em>Vous n'avez pas encore de cours en progression.</em></p>
+          <%= link_to 'Découvrir nos cours', courses_path, class: 'btn-secondary-fill' %>
+        <% else %>
         <div class="display-cards-dashboard">
           <% current_user.classrooms.each do |classroom| %>
             <% unless classroom.finished? %>
@@ -18,16 +22,21 @@
             <% end %>
           <% end %>
         </div>
+        <% end %>
       </div>
       <div class="finished-courses">
-        <p class="large-paragraph">Mes cours terminés</p>
-        <div class="display-cards-dashboard">
-          <% current_user.classrooms.each do |classroom| %>
-            <% if classroom.finished? %>
-              <%= render "shared/card_dashboard_finished", course: classroom.course, classroom: classroom %>
+        <p class="large-paragraph">Mes cours terminés <strong><em>(<%= @count_finished %>)</em></strong></p>
+        <% if @count_finished == 0 %>
+          <p><em>Vous n'avez pas encore terminé de cours</em></p>
+        <% else %>
+          <div class="display-cards-dashboard">
+            <% current_user.classrooms.each do |classroom| %>
+              <% if classroom.finished? %>
+                <%= render "shared/card_dashboard_finished", course: classroom.course, classroom: classroom %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
