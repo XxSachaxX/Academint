@@ -1,7 +1,14 @@
 <div class='course-display-content'>
   <h1><%= lesson.title %></h1>
-  <p class="large-paragraph"><%= lesson.content %></p>
-  <div data-action='click->tabs#nextLesson' data-tabs-index-param="<%= index + 1 %>">
-    <%= link_to "Next lesson",  next_course_classroom_path(classroom.course, classroom, lesson: lesson.id), data: { tabs_target: "link" }%>
+  <% lesson.content.split('&&').each do |par| %>
+    <p class="large-paragraph"><%= par %></p>
+  <% end %>
+  <div class="btn-lesson-next" data-action='click->tabs#nextLesson' data-tabs-index-param="<%= index + 1 %>">
+    <%=
+      link_to "Next lesson",
+      next_course_classroom_path(classroom.course, classroom, lesson: lesson.id),
+      data: { tabs_target: "link" },
+      class: 'btn-secondary-fill btn-lesson'
+    %>
   </div>
 </div>
