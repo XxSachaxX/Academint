@@ -30,7 +30,6 @@ class ClassroomsController < ApplicationController
     @next_lecture = Lecture.find_by(status: "pending", classroom: @classroom)
     @next_lecture.ongoing! unless !@next_lecture
     authorize @classroom
-    redirect_to course_classroom_path(@classroom.course, @classroom)
   end
 
   private
