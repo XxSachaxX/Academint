@@ -44,8 +44,8 @@ puts "All users created"
 
 puts "Creating courses..."
 puts "Creating course 1"
-course1 = Course.new(name: 'Comprendre les NFT',
-                     description: '*Les tokens non fongibles, ou NFT en abrégé, sont devenus très populaires ces
+course1 = Course.new(name: 'Comprendre les NFTs',
+                     description: 'Les tokens non fongibles, ou NFT en abrégé, sont devenus très populaires ces
                      dernières années en raison de leur capacité à donner une valeur symbolique (la tokenisation)
                      à presque tout. Ils confèrent également à leurs détenteurs la véritable propriété de leurs actifs
                      numériques.
@@ -57,7 +57,7 @@ course1.photo.attach(io: cover1, filename: "Cours 1", content_type: "image/jpg")
 course1.save!
 
 puts "Creating course 2"
-course2 = Course.new(name: 'Comprendre la Blockchain?',
+course2 = Course.new(name: 'Comprendre la blockchain?',
                      description: "Ce cours a pour but de faire comprendre de manière simple ce qu'est la blockchain
                      et ses usages.", level: 'débutant',
                      user_id: user1.id)
@@ -67,7 +67,7 @@ course2.photo.attach(io: cover2, filename: "Cours 2", content_type: "image/jpg")
 course2.save!
 
 puts "Creating course 3"
-course3 = Course.new(name: 'Introduction à ETHEREUM',
+course3 = Course.new(name: 'Introduction à Ethereum',
                      description: "Comprendre ce qu'est Ethereum, comment cette blockchain fonctionne et les différentes
                      technologies et fonctionnalités qui y sont attachées.", level: 'débutant',
                      user_id: user1.id)

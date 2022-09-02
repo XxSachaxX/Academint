@@ -23,7 +23,6 @@ export default class extends Controller {
   static targets = ["login", "logout", "status"]
 
   connect() {
-    console.log('test');
     if (web3auth.provider) {
       this.statusTarget.classList.add('status-logged')
       this.loginTarget.classList.add('d-none')
