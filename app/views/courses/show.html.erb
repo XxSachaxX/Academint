@@ -31,7 +31,7 @@
     <% if !current_user %>
       <%= link_to 'Commencer', new_user_session_path, class: 'btn-main' %>
     <% elsif @user_has_course %>
-      <%= link_to 'Continuer', dashboard_path, class: 'btn-main' %>
+      <%= link_to 'Continuer', course_classroom_path(@course, @classroom), class: 'btn-main' %>
     <% else %>
       <%= button_to 'Commencer', course_classrooms_path(@course), class: 'btn-main' %>
     <% end %>
