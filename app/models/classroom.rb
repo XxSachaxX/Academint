@@ -15,7 +15,7 @@ class Classroom < ApplicationRecord
 
   def completed_percentage
     lectures = self.lectures
-    completed = lectures.select { |l| l.done? }
+    completed = lectures.select(&:done?)
     return completed.count.fdiv(lectures.count).round(2)
   end
 end

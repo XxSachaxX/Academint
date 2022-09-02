@@ -16,10 +16,11 @@
       <div data-tabs-target="content">
         <%= render 'introduction', course: @course %>
       </div>
+      <% index_btn = 0 %>
       <% @course.chapters.each do |chapter| %>
         <% chapter.lessons.each do |lesson| %>
           <div class='d-none' data-tabs-target='content'>
-            <%= render 'lesson', lesson: lesson, classroom: @classroom %>
+            <%= render 'lesson', lesson: lesson, classroom: @classroom, index: index_btn += 1 %>
           </div>
         <% end %>
       <% end %>

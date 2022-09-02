@@ -13,11 +13,10 @@
   li {
     list-style: none;
     padding: 0.5rem 1rem;
+    margin-right: 1rem;
     cursor: pointer;
-    :not(.active-tab) {
-      &:hover {
-        color: $primary-violet;
-      }
+    &:hover {
+      color: $primary-violet;
     }
   }
 }
