@@ -6,12 +6,11 @@ export default class extends Controller {
   static targets = ['dropdownMenu']
 
   connect() {
-    console.log('COUCOUUUU');
     useClickOutside(this)
   }
 
   show() {
-    this.dropdownMenuTarget.classList.remove("d-none");
+    this.dropdownMenuTarget.classList.toggle("d-none");
   }
 
   hide() {
