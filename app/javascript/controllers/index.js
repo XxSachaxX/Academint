@@ -7,17 +7,11 @@ import { application } from "./application"
 import AlertController from "./alert_controller"
 application.register("alert", AlertController)
 
-import ClassroomController from "./classroom_controller"
-application.register("classroom", ClassroomController)
-
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import TabsController from "./tabs_controller"
-application.register("tabs", TabsController)
 
 import WalletController from "./wallet_controller"
 application.register("wallet", WalletController)

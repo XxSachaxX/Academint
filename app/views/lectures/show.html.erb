@@ -38,7 +38,6 @@
 </div>
 <div class="course-footer">
   <div class="container container-footer-course">
-
     <% unless @lecture == @classroom.lectures.last %>
       <%= link_to next_course_classroom_path(@classroom.course, @classroom),
           data: { tabs_target: "link" },
