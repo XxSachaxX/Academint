@@ -1,4 +1,4 @@
-<%= link_to course_classroom_path(course, classroom), class: 'link-card' do %>
+<%= link_to course_classroom_lecture_path(course, classroom, classroom.ongoing_lecture), class: 'link-card' do %>
   <div class="dashboard-card">
     <div class="dashboard-card-text">
     <h3><%= course.name %></h3>

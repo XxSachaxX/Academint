@@ -12,7 +12,7 @@ class ClassroomsController < ApplicationController
     if @classroom.save
       create_lectures
       start_course
-      redirect_to course_classroom_path(@course, @classroom), notice: "#{@course.name} a été ajouté à vos cours !"
+      redirect_to course_classroom_lecture_path(@course, @classroom, @classroom.ongoing_lecture), notice: "#{@course.name} a été ajouté à vos cours !"
     end
     authorize @classroom
   end
@@ -20,15 +20,21 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find(params[:id])
     @course = Course.find(params[:course_id])
+    @lecture = @classroom.lectures.find_by(status: 'ongoing')
     authorize @classroom
   end
 
   def next
     @classroom = Classroom.find(params[:id])
     @lecture = @classroom.lectures.find_by(status: 'ongoing')
-    @lecture.done! unless !@lecture
+    @lecture.done! if @lecture
     @next_lecture = Lecture.find_by(status: "pending", classroom: @classroom)
-    @next_lecture.ongoing! unless !@next_lecture
+    if @next_lecture
+      @next_lecture.ongoing!
+      redirect_to course_classroom_lecture_path(@classroom.course, @classroom, @next_lecture)
+    else
+      redirect_to dashboard_path
+    end
     authorize @classroom
   end
 

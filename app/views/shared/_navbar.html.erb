@@ -1,6 +1,8 @@
 <nav class="navbar" data-controller="wallet">
   <div class="container container-navbar">
-    <%= link_to 'Academint', root_path, id: 'logo' %>
+    <%= link_to root_path do %>
+      <%= image_tag "logo_academint.svg", alt: "logo Academint", id: 'logo' %>
+    <% end %>
     <div>
       <%= render "shared/search_bar" %>
     </div>

@@ -16,7 +16,11 @@ class CoursesController < ApplicationController
 
   def show
     authorize @course
-    @classroom = Classroom.new
+    if user_has_course?
+      @classroom = Classroom.where(user_id: current_user.id, course_id: @course.id).first
+    else
+      @classroom = Classroom.new
+    end
     @skip_footer = true
     @user_has_course = user_has_course?
   end
