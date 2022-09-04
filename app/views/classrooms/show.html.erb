@@ -7,7 +7,7 @@
         <% @course.chapters.each do |chapter| %>
           <h5 class='large-paragraph'><strong><%= chapter.name %></strong></h5>
           <% chapter.lessons.each_with_index do |lesson, i| %>
-            <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index += 1 %>" data-tabs-target="tab"><%= i + 1 %> - <%= lesson.title %></p>
+            <p class='tab-font clickable' data-action='click->tabs#display' data-tabs-index-param="<%= index += 1 %>" data-tabs-target="tab"><%= i + 1 %> - <%= lesson.title %> || <%= Lecture.find_by(lesson_id: lesson.id).status %></p>
           <% end %>
         <% end %>
       </div>

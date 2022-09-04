@@ -6,6 +6,9 @@ export default class extends Controller {
 
   connect() {
     console.log('coucou alerte');
+    setTimeout(() => {
+      this.close()
+    }, 5000);
   }
 
   close(event) {
