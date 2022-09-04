@@ -33,7 +33,7 @@ class ClassroomsController < ApplicationController
       @next_lecture.ongoing!
       redirect_to course_classroom_lecture_path(@classroom.course, @classroom, @next_lecture)
     else
-      redirect_to dashboard_path
+      redirect_to mint_nft_path
     end
     authorize @classroom
   end

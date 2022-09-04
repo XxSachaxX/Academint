@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def mint_nft
+  end
+
   private
 
   def count_finished_classrooms(classrooms)

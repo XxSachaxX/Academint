@@ -54,6 +54,9 @@
   padding: 1.5rem 0;
   border-top: 1px solid $neutral-200;
   background-color: $neutral-100-violet;
+  p {
+    margin: 0;
+  }
 }
 
 .container-footer-course {

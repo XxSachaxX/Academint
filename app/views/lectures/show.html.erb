@@ -38,17 +38,17 @@
 </div>
 <div class="course-footer">
   <div class="container container-footer-course">
-    <% unless @lecture == @classroom.lectures.last %>
+    <% if @last_course %>
+      <%= link_to next_course_classroom_path(@classroom.course, @classroom),
+          data: { tabs_target: "link" },
+          class: 'next-lesson' do %>
+            <button class="btn-main">Obtiens ton NFT</button>
+      <% end %>
+    <% else %>
       <%= link_to next_course_classroom_path(@classroom.course, @classroom),
           data: { tabs_target: "link" },
           class: 'next-lesson' do %>
             <p class="large-paragraph">Leçon suivante <i class="fa-solid fa-arrow-right"></i></p>
-      <% end %>
-    <% else %>
-      <%= link_to dashboard_path(@classroom.course, @classroom),
-          data: { tabs_target: "link" },
-          class: 'next-lesson' do %>
-            <p class="large-paragraph">Retour au dashboard <i class="fa-solid fa-arrow-right"></i></p>
       <% end %>
     <% end %>
   </div>
