@@ -1,10 +1,9 @@
-<%# TODO: Create a route to get the value from the answers  %>
 <div class="container">
-  <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/quizz" do |form| %>
+  <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/quizz_submit" do |form| %>
     <% Answer.all.each do |answer| %>
     <h3><%= answer.question.content %></h3>
     <% answer.content.split(',').each_with_index do |word, index| %>
-      <%= form.check_box :"user_answers[#{answer.id}][#{index}]"%>
+      <%= form.check_box :"user_answers[#{answer.id}][#{index + 1}]"%>
       <%= form.label :"user_answers[#{index}]", word %>
       <% end %>
     <% end %>
