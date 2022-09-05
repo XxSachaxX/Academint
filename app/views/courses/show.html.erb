@@ -1,9 +1,9 @@
 <div class='container' data-controller="collapse">
   <div class="wrapper-no-footer">
-    <% @course.chapters.each do |chapter| %>
-      <h4 data-action="click->collapse#open" data-><%= chapter.name %></h5>
+    <% @course.chapters.each_with_index do |chapter, index| %>
+      <h4 data-action="click->collapse#open" data-collapse-index-param="<%= index %>" data-collapse-target="chapter"><%= chapter.name %></h5>
       <% chapter.lessons.each do |lesson| %>
-        <div class="lesson-tabs">
+        <div class="lesson-tabs" data-collapse-target="lesson">
           <p class="disabled-link"><%= lesson.media %> || <%= lesson.title%></p>
         </div>
       <% end %>
