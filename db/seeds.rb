@@ -142,8 +142,9 @@ puts "All chapters created"
 
 puts "Creating lessons..."
 puts "Creating Course 1 Chapter 1 Lesson 1"
-course_1_chapter1_lesson1 = Lesson.new(title: "Introduction",
-                                         chapter_id: course1_chapter1.id, media: "texte", content: "Les NFT sont des medias
+
+course_1_chapter1_lesson1 = Lesson.new(title: "Vidéo: Phénomène NFTs",
+                                         chapter_id: course1_chapter1.id, quizz_answers: "3,1,3,1,1,1,2,1,4,1", media: "texte", content: "Les NFT sont des medias
                                          relativement nouveaux d’actifs numériques conçus pour représenter la propriété
                                          de quelque chose d’unique et de rare. Il peut s’agir d’actifs physiques
                                          tokenisés, de ressources digitales rares, d’actions ou de pratiquement
@@ -253,7 +254,7 @@ course1_chapter4_lesson1 = Lesson.new(title: "Les usages NFT", media: "texte",
 course1_chapter4_lesson1.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 2"
-course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "3, 1, 3, 1, 1, 1, 2, 1, 4, 1", chapter_id: course1_chapter4.id, content: "Quizz:")
+course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "3,1,3,1,1,1,2,1,4,1", chapter_id: course1_chapter4.id, content: "Quizz:")
 course1_chapter4_lesson2.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 1"
