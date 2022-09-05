@@ -6,7 +6,7 @@ class Lesson < ApplicationRecord
   has_one :course, through: :chapter
   has_many_attached :photos, dependent: :destroy
   has_rich_text :enriched_content
-  validates :media, :content, :title, presence: true
+  validates :media, :title, presence: true
 
   def display_media
     case self.media
