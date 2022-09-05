@@ -11,8 +11,6 @@ export default class extends Controller {
 
   connect() {
 
-    const { ethereum } = window;
-
     (async function init() {
 
       const clientId = "BKw42hjnzAcnwhm4SRkx1a0gxmia6lNZtl-gyaf66aOkEMf2AY-_KGyrOLnEBNdW0exZFWc85W8BU0Z4vnXVgwI";
@@ -32,13 +30,13 @@ export default class extends Controller {
     await web3auth.initModal();
     })();
 
-    if (web3auth.provider || ethereum ) {
+    if (web3auth.provider) {
       this.connectTarget.classList.add('d-none')
       this.mintNFTTarget.classList.remove('d-none')
       this.logoutTarget.classList.remove('d-none')
       console.log('Wallet connecté au connect')
     } else {
-      this.mintNFTTarget.add('d-none')
+      this.mintNFTTarget.classList.add('d-none')
     }
 
     this.doneTarget.classList.add('d-none')
@@ -47,7 +45,7 @@ export default class extends Controller {
   async connectWallet() {
     try {
       await web3auth.connect();
-      this.connectTarget.add('d-none')
+      this.connectTarget.classList.add('d-none')
       this.mintNFTTarget.classList.remove('d-none')
       this.logoutTarget.classList.remove('d-none')
     } catch (error) {
@@ -56,12 +54,11 @@ export default class extends Controller {
   }
 
   async disconnectWallet() {
-    const { ethereum } = window;
-    
     try {
       await web3auth.logout();
       this.logoutTarget.classList.add('d-none')
       this.connectTarget.classList.remove('d-none')
+      this.doneTarget.classList.add('d-none')
       console.log('déconnecté');
     } catch (error) {
       console.error(error.message);
@@ -69,11 +66,8 @@ export default class extends Controller {
   }
 
   async askContractToMintNft() {
-
-    const { ethereum } = window;
-
     try {
-    if (web3auth.provider || ethereum ) {
+    if (web3auth.provider) {
         const provider = new ethers.providers.Web3Provider(web3auth.provider)
         const signer = provider.getSigner()
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, AcademintNFT.abi, signer);
