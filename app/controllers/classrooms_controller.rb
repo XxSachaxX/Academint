@@ -38,6 +38,43 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
+  def quizz
+    @classroom = Classroom.find(params[:id])
+    @course = @classroom.course
+    authorize @classroom
+  end
+
+  def quizz_submit
+    @classroom = Classroom.find(params[:id])
+    @course = @classroom.course
+    @user_answers = params[:user_answers].values.map { |hash| hash.key("1") }.join(',')
+    @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
+    @lecture.update!(user_answers: @user_answers)
+    @lesson = @lecture.lesson
+    authorize @classroom
+    compare_answers
+  end
+
+  def compare_answers
+    if success_rate < 90
+      redirect_to quizz_course_classroom_path, notice: "Try again, your score is #{success_rate}%. You need 90% to pass!"
+    else
+      redirect_to "/mint_nft", notice: "Well done, you did it!!"
+    end
+  end
+
+  def success_rate
+    user_answers_array = @lecture.user_answers.split(",")
+    quizz_answers_array = @lesson.quizz_answers.split(",")
+    @counter = 0
+    user_answers_array.each_with_index do |user_answer, index|
+      if user_answers_array[index] == quizz_answers_array[index]
+        @counter += 1
+      end
+    end
+    @success_rate = (@counter * 100) / user_answers_array.length
+  end
+
   private
 
   def create_lectures
