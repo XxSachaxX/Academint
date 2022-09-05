@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get "/mint_nft", to: "pages#mint_nft", as: :mint_nft
   resources :courses do
     resources :classrooms, only: %i[new create show] do
+      member do
+        get :quizz
+        post :quizz_submit
+      end
       resources :lectures, only: %i[new create show]
       member do
         get :next

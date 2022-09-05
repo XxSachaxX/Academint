@@ -1,4 +1,14 @@
 <div class="container" data-controller="wallet">
-<button class="btn-main clickable" data-action="click->wallet#connectWallet" data-wallet-target="connect">Connectez votre portefeuille</button>
-<button class="btn-main clickable d-none" data-action="click->wallet#signMessage" data-wallet-target="message">Signe le message</button>
+  <div class="container-mint-process">
+    <div class="mint-nft">
+      <button class="btn-main clickable" data-action="click->wallet#connectWallet" data-wallet-target="connect">Connectez votre portefeuille</button>
+      <button class="btn-main clickable" data-action="click->wallet#askContractToMintNft" data-wallet-target="mintNFT">Obtenir la certification</button>
+    </div>
+    <div class="mint-ongoing d-none" data-wallet-target="ongoing">
+      <%= render "shared/animation_mint" %>
+      <h3>La certification est en cours de création</h3>
+    </div>
+    <div class="opensea-link d-none" data-wallet-target="done">
+    </div>
+  </div>
 </div>

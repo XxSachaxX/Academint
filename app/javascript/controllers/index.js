@@ -7,6 +7,9 @@ import { application } from "./application"
 import AlertController from "./alert_controller"
 application.register("alert", AlertController)
 
+import CollapseController from "./collapse_controller"
+application.register("collapse", CollapseController)
+
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
 
