@@ -1,5 +1,10 @@
 <div class='container' data-controller="collapse">
   <div class="wrapper-no-footer">
+    <%= cl_image_tag(@course.photo.key) %>
+    <div class='course-display-content'>
+      <h1><%= @course.name %></h1>
+      <p class="large-paragraph"><%= @course.description %></p>
+    </div>
     <% @course.chapters.each_with_index do |chapter, index| %>
       <h4 data-action="click->collapse#open" data-collapse-index-param="<%= index %>" data-collapse-target="chapter"><%= chapter.name %></h5>
         <div class="d-none" data-collapse-target="lesson">
