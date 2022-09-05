@@ -160,7 +160,7 @@ course_1_chapter1_lesson1 = Lesson.new(title: "Phénomène NFTs",
   course_1_chapter1_lesson1.save!
 
 puts "Creating Course 1 Chapter 1 Lesson 2"
-course1_chapter1_lesson2 = Lesson.new(title: "Podcast : Comprendre la fongibilité", media: "podcast",
+course1_chapter1_lesson2 = Lesson.new(title: "Comprendre la fongibilité", media: "podcast",
                                          chapter_id: course1_chapter1.id, content: "Comme les principaux actifs
                                          numériques comme l’ether (ETH) et le bitcoin (BTC), les NFT sont stockés sous
                                         forme de données sur une blockchain. Ils sont placés dans des wallets qui leur

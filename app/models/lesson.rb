@@ -6,4 +6,19 @@ class Lesson < ApplicationRecord
   has_one :course, through: :chapter
   validates :content, presence: true
   has_many_attached :photos, dependent: :destroy
+
+  def display_media
+    case self.media
+    when "video"
+      "fa-circle-play"
+    when "texte"
+      "fa-file-lines"
+    when "podcast"
+      "fa-podcast"
+    when "quizz"
+      "fa-circle-question"
+    else
+      self.media
+    end
+  end
 end

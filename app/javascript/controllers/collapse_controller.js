@@ -9,10 +9,15 @@ export default class extends Controller {
   }
 
   open(event) {
-    console.log(this.lessonTargets);
     this.lessonTargets.forEach(element => {
       element.classList.add('d-none')
     })
-    this.lessonTargets[event.params.index].classList.remove('d-none')
+    const element = this.lessonTargets[event.params.index]
+    const y = element.getBoundingClientRect().top + window.scrollY + 73;
+    element.classList.remove('d-none')
+    window.scroll({
+      top: y,
+      behavior: 'smooth'
+    });
   }
 }

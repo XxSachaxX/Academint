@@ -1,20 +1,22 @@
 <div class='container' data-controller="collapse">
-  <div class="wrapper-no-footer">
-    <%= cl_image_tag(@course.photo.key) %>
-    <div class='course-display-content'>
-      <h1><%= @course.name %></h1>
-      <p class="large-paragraph"><%= @course.description %></p>
+  <div class='course'>
+    <div class="wrapper-no-footer course-display">
+      <%= cl_image_tag(@course.photo.key) %>
+      <div class='course-display-content'>
+        <h1><%= @course.name %></h1>
+        <p class="large-paragraph"><%= @course.description %></p>
+      </div>
+      <% @course.chapters.each_with_index do |chapter, index| %>
+        <h4 class="clickable" data-action="click->collapse#open" data-collapse-index-param="<%= index %>" data-collapse-target="chapter"><%= chapter.name %></h5>
+          <div class="d-none" data-collapse-target="lesson">
+            <% chapter.lessons.each do |lesson| %>
+              <div class="lesson-tabs">
+                <p class="disabled-link"><i class="fa-solid <%= lesson.display_media %>"></i> <%= lesson.title%></p>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
     </div>
-    <% @course.chapters.each_with_index do |chapter, index| %>
-      <h4 data-action="click->collapse#open" data-collapse-index-param="<%= index %>" data-collapse-target="chapter"><%= chapter.name %></h5>
-        <div class="d-none" data-collapse-target="lesson">
-          <% chapter.lessons.each do |lesson| %>
-            <div class="lesson-tabs">
-              <p class="disabled-link"><%= lesson.media %> || <%= lesson.title%></p>
-            </div>
-          <% end %>
-        </div>
-    <% end %>
   </div>
 </div>
 <div class="course-footer">
