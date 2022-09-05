@@ -12,7 +12,7 @@ User.destroy_all
 puts "Creating 5 users...."
 puts "Creating user 1"
 user1 = User.new(email: 'academint@gmail.com', password: '123456', username: 'academint')
-avatar1 = URI.open("https://moeara.com/wp-content/uploads/2022/03/Bob-Iger-Joins-Web3-Metaverse-Avatar-Company-Genies-The.jpg")
+avatar1 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
 user1.photo.attach(io: avatar1, filename: 'John Webber', content_type: "image/jpg")
 user1.save!
 
@@ -153,6 +153,7 @@ course_1_chapter1_lesson1 = Lesson.new(title: "Introduction",
   autre token identique. C’est une caractéristique connue sous le nom de « non-fongibilité». Elle est mise en œuvre
   par des smart contracts qui empêchent toute duplication, tandis que les blockchains
   publiques permettent de prouver la rareté.
+
   Les NFT peuvent se présenter sous différentes formes, selon la norme sur laquelle ils sont créés, par exemple:
   les ERC721 et les ERC1155 sont des NFT d’Ethereum, et TRC721 pour TRON. Chacune de ces normes a ses avantages et ses
   limites, qui peuvent influer sur les medias de NFT créés. De la même manière qu’une personne qui cuisine est limitée
@@ -371,6 +372,9 @@ course2_chapter1_lesson1 = Lesson.new(title: "Définition", media: "texte",
                                         supprimées ni modifiées, contrairement à une base de données.
                                         C’est le résultat même de la conception globale des blockchains.")
 course2_chapter1_lesson1.save!
+course_2_chapter1_lesson1_1 = Lesson.new(title: "Illustration Blockchain",
+chapter_id: course2_chapter1.id, media: "video", content: "COMPRENDRE_LA_BLOCKCHAIN_EN_7_MINUTES_f38q9n")
+course_2_chapter1_lesson1_1.save!
 
 puts "Creating Course 2 Chapter 1 Lesson 3"
 course2_chapter1_lesson3 = Lesson.new(title: "Pourquoi une chaîne? ", media: "texte",
@@ -491,13 +495,13 @@ puts "Creating Course 3 Chapter 1 Lesson 1"
 
 course3_chapter1_lesson1 = Lesson.new(title: "Introduction Ethereum", media: "video",
                                         chapter_id: course3_chapter1.id,
-                                        content: "Vidéo à venir!")
+                                        content: "videoplayback_gktqqo")
 course3_chapter1_lesson1.save!
 
 puts "Creating Course 3 Chapter 2 Lesson 1"
 course3_chapter2_lesson1 = Lesson.new(title: "Les algorithmes de consensus", media: "video",
                                         chapter_id: course3_chapter2.id,
-                                        content: "Vidéo à venir!")
+                                        content: "videoplayback_2_j4hbb3")
 course3_chapter2_lesson1.save!
 
 puts "Creating Course 3 Chapter 3 Lesson 1"
@@ -567,7 +571,7 @@ course3_chapter3_lesson1.save!
 puts "Creating Course 3 Chapter 3 Lesson 1"
 course3_chapter3_lesson2 = Lesson.new(title: "Transactions, gaz et minage", media: "video",
                                         chapter_id: course3_chapter3.id,
-                                        content: "Vidéo à venir!")
+                                        content: "Transactions_-_ETH.BUILD_d3cx09")
 course3_chapter3_lesson2.save!
 
 puts "Creating Course 3 Chapter 4 Lesson 1"
