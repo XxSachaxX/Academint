@@ -72,7 +72,6 @@ export default class extends Controller {
         const signer = provider.getSigner()
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, AcademintNFT.abi, signer);
 
-        console.log("Going to pop wallet now to pay gas...")
         let nftTxn = await connectedContract.makeAnEpicNFT();
         this.mintNFTTarget.classList.add("d-none")
         this.ongoingTarget.classList.remove("d-none")
@@ -80,10 +79,10 @@ export default class extends Controller {
         await nftTxn.wait();
         this.ongoingTarget.classList.add("d-none")
         this.doneTarget.classList.remove("d-none")
-        this.doneTarget.innerHTML = `<h3><a href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/1" target="_blank">Retrouve ta certification NFT sur la plateforme OpenSea</a></h3>`
+        this.doneTarget.innerHTML = `<a href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/1" target="_blank">Retrouve ta certification NFT sur la plateforme OpenSea</a>`
 
       } else {
-        console.log('wallet not connected');
+        alert('wallet not connected');
       }
     }
     catch (error) {
