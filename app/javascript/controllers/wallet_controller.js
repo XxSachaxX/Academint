@@ -1,14 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
 import { ethers } from "ethers";
+import AcademintNFT from '.././utils/AcademintNFT.json';
 
 let web3auth = null;
-let provider = null;
+const CONTRACT_ADDRESS = '0x4E6d218794432aFce479d51e6091916BC309D51F';
 
 // Connects to data-controller="wallet"
 export default class extends Controller {
-  static targets = ["message", "connect"]
+  static targets = ["connect", "mintNFT", "ongoing", "done", "logout"]
 
   connect() {
+
+    const { ethereum } = window;
+
     (async function init() {
 
       const clientId = "BKw42hjnzAcnwhm4SRkx1a0gxmia6lNZtl-gyaf66aOkEMf2AY-_KGyrOLnEBNdW0exZFWc85W8BU0Z4vnXVgwI";
@@ -17,44 +21,79 @@ export default class extends Controller {
       clientId,
       chainConfig: {
         chainNamespace: "eip155",
-        chainId: "0x89",
-        rpcTarget: "https://rpc-mainnet.matic.network", // This is the public RPC we have added, please pass on your own endpoint while creating an app
+        chainId: "0x5",
+        rpcTarget: "https://rpc.ankr.com/eth_goerli",
+        displayName: "Ropsten Testnet",
+        blockExplorer: "https://goerli.etherscan.io",
+        ticker: "ETH",
+        tickerName: "Ethereum",
       },
     });
     await web3auth.initModal();
     })();
+
+    if (web3auth.provider || ethereum ) {
+      this.connectTarget.classList.add('d-none')
+      this.mintNFTTarget.classList.remove('d-none')
+      this.logoutTarget.classList.remove('d-none')
+      console.log('Wallet connecté au connect')
+    } else {
+      this.mintNFTTarget.add('d-none')
+    }
+
+    this.doneTarget.classList.add('d-none')
   }
 
   async connectWallet() {
     try {
       await web3auth.connect();
-      this.messageTarget.classList.remove('d-none')
-      this.connectTarget.classList.add('d-none')
+      this.connectTarget.add('d-none')
+      this.mintNFTTarget.classList.remove('d-none')
+      this.logoutTarget.classList.remove('d-none')
     } catch (error) {
       console.error(error.message);
     }
   }
 
   async disconnectWallet() {
+    const { ethereum } = window;
+    
     try {
       await web3auth.logout();
-      this.loginTarget.classList.remove('d-none')
       this.logoutTarget.classList.add('d-none')
-      this.statusTarget.classList.remove('status-logged')
+      this.connectTarget.classList.remove('d-none')
+      console.log('déconnecté');
     } catch (error) {
       console.error(error.message);
     }
   }
 
-  async signMessage () {
-    console.log('hello');
-    const ethersProvider = new ethers.providers.Web3Provider(web3auth.provider)
-    const signer = ethersProvider.getSigner()
+  async askContractToMintNft() {
 
-    const originalMessage = "Salut tête de bite";
+    const { ethereum } = window;
 
-    const signedMessage = await signer.signMessage(originalMessage);
+    try {
+    if (web3auth.provider || ethereum ) {
+        const provider = new ethers.providers.Web3Provider(web3auth.provider)
+        const signer = provider.getSigner()
+        const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, AcademintNFT.abi, signer);
 
-    return signedMessage;
+        console.log("Going to pop wallet now to pay gas...")
+        let nftTxn = await connectedContract.makeAnEpicNFT();
+        this.mintNFTTarget.classList.add("d-none")
+        this.ongoingTarget.classList.remove("d-none")
+
+        await nftTxn.wait();
+        this.ongoingTarget.classList.add("d-none")
+        this.doneTarget.classList.remove("d-none")
+        this.doneTarget.innerHTML = `<h3><a href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/1" target="_blank">Retrouve ta certification NFT sur la plateforme OpenSea</a></h3>`
+
+      } else {
+        console.log('wallet not connected');
+      }
+    }
+    catch (error) {
+    console.log(error)
+    }
   }
 }
