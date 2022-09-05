@@ -254,7 +254,7 @@ course1_chapter4_lesson1 = Lesson.new(title: "Les usages NFT", media: "texte",
 course1_chapter4_lesson1.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 2"
-course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "3, 1, 3, 1, 1, 1, 2, 1, 4, 1", chapter_id: course1_chapter4.id, content: "Quizz:")
+course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "3,1,3,1,1,1,2,1,4,1", chapter_id: course1_chapter4.id, content: "Quizz:")
 course1_chapter4_lesson2.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 1"
