@@ -1,4 +1,8 @@
 <div class='course-display-content'>
   <h1><%= lesson.title %></h1>
-  <p class="medium-paragraph justify-text"><%= lesson.content %></p>
+  <% if lesson.media == "video" %>
+    <%= cl_video_tag(lesson.content, :controls => true) %>
+  <% else %>
+    <p class="medium-paragraph justify-text"><%= lesson.content %></p>
+  <% end %>
 </div>

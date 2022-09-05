@@ -142,8 +142,8 @@ puts "All chapters created"
 
 puts "Creating lessons..."
 puts "Creating Course 1 Chapter 1 Lesson 1"
-course_1_chapter1_lesson1 = Lesson.new(title: "Phénomène NFTs",
-                                         chapter_id: course1_chapter1.id, media: "video", content: "Les NFT sont des medias
+course_1_chapter1_lesson1 = Lesson.new(title: "Introduction",
+                                         chapter_id: course1_chapter1.id, media: "texte", content: "Les NFT sont des medias
                                          relativement nouveaux d’actifs numériques conçus pour représenter la propriété
                                          de quelque chose d’unique et de rare. Il peut s’agir d’actifs physiques
                                          tokenisés, de ressources digitales rares, d’actions ou de pratiquement
@@ -158,6 +158,10 @@ course_1_chapter1_lesson1 = Lesson.new(title: "Phénomène NFTs",
   limites, qui peuvent influer sur les medias de NFT créés. De la même manière qu’une personne qui cuisine est limitée
   par les ingrédients dont elle dispose.La grande majorité des NFT est actuellement basée sur la norme ERC721.")
   course_1_chapter1_lesson1.save!
+
+course_1_chapter1_lesson1_1 = Lesson.new(title: "Phénomène NFTs",
+  chapter_id: course1_chapter1.id, media: "video", content: "Les_NFT_un_phénomène_artistique_et_un_investissement_innovant_ycyfbo")
+course_1_chapter1_lesson1_1.save!
 
 puts "Creating Course 1 Chapter 1 Lesson 2"
 course1_chapter1_lesson2 = Lesson.new(title: "Comprendre la fongibilité", media: "podcast",
