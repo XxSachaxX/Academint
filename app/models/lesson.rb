@@ -4,8 +4,9 @@ class Lesson < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :answers, through: :questions
   has_one :course, through: :chapter
-  validates :content, presence: true
+  # validates :content, presence: true
   has_many_attached :photos, dependent: :destroy
+  has_rich_text :content
 
   def display_media
     case self.media

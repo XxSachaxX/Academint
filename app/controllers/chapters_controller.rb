@@ -3,13 +3,19 @@ class ChaptersController < ApplicationController
 
   def new
     @chapter = Chapter.new
+    @course = Course.find(params[:course_id])
     authorize @chapter
   end
 
   def create
     @chapter = Chapter.new(chapter_params)
-    @course = Chapter.find(params[course_id])
+    @course = Course.find(params[:course_id])
     @chapter.course = @course
+    if @chapter.save
+      redirect_to new_course_chapter_lesson_path(@course, @chapter), notice: "Chapitre créé, Poursuivez"
+    else
+      render :new, status: :unprocessable_entity
+    end
     authorize @chapter
   end
 
