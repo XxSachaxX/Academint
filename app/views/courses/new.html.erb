@@ -1,6 +1,11 @@
-<%= simple_form_for @course do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :level, collection: [ "Débutant", "Intermédiaire", "Expert"] %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @course do |f| %>
+    <div class="input-label">
+      <%= f.input :name, label: 'Nom du cours' %>
+      <%= f.input :description, label: 'Description', placeholder: 'Description du cours' %>
+      <%= f.input :level, collection: [ "débutant", "intermédiaire", "expert"] %>
+      <%= f.input :photo, as: :file, input_html: { multiple: false } %>
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

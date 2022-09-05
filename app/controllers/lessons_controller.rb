@@ -12,7 +12,7 @@ class LessonsController < ApplicationController
     @course = Course.find(params[:course_id])
     @lesson.chapter = @chapter
     if @lesson.save
-      redirect_to course_path(@course), notice: "Lesson créé, voici votre cours"
+      redirect_to new_course_chapter_path(@course), notice: "Lesson créé, voici votre cours"
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,6 +35,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:content, :type, :photos)
+    params.require(:lesson).permit(:content, :media, :photos, :enriched_content, :title)
   end
 end
