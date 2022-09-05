@@ -57,9 +57,9 @@ class ClassroomsController < ApplicationController
 
   def compare_answers
     if success_rate < 90
-      redirect_to quizz_course_classroom_path, notice: "Try again, your score is #{success_rate}%. You need 90% to pass!"
+      redirect_to quizz_course_classroom_path, notice: "Vous n'avez obtenu que #{success_rate}% de bonnes réponses. Essayez encore pour atteindre les 90% de bonnes réponses et valider le quizz!"
     else
-      redirect_to "/mint_nft", notice: "Well done, you did it!!"
+      redirect_to "/mint_nft", notice: "Félicitations, vous avez obtenu #{success_rate}% de bonnes réponses!"
     end
   end
 
