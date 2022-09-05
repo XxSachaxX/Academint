@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_course, only: %i[show edit update destroy]
 
   def index
@@ -16,7 +16,11 @@ class CoursesController < ApplicationController
 
   def show
     authorize @course
-    @classroom = Classroom.new
+    if user_has_course?
+      @classroom = Classroom.where(user_id: current_user.id, course_id: @course.id).first
+    else
+      @classroom = Classroom.new
+    end
     @skip_footer = true
     @user_has_course = user_has_course?
   end
@@ -56,6 +60,7 @@ class CoursesController < ApplicationController
 
   def user_has_course?
     if current_user
+      @classroom = Classroom.where(user_id: current_user.id, course_id: @course.id).first
       Classroom.where(user_id: current_user.id, course_id: @course.id).any?
     end
   end

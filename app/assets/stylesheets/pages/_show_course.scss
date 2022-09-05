@@ -1,9 +1,6 @@
 .course {
   display: flex;
   margin-top: 20px;
-  h1 {
-    margin: 0;
-  }
 }
 
 .course-summary {
@@ -16,6 +13,9 @@
       &:hover {
       color: $primary-violet-hover;
     }
+  }
+  h5 {
+    margin: 0.5rem 0;
   }
 }
 
@@ -30,6 +30,7 @@
 }
 
 .course-display {
+  min-height: 90vh;
   width: 70%;
   img {
     width: 100%;
@@ -53,6 +54,9 @@
   padding: 1.5rem 0;
   border-top: 1px solid $neutral-200;
   background-color: $neutral-100-violet;
+  p {
+    margin: 0;
+  }
 }
 
 .container-footer-course {
@@ -61,4 +65,45 @@
 
 .tab-font {
   font-size: 16px;
+}
+
+.next-lesson {
+  text-decoration: none;
+  p {
+    color: $primary-violet;
+  }
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.disabled-link {
+  color: $neutral-300;
+}
+
+.ongoing-lesson-classroom {
+  color: $orange-100;
+}
+
+.done-lesson-classroom {
+  color: $green-100;
+}
+
+.active-tab-lesson {
+  color: $primary-violet;
+}
+
+.lesson-tabs {
+  display: flex;
+  align-items: center;
+  i {
+    margin-right: 0.5rem;
+  }
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.justify-text {
+  text-align: justify;
 }

@@ -28,10 +28,14 @@
 </div>
 <div class="course-footer">
   <div class="container container-footer-course">
-    <% if @user_has_course %>
-      <%= link_to 'Continuer', dashboard_path, class: 'btn-main' %>
+    <% if !current_user %>
+      <%= link_to 'Commencer', new_user_session_path, class: 'btn-main' %>
+    <% elsif @user_has_course && !@classroom.finished? %>
+      <%= link_to 'Continuer', course_classroom_lecture_path(@course, @classroom, @classroom.ongoing_lecture), class: 'btn-main' %>
+    <% elsif @user_has_course && @classroom.finished? %>
+      <%= link_to 'Revoir le cours', course_classroom_lecture_path(@course, @classroom, @classroom.lectures.first), class: 'btn-main' %>
     <% else %>
-      <%= button_to 'Commencer', course_classrooms_path(@course), class: 'btn-main', :disabled => !current_user %>
+      <%= button_to 'Commencer', course_classrooms_path(@course), class: 'btn-main' %>
     <% end %>
   </div>
 </div>

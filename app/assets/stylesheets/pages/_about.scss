@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.display-cards {
+.display-cards-about {
   display: flex;
   justify-content: space-between;
 }
@@ -14,18 +14,25 @@
 
 .block-text-about {
   width: 70%;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 .block-img-about {
   width: 50%;
   img {
     width: 100%;
-    height: 250px;
+    height: 310px;
     object-fit: cover;
   }
 }
 
 .academint-block {
   display: flex;
+}
+
+.about-btn{
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  margin-top:40px;
 }

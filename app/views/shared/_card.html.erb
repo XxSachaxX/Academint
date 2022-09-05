@@ -1,19 +1,23 @@
 
 <%= link_to course_path(course), class: 'link-card' do %>
   <div class="card-main">
+  <!--
     <div class="card-main-img">
       <%= cl_image_tag(course.photo.key) %>
     </div>
+  -->
     <div class="card-main-content">
       <div class="card-main-top-text">
         <h3><%= course.name %></h3>
         <p class="text-ellipsis--2"><%= course.description %></p>
       </div>
       <div class="card-main-bottom">
+      <!--
         <div class="card-author">
           <%= cl_image_tag(course.user.photo.key, class: 'avatar') %>
           <p class="label"><%= course.user.username.capitalize %></p>
         </div>
+      -->
         <div class="card-level">
           <button class="badge badge-beginner"><%= course.level.capitalize %></button>
         </div>

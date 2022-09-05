@@ -1,16 +1,19 @@
 // Card homepage
 
 .card-main {
-  height: 365px;
-  width: 365px;
+  height: 10rem;
+  width: 100%;
   box-shadow: $elevation-100;
   border-radius: $border-radius-main;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  p {
+    color: $neutral-0;
+  }
   &:hover {
     h3 {
-      color: $primary-violet-hover
+      color: $neutral-0
     }
   box-shadow: $elevation-500;
   }
@@ -19,27 +22,30 @@
   text-decoration: none;
 }
 
-.card-main-img {
-  height: 50%;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-}
+// .card-main-img {
+//   height: 50%;
+//   img {
+//     height: 100%;
+//     width: 100%;
+//     object-fit: cover;
+//   }
+// }
 
 .card-main-content {
-  height: 50%;
-  flex-grow: 1;
+  height: 100%;
+  // flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $neutral-100-violet;
+  background-color: $primary-violet;
   padding: 1rem;
   transition: 0.2 ease-in-out;
   h3 {
     margin: 0;
-    color: $primary-violet;
+    color: $neutral-0;
+  }
+  &:hover {
+    background-color: $primary-violet-hover;
   }
 }
 
@@ -55,7 +61,7 @@
   align-items: center;
   p {
     padding-left: 0.5rem;
-    color: $primary-violet;
+    color: $neutral-0;
   }
 }
 
@@ -141,4 +147,8 @@
   &:hover {
     background-color: $green-0;
   }
+}
+
+.test {
+  color: red;
 }
