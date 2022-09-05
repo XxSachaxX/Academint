@@ -8,7 +8,11 @@ export default class extends Controller {
     console.log("Collapse");
   }
 
-  open() {
-    this.
+  open(event) {
+    console.log(this.lessonTargets);
+    this.lessonTargets.forEach(element => {
+      element.classList.add('d-none')
+    })
+    this.lessonTargets[event.params.index].classList.remove('d-none')
   }
 }

@@ -2,11 +2,13 @@
   <div class="wrapper-no-footer">
     <% @course.chapters.each_with_index do |chapter, index| %>
       <h4 data-action="click->collapse#open" data-collapse-index-param="<%= index %>" data-collapse-target="chapter"><%= chapter.name %></h5>
-      <% chapter.lessons.each do |lesson| %>
-        <div class="lesson-tabs" data-collapse-target="lesson">
-          <p class="disabled-link"><%= lesson.media %> || <%= lesson.title%></p>
+        <div class="d-none" data-collapse-target="lesson">
+          <% chapter.lessons.each do |lesson| %>
+            <div class="lesson-tabs">
+              <p class="disabled-link"><%= lesson.media %> || <%= lesson.title%></p>
+            </div>
+          <% end %>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>
