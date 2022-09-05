@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   get "/about", to: "pages#about", as: :about
+  get "/mint_nft", to: "pages#mint_nft", as: :mint_nft
   resources :courses do
     resources :classrooms, only: %i[new create show] do
+      resources :lectures, only: %i[new create show]
       member do
         get :next
       end
     end
     resources :chapters, only: %i[new create edit destroy] do
-      resources :lessons, only: %i[new create edit destroy] do
-        resources :lectures, only: %i[new create]
-      end
+      resources :lessons, only: %i[new create edit destroy]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

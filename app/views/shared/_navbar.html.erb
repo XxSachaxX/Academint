@@ -1,6 +1,8 @@
-<nav class="navbar" data-controller="wallet">
+<nav class="navbar">
   <div class="container container-navbar">
-    <%= link_to 'Academint', root_path, id: 'logo' %>
+    <%= link_to root_path do %>
+      <%= image_tag "logo_academint.svg", alt: "logo Academint", id: 'logo' %>
+    <% end %>
     <div>
       <%= render "shared/search_bar" %>
     </div>
@@ -15,16 +17,9 @@
             <% else %>
               <%= image_tag "default_avatar_small.png", class: 'avatar' %>
             <% end %>
-              <div class="status-navbar" data-wallet-target="status">
-              </div>
           <div class="dropdown-menu d-none" data-dropdown-target="dropdownMenu" >
             <ul>
               <li data-action="click->dropdown#hide"><%= link_to 'Mon profil', dashboard_path %></li>
-              <li data-wallet-target="login" data-action="click->dropdown#hide">
-                <button data-action="click->wallet#connectWallet">
-                  Connecter portefeuille
-                </button>
-              </li>
               <li class="d-none" data-wallet-target="logout" data-action="click->dropdown#hide">
                 <button class="disconnect-wallet"data-action="click->wallet#disconnectWallet">
                   Déconnecter portefeuille

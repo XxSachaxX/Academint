@@ -1,0 +1,55 @@
+<div class='container'>
+  <div class='course' data-controller="tabs">
+    <div class='course-summary'>
+      <div class='course-summary-content'>
+        <% @course.chapters.each do |chapter| %>
+          <h4><%= chapter.name %></h5>
+          <% @classroom.lectures.each do |lecture| %>
+            <% if lecture.lesson.chapter == chapter %>
+              <% if lecture.status == "pending" %>
+                <div class="lesson-tabs">
+                  <i class="fa-solid fa-lock disabled-link"></i>
+                  <p class="disabled-link"><%= lecture.lesson.title%></p>
+                </div>
+              <% elsif lecture.status == "ongoing" %>
+                <%= link_to course_classroom_lecture_path(@course, @classroom, lecture), class: "link-card" do %>
+                <div class="lesson-tabs">
+                  <i class="fa-solid fa-spinner ongoing-lesson-classroom"></i>
+                  <p class="clickable <%= 'active-tab-lesson' if @lecture == lecture %>"><%= lecture.lesson.title %></p>
+                </div>
+                <% end %>
+              <% else %>
+                <%= link_to course_classroom_lecture_path(@course, @classroom, lecture), class: "link-card" do %>
+                  <div class="lesson-tabs">
+                    <i class="fa-solid fa-circle-check done-lesson-classroom"></i>
+                    <p class="clickable <%= 'active-tab-lesson' if @lecture == lecture %>"><%= lecture.lesson.title %></p>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class='course-display'>
+      <%= render 'shared/lesson', lesson: @lecture.lesson, classroom: @classroom %>
+    </div>
+  </div>
+</div>
+<div class="course-footer">
+  <div class="container container-footer-course">
+    <% if @last_course %>
+      <%= link_to next_course_classroom_path(@classroom.course, @classroom),
+          data: { tabs_target: "link" },
+          class: 'next-lesson' do %>
+            <button class="btn-main">Obtiens ton NFT</button>
+      <% end %>
+    <% else %>
+      <%= link_to next_course_classroom_path(@classroom.course, @classroom),
+          data: { tabs_target: "link" },
+          class: 'next-lesson' do %>
+            <p class="large-paragraph">Leçon suivante <i class="fa-solid fa-arrow-right"></i></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

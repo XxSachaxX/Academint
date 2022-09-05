@@ -18,4 +18,12 @@ class Classroom < ApplicationRecord
     completed = lectures.select(&:done?)
     return completed.count.fdiv(lectures.count).round(2)
   end
+
+  def ongoing_lecture
+    Lecture.find_by(status: "ongoing", classroom: self)
+  end
+
+  def next_lecture
+    Lecture.find_by(status: "pending", classroom: self)
+  end
 end
