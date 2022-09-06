@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import AcademintNFT from '.././utils/AcademintNFT.json';
 
 let web3auth = null;
-const CONTRACT_ADDRESS = '0x4E6d218794432aFce479d51e6091916BC309D51F';
+const CONTRACT_ADDRESS = '0x849f64B516f599aDc72191648D2c118Fb9c4669A';
 
 // Connects to data-controller="wallet"
 export default class extends Controller {
@@ -19,12 +19,14 @@ export default class extends Controller {
       clientId,
       chainConfig: {
         chainNamespace: "eip155",
-        chainId: "0x5",
-        rpcTarget: "https://rpc.ankr.com/eth_goerli",
-        displayName: "Ropsten Testnet",
-        blockExplorer: "https://goerli.etherscan.io",
-        ticker: "ETH",
-        tickerName: "Ethereum",
+        chainId: "0x13881", // hex of 80001, polygon testnet
+        rpcTarget: "https://rpc.ankr.com/polygon_mumbai",
+        // Avoid using public rpcTarget in production.
+        // Use services like Infura, Quicknode etc
+        displayName: "Polygon Mainnet",
+        blockExplorer: "https://mumbai.polygonscan.com/",
+        ticker: "MATIC",
+        tickerName: "Matic",
       },
     });
     await web3auth.initModal();
