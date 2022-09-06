@@ -39,7 +39,7 @@ class ClassroomsController < ApplicationController
   end
 
   def quizz
-    @classroom = Classroom.find(params[:id])
+    @classroom = Lecture.find(params[:id]).classroom
     @course = @classroom.course
     @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
     authorize @classroom
@@ -50,7 +50,6 @@ class ClassroomsController < ApplicationController
     @course = @classroom.course
     @user_answers = params[:user_answers].values.map { |hash| hash.key("1") }.join(',')
     @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
-
     @lecture.update!(user_answers: @user_answers)
     @lesson = @lecture.lesson
     authorize @classroom
