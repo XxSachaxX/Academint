@@ -12,6 +12,22 @@ class LecturesController < ApplicationController
     authorize @lecture
   end
 
+  def next
+    @lecture = Lecture.find(params[:id])
+    @classroom = @lecture.classroom
+    if @lecture.done?
+      redirect_to course_classroom_lecture_path(@classroom.course, @classroom, Lecture.find(@lecture.id + 1))
+    else
+      @lecture.done!
+      @next_lecture = Lecture.find_by(status: "pending", classroom: @classroom)
+      if @next_lecture
+        @next_lecture.ongoing!
+        redirect_to course_classroom_lecture_path(@classroom.course, @classroom, @next_lecture)
+      end
+    end
+    authorize @classroom
+  end
+
   def show
     @lecture = Lecture.find(params[:id])
     @classroom = Classroom.find(params[:classroom_id])

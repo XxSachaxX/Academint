@@ -45,7 +45,7 @@
         <%= link_to 'Faire le quizz', quizz_course_classroom_lecture_path, class: 'btn-main' %>
       <% end %>
     <% else %>
-      <%= link_to next_course_classroom_path(@classroom.course, @classroom),
+      <%= link_to next_course_classroom_lecture_path(@classroom.course, @classroom),
           class: 'next-lesson' do %>
             <p class="large-paragraph">Leçon suivante <i class="fa-solid fa-arrow-right"></i></p>
       <% end %>
