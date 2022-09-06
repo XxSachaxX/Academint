@@ -20,8 +20,8 @@
           </div>
           <div class="content-bottom-card-horizontal">
             <div class="card-author">
-              <% if current_user.photo.present? %>
-                <%= cl_image_tag(current_user.photo.key, class: 'avatar') %>
+              <% if course.user.photo.present? %>
+                <%= cl_image_tag(course.user.photo.key, class: 'avatar') %>
               <% else %>
                 <%= image_tag "default_avatar_small.png", class: 'avatar' %>
               <% end %>
