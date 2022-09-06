@@ -333,7 +333,7 @@ course1_chapter4_lesson1 = Lesson.new(title: "Controlleurs, vues et routes, un p
 course1_chapter4_lesson1.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 2"
-course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "1,2,2,2", chapter_id: course1_chapter4.id,
+course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "2,2,2,2", chapter_id: course1_chapter4.id,
                                       content: "Vous allez maintenant pouvoir tester vos connaissances sur le langage de
                                        programmation Ruby à travers un cours quizz. Pour le réussir vous devrez valider
                                        90% de bonnes réponses, mais si vous échouez ne vous découragez pas! Révisez
