@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import AcademintNFT from '.././utils/AcademintNFT.json';
 
 let web3auth = null;
-const CONTRACT_ADDRESS = '0x849f64B516f599aDc72191648D2c118Fb9c4669A';
+const CONTRACT_ADDRESS = '0xD1F8f44971C2E5a861B1Ec475826a143f57af04f';
 
 // Connects to data-controller="wallet"
 export default class extends Controller {
