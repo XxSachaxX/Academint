@@ -3,16 +3,17 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   get "/about", to: "pages#about", as: :about
-  get "/mint_nft", to: "pages#mint_nft", as: :mint_nft
   resources :courses do
     resources :classrooms, only: %i[new create show] do
       member do
-        get :quizz
-        post :quizz_submit
+        get :mint_nft
       end
-      resources :lectures, only: %i[new create show]
-      member do
-        get :next
+      resources :lectures, only: %i[new create show] do
+        member do
+          get :next
+          get :quizz
+          post :quizz_submit
+        end
       end
     end
     resources :chapters, only: %i[new create edit destroy] do

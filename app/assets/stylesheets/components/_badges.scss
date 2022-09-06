@@ -9,14 +9,17 @@
 .badge-beginner {
   color: $green-300;
   background-color: $green-0;
+  border: 1px solid $green-300;
 }
 
 .badge-intermediate {
   color: $orange-200;
   background-color: $orange-0;
+  border: 1px solid $orange-200;
 }
 
 .badge-expert {
   color: $red-200;
   background-color: $red-0;
+  border: 1px solid $red-200;
 }

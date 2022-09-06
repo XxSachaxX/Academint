@@ -13,4 +13,12 @@ class LecturePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def quizz?
+    true
+  end
+
+  def quizz_submit?
+    true
+  end
 end

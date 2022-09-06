@@ -6,6 +6,21 @@ $scale: 1;
 $duration: 3s;
 $timingFunction: ease;
 
+.minting {
+  display: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  img {
+    display: absolute;
+    margin: auto;
+    z-index: -1;
+    object-fit: cover;
+    top: -5rem;
+    left: -10rem;
+  }
+}
+
 .container-mint-process {
   height: 70vh;
   display: flex;
