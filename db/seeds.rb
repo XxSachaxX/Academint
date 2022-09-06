@@ -127,7 +127,7 @@ course9 = Course.new(name: "Apprendre à coder vos NFT en solidity",
                      description: "Les bases pour coder vos premier smart contracts en Solidity", level: 'expert',
                      user_id: user1.id)
 # cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
-cover9 = URI.open("https://academy.bit2me.com/wp-content/uploads/2019/12/solidity-logo.jpg")
+cover9 = URI.open("https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
 course9.photo.attach(io: cover9, filename: "Cours 9", content_type: "image/jpg")
 course9.save!
 
