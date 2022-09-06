@@ -60,6 +60,8 @@ class LecturesController < ApplicationController
     if success_rate < 90
       redirect_to quizz_course_classroom_lecture_path, notice: "Vous n'avez obtenu que #{success_rate}% de bonnes réponses. Essayez encore pour atteindre les 90% de bonnes réponses et valider le quizz!"
     else
+      @lesson.update(content: "Félicitations, vous avez réussi le test avec brio. Vous pouvez dès maintenant obtenir votre
+         NFT pour certifier que vous avez bien acquis toutes ces connaissances")
       @lecture.done!
       redirect_to course_classroom_lecture_path(course, classroom, classroom.lectures.last), notice: "Félicitations, vous avez obtenu #{success_rate}% de bonnes réponses!"
     end

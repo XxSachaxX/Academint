@@ -44,16 +44,12 @@ puts "All users created"
 
 puts "Creating courses..."
 puts "Creating course 1"
-course1 = Course.new(name: 'Comprendre les NFTs',
-                     description: 'Les tokens non fongibles, ou NFT en abrégé, sont devenus très populaires ces
-                     dernières années en raison de leur capacité à donner une valeur symbolique (la tokenisation)
-                     à presque tout. Ils confèrent également à leurs détenteurs la véritable propriété de leurs actifs
-                     numériques.
-                     Nous examinons ici ce que sont les NFT et leurs cas d’usage actuels.', level: 'débutant',
+course1 = Course.new(name: 'Apprendre à coder en Ruby (1ère partie)',
+                     description: "Tout ce qu'il faut savoir pour pouvoir créer vos propres applications web en Ruby", level: 'Intermédiaire',
                      user_id: user1.id)
 
 # cover1 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/feb1bb9c-d4bb-45be-b997-22069b5bb889/1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153408Z&X-Amz-Expires=86400&X-Amz-Signature=fc77682a444b731d2d4ef761944a4c335881fd2ec3771a5a92d2d2c439cde85b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%221.png%22&x-id=GetObject")
-cover1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662363782/production/88purusahsfgb6tnwkz9nvlhk1kn.png")
+cover1 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1200px-Ruby_logo.svg.png")
 
 course1.photo.attach(io: cover1, filename: "Cours 1", content_type: "image/jpg")
 course1.save!
@@ -83,7 +79,7 @@ course3.save!
 
 puts "Creating course 4"
 course4 = Course.new(name: 'Trading de cryptomonnaies',
-                     description: "Comprendre plus en détail le fonctionnement des cryptomonnaies et leurs échanges.", level: 'intermediaire',
+                     description: "Comprendre plus en détail le fonctionnement des cryptomonnaies et leurs échanges.", level: 'intermédiaire',
                      user_id: user1.id)
 cover4 = URI.open("https://images.unsplash.com/photo-1640826514546-7d2eab70a4e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80")
 # cover4 = URI.open("https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
@@ -92,7 +88,7 @@ course4.save!
 
 puts "Creating course 5"
 course5 = Course.new(name: 'Qu’est-ce qu’un stablecoin?',
-                     description: "Le stablecoin, une nouvelle alternative régulée aux cryptomonnaies", level: 'intermediaire',
+                     description: "Le stablecoin, une nouvelle alternative régulée aux cryptomonnaies", level: 'intermédiaire',
                      user_id: user1.id)
 # cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
 cover5 = URI.open("https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
@@ -101,7 +97,7 @@ course5.save!
 
 puts "Creating course 6"
 course6 = Course.new(name: "Qu'est-ce que Metamask?",
-                     description: "Une alternative à moindre côut au ledger", level: 'intermediaire',
+                     description: "Une alternative à moindre côut au ledger", level: 'intermédiaire',
                      user_id: user1.id)
 # cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
 cover6 = URI.open("https://i0.wp.com/financededemain.com/wp-content/uploads/2022/05/metamask-image-cryptoast.webp?resize=1140%2C600&ssl=1")
@@ -128,7 +124,7 @@ course8.save!
 
 puts "Creating course 9"
 course9 = Course.new(name: "Apprendre à coder vos NFT en solidity",
-                     description: "Les bases pour coder vos premier smart contracts en Solidity", level: 'avancé',
+                     description: "Les bases pour coder vos premier smart contracts en Solidity", level: 'expert',
                      user_id: user1.id)
 # cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
 cover9 = URI.open("https://academy.bit2me.com/wp-content/uploads/2019/12/solidity-logo.jpg")
@@ -137,7 +133,7 @@ course9.save!
 
 puts "Creating course 10"
 course10 = Course.new(name: "Que sont les gas-fees?",
-                     description: "Un point détaillé sur ce que sont les fameux gas-fees et comment les réduire", level: 'avancé',
+                     description: "Un point détaillé sur ce que sont les fameux gas-fees et comment les réduire", level: 'expert',
                      user_id: user1.id)
 # cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
 cover10 = URI.open("https://images.unsplash.com/photo-1616710556977-cc70311a68a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
@@ -149,23 +145,23 @@ puts "All courses created"
 
 puts "Creating chapters..."
 puts "Creating course 1 chapter 1"
-course1_chapter1 = Chapter.create(name: 'Que sont les tokens non fongibles?', description: 'Notions
-                                  élémentaires pour comprendre les NFT', course_id: course1.id)
+course1_chapter1 = Chapter.create(name: 'Les bases de la programmation', description: 'Notions
+                                  élémentaires pour comprendre la programmation', course_id: course1.id)
 course1_chapter1.save!
 
 puts "Creating course 1 chapter 2"
-course1_chapter2 = Chapter.create(name: 'Pourquoi certains tokens non fongibles ont-ils de la valeur ?',
-                                  description: 'Notions de valeur des NFT', course_id: course1.id)
+course1_chapter2 = Chapter.create(name: 'Les différents types de données',
+                                  description: 'Apprendre à manipuler les différents types de données existants en ruby', course_id: course1.id)
 course1_chapter2.save!
 
 puts "Creating course 1 chapter 3"
-course1_chapter3 = Chapter.create(name: 'Recevoir, stocker et envoyer des tokens non fongibles',
-                                  description: "La notion d'échange appliquée aux NFT", course_id: course1.id)
+course1_chapter3 = Chapter.create(name: 'Programmation orientée objet',
+                                  description: "Les bases de l'itération et de des blocs de code", course_id: course1.id)
 course1_chapter3.save!
 
 puts "Creating course 1 chapter 4"
-course1_chapter4 = Chapter.create(name: 'Comment les tokens non fongibles sont utilisés ?', description:
-                                  "Les used-cases des NFT", course_id: course1.id)
+course1_chapter4 = Chapter.create(name: 'Ruby on Rails', description:
+                                  "Comprendre et apprendre à utliser le framework Ruby on Rails", course_id: course1.id)
 course1_chapter4.save!
 
 puts "Creating course 2 chapter 1"
@@ -213,7 +209,7 @@ puts "All chapters created"
 puts "Creating lessons..."
 puts "Creating Course 1 Chapter 1 Lesson 1"
 
-course_1_chapter1_lesson1 = Lesson.new(title: "Vidéo: Phénomène NFTs",
+course_1_chapter1_lesson1 = Lesson.new(title: "Les éléments de base de la programmation",
                                          chapter_id: course1_chapter1.id, quizz_answers: "3,1,3,1,1,1,2,1,4,1", media: "texte", content: "Les NFT sont des medias
                                          relativement nouveaux d’actifs numériques conçus pour représenter la propriété
                                          de quelque chose d’unique et de rare. Il peut s’agir d’actifs physiques
@@ -231,12 +227,8 @@ course_1_chapter1_lesson1 = Lesson.new(title: "Vidéo: Phénomène NFTs",
   par les ingrédients dont elle dispose.La grande majorité des NFT est actuellement basée sur la norme ERC721.")
   course_1_chapter1_lesson1.save!
 
-course_1_chapter1_lesson1_1 = Lesson.new(title: "Phénomène NFTs",
-  chapter_id: course1_chapter1.id, media: "video", content: "Les_NFT_un_phénomène_artistique_et_un_investissement_innovant_ycyfbo")
-course_1_chapter1_lesson1_1.save!
-
 puts "Creating Course 1 Chapter 1 Lesson 2"
-course1_chapter1_lesson2 = Lesson.new(title: "Comprendre la fongibilité", quizz_answers: "3,1,3,1,1,1,2,1,4,1", media: "podcast",
+course1_chapter1_lesson2 = Lesson.new(title: "Pratique: executer son code", quizz_answers: "3,1,3,1,1,1,2,1,4,1", media: "podcast",
                                          chapter_id: course1_chapter1.id, content: "Comme les principaux actifs
                                          numériques comme l’ether (ETH) et le bitcoin (BTC), les NFT sont stockés sous
                                         forme de données sur une blockchain. Ils sont placés dans des wallets qui leur
@@ -254,7 +246,7 @@ course1_chapter1_lesson2 = Lesson.new(title: "Comprendre la fongibilité", quizz
 course1_chapter1_lesson2.save!
 
 puts "Creating Course 1 Chapter 2 Lesson 1"
-course1_chapter2_lesson1 = Lesson.new(title: "Valorisation des tokens",
+course1_chapter2_lesson1 = Lesson.new(title: "La manipulation des différents types de données",
                                         chapter_id: course1_chapter2.id, media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                         content: "Vous l’avez peut-être déjà constaté, mais certains NFT ont une grande
                                                 valeur. Plusieurs d’entre eux dépassent les 100000$US sur le marché libre.
@@ -270,8 +262,25 @@ course1_chapter2_lesson1 = Lesson.new(title: "Valorisation des tokens",
                                                 pour les acquérir… ce qui peut être une somme considérable.")
 course1_chapter2_lesson1.save!
 
+puts "Creating Course 1 Chapter 2 Lesson 2"
+course1_chapter2_lesson2 = Lesson.new(title: "Les blocs et les itérateurs",
+                                        chapter_id: course1_chapter2.id, media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
+                                        content: "Vous l’avez peut-être déjà constaté, mais certains NFT ont une grande
+                                                valeur. Plusieurs d’entre eux dépassent les 100000$US sur le marché libre.
+                                                Par exemple, une parcelle de Decentraland s’est vendue 215000US$ en novembre
+                                                2018, unCryptoKittyrare connu sous le nom de Dragon s’est vendu 600ETH
+                                                (soit une valeur d’environ 170000$US à l’époque).
+                                                Puisque les NFT sont uniques et peuvent différer en termes de rareté,
+                                                de désirabilité et d’utilité, un marché s’est développé autour des plus
+                                                recherchés d’entre eux. Les collectionneurs et les tradeurs achètent et
+                                                vendent des NFT, dont la valeur est déterminée par la spéculation, l’offre
+                                                et la demande, et bien d’autres facteurs. Comme de nombreux objets
+                                                « collectors», les NFT valent autant que ce que quelqu’un est prêt à payer
+                                                pour les acquérir… ce qui peut être une somme considérable.")
+course1_chapter2_lesson2.save!
+
 puts "Creating Course 1 Chapter 3 Lesson 1"
-course1_chapter3_lesson1 = Lesson.new(title: "Les portefeuilles", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
+course1_chapter3_lesson1 = Lesson.new(title: "Classes et instances de classe", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter3.id, content: "Comme nous l’avons évoqué plus
                                          haut, les NFT sont stockés dans des wallets d’actifs numériques compatibles.
                                          Pour les NFT sur Ethereum, MyEtherWallet est l’un des choix les plus
@@ -285,13 +294,13 @@ course1_chapter3_lesson1 = Lesson.new(title: "Les portefeuilles", media: "texte"
 course1_chapter3_lesson1.save!
 
 puts "Creating Course 1 Chapter 3 Lesson 2"
-course1_chapter3_lesson2 = Lesson.new(title: "Guide MyEtherWallet", media: "texte", quizz_answers: "3,2,3,1,1,1,2,1,4,1",
+course1_chapter3_lesson2 = Lesson.new(title: "Inhéritance et 'Self'", media: "texte", quizz_answers: "3,2,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter3.id, content: "MyEtherWallet dispose d’un guide
                                          complet sur l’utilisation des NFT via son gestionnaire de NFT")
 course1_chapter3_lesson2.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 1"
-course1_chapter4_lesson1 = Lesson.new(title: "Les usages NFT", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
+course1_chapter4_lesson1 = Lesson.new(title: "Controlleurs, vues et routes, un premier aperçu de Rails", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter4.id, content: "Le nombre de cas d’usage
                                          potentiels des NFT ne cesse de croître avec le temps, et des exemples toujours
                                          plus innovants voient régulièrement le jour. Néanmoins, il existe une poignée
@@ -324,103 +333,48 @@ course1_chapter4_lesson1 = Lesson.new(title: "Les usages NFT", media: "texte", q
 course1_chapter4_lesson1.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 2"
-course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "3,1,3,1,1,1,2,1,4,1", chapter_id: course1_chapter4.id, content: "Quizz:")
+course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "1,2,2,2", chapter_id: course1_chapter4.id,
+                                      content: "Vous allez maintenant pouvoir tester vos connaissances sur le langage de
+                                       programmation Ruby à travers un cours quizz. Pour le réussir vous devrez valider
+                                       90% de bonnes réponses, mais si vous échouez ne vous découragez pas! Révisez
+                                       tranquillement vos cours et revenez plus tard le refaire. A la réussite de
+                                       celui-ci vous obtiendrez votre NFT, preuve de vos compétences.")
 course1_chapter4_lesson2.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 1"
-course1_chapter4_lesson2_question1 = Question.new(content: "Le token non fongible est une unité de donnée stockée dans
-                                                   _________.", lesson_id: course1_chapter4_lesson2.id)
+course1_chapter4_lesson2_question1 = Question.new(content: "Ruby est un langage orienté _____", lesson_id: course1_chapter4_lesson2.id)
 course1_chapter4_lesson2_question1.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 1 Answers"
-course1_chapter4_lesson2_question1_answers = Answer.new(content: "Un programme, Un trackeur, La blockchain", question_id: course1_chapter4_lesson2_question1.id)
+course1_chapter4_lesson2_question1_answers = Answer.new(content: "Programmation,Objet,Web", question_id: course1_chapter4_lesson2_question1.id)
 course1_chapter4_lesson2_question1_answers.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 2"
-course1_chapter4_lesson2_question2 = Question.new(content: "Les NFTs sont non échangeables:",
+course1_chapter4_lesson2_question2 = Question.new(content: "La commande mkdir sert à:",
                                                   lesson_id: course1_chapter4_lesson2.id)
 course1_chapter4_lesson2_question2.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 2 Answers"
-course1_chapter4_lesson2_question2_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question2.id)
+course1_chapter4_lesson2_question2_answers = Answer.new(content: "Créer un nouveau fichier,Créer un nouveau dossier,Se déplacer vers un autre dossier", question_id: course1_chapter4_lesson2_question2.id)
 course1_chapter4_lesson2_question2_answers.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 3"
-course1_chapter4_lesson2_question3 = Question.new(content: "Un NFT est stocké dans un espace digital appelé  __________.",
+course1_chapter4_lesson2_question3 = Question.new(content: "Le keyword 'if' est un:",
                                                   lesson_id: course1_chapter4_lesson2.id)
 course1_chapter4_lesson2_question3.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 3 Answers"
-course1_chapter4_lesson2_question3_answers = Answer.new(content: "Locker, Container, Ledger", question_id: course1_chapter4_lesson2_question3.id)
+course1_chapter4_lesson2_question3_answers = Answer.new(content: "Itérateur,Conditionnel", question_id: course1_chapter4_lesson2_question3.id)
 course1_chapter4_lesson2_question3_answers.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 4"
-course1_chapter4_lesson2_question4 = Question.new(content: "Les NFT ont besoin d'un moyen d'échange pour être
-                                                  transférés d'une personne à une autre",
+course1_chapter4_lesson2_question4 = Question.new(content: "Quel est le meilleur moyen d'obtenir un petit déjeuner?",
                                                   lesson_id: course1_chapter4_lesson2.id)
 course1_chapter4_lesson2_question4.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 4 Answers"
-course1_chapter4_lesson2_question4_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question4.id)
+course1_chapter4_lesson2_question4_answers = Answer.new(content: "Aller à la boulangerie,Trafiquer le code de ses voisins pour qu'ils fassent une erreur 500", question_id: course1_chapter4_lesson2_question4.id)
 course1_chapter4_lesson2_question4_answers.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 5"
-course1_chapter4_lesson2_question5 = Question.new(content: "Quel est le NFT associé Ethereum ?",
-                                                  lesson_id: course1_chapter4_lesson2.id)
-course1_chapter4_lesson2_question5.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 5 Answers"
-course1_chapter4_lesson2_question5_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question5.id)
-course1_chapter4_lesson2_question5_answers.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 6"
-course1_chapter4_lesson2_question6 = Question.new(content: "Une ___________ est une monnaie numérique conçue pour
-                                                  fonctionner comme moyen d'échange via un réseau informatique.",
-                                                  lesson_id: course1_chapter4_lesson2.id)
-course1_chapter4_lesson2_question6.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 6 Answers"
-course1_chapter4_lesson2_question6_answers = Answer.new(content: "Cryptomonnaie, Cratomonnaie, Les deux", question_id: course1_chapter4_lesson2_question6.id)
-course1_chapter4_lesson2_question6_answers.save!
-
-
-puts "Creating course 1 chapter 4 lesson 2 Question 7"
-course1_chapter4_lesson2_question7 = Question.new(content: "Les NFTs sont similaires aux Bitcoins.",
-                                                  lesson_id: course1_chapter4_lesson2.id)
-course1_chapter4_lesson2_question7.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 7 Answers"
-course1_chapter4_lesson2_question7_answers = Answer.new(content: "Vrai, Faux", question_id: course1_chapter4_lesson2_question7.id)
-course1_chapter4_lesson2_question7_answers.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 8"
-course1_chapter4_lesson2_question8 = Question.new(content: "Les NFT ont-ils le droit d'auteur sur les fichiers
-                                                  numériques qui leur appartiennent?",
-                                                  lesson_id: course1_chapter4_lesson2.id)
-course1_chapter4_lesson2_question8.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 8 Answers"
-course1_chapter4_lesson2_question8_answers = Answer.new(content: "Oui, Non", question_id: course1_chapter4_lesson2_question8.id)
-course1_chapter4_lesson2_question8_answers.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 9"
-course1_chapter4_lesson2_question9 = Question.new(content: "Quels sont les exemples de cas d’usage des NFTs?",
-                                                  lesson_id: course1_chapter4_lesson2.id)
-course1_chapter4_lesson2_question9.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 9 Answers"
-course1_chapter4_lesson2_question9_answers = Answer.new(content: "Nom de domaine, Actif-in Game, Oeuvres d’arts, Toutes les réponses", question_id: course1_chapter4_lesson2_question9.id)
-course1_chapter4_lesson2_question9_answers.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 10"
-course1_chapter4_lesson2_question10 = Question.new(content: "_________ a été le premier jeu connu à
-                                                   utiliser les technologies de la blockchain.",
-                                                  lesson_id: course1_chapter4_lesson2.id)
-course1_chapter4_lesson2_question10.save!
-
-puts "Creating course 1 chapter 4 lesson 2 Question 10 Answers"
-course1_chapter4_lesson2_question10_answers = Answer.new(content: "CryptoKitties, CryptoBlades, Elementos", question_id: course1_chapter4_lesson2_question10.id)
-course1_chapter4_lesson2_question10_answers.save!
 
 puts "Creating Course 2 Chapter 1 Lesson 1"
 course2_chapter1_lesson1 = Lesson.new(title: "Définition", media: "texte",
