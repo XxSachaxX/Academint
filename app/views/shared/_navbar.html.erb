@@ -1,13 +1,13 @@
 <nav class="navbar">
   <div class="container container-navbar">
     <%= link_to root_path do %>
-      <%= image_tag "logo_academint.svg", alt: "logo Academint", id: 'logo' %>
+      <%= image_tag "Academint.png", alt: "logo Academint", id: 'logo' %>
     <% end %>
     <div>
       <%= render "shared/search_bar" %>
     </div>
     <ul>
-      <li><a href="#" class="btn-secondary">Enseigner</a></li>
+      <li><%= link_to "Enseigner", new_course_path, class:"btn-secondary" %></li>
       <li><%= link_to 'Mes cours', dashboard_path, class: 'btn-secondary' %></li>
       <% if user_signed_in? %>
         <div class="avatar-menu" data-controller="dropdown" data-action="click->dropdown#show dropdown:click:outside->dropdown#hide">

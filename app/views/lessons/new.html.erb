@@ -1,2 +1,9 @@
-<h1>Lessons#new</h1>
-<p>Find me in app/views/lessons/new.html.erb</p>
+<div class="container">
+  <%= simple_form_for [@course, @chapter, @lesson] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :media, as: :select, collection: [ "podcast", "video", "texte"]  %>
+    <%= f.input :content %>
+    <%= f.rich_text_area :enriched_content %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

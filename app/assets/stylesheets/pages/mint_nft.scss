@@ -1,7 +1,3 @@
-.mint-nft {
-  margin: 0 auto;
-}
-
 $background: transparent;
 $leftFace: #6966FF;
 $rightFace: #DBD5F2;
@@ -21,12 +17,24 @@ $timingFunction: ease;
   }
 }
 
+.mint-ongoing {
+  padding: 3rem;
+}
+
+.opensea-link {
+  a {
+    font-size: 24px;
+    line-height:32px;
+    letter-spacing: -0.03rem;
+    color: $primary-violet;
+    font-weight: 700;
+  }
+}
 
 .container-animation {
-  margin: 4rem;
-  height: 100vh;
+  margin: 0 auto;
   position:relative;
-  height:100px;
+  height:200px;
   width:86px;
   transform:scale(#{$scale * .5});
 }

@@ -33,6 +33,11 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @course.user = current_user
+    if @course.save
+      redirect_to new_course_chapter_path(@course), notice: "Cours créé, poursuivez"
+    else
+      render :new, status: :unprocessable_entity
+    end
     authorize @course
   end
 
