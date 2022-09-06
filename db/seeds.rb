@@ -236,7 +236,7 @@ course_1_chapter1_lesson1_1 = Lesson.new(title: "Phénomène NFTs",
 course_1_chapter1_lesson1_1.save!
 
 puts "Creating Course 1 Chapter 1 Lesson 2"
-course1_chapter1_lesson2 = Lesson.new(title: "Comprendre la fongibilité", media: "podcast",
+course1_chapter1_lesson2 = Lesson.new(title: "Comprendre la fongibilité", quizz_answers: "3,1,3,1,1,1,2,1,4,1", media: "podcast",
                                          chapter_id: course1_chapter1.id, content: "Comme les principaux actifs
                                          numériques comme l’ether (ETH) et le bitcoin (BTC), les NFT sont stockés sous
                                         forme de données sur une blockchain. Ils sont placés dans des wallets qui leur
@@ -255,7 +255,7 @@ course1_chapter1_lesson2.save!
 
 puts "Creating Course 1 Chapter 2 Lesson 1"
 course1_chapter2_lesson1 = Lesson.new(title: "Valorisation des tokens",
-                                        chapter_id: course1_chapter2.id, media: "texte",
+                                        chapter_id: course1_chapter2.id, media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                         content: "Vous l’avez peut-être déjà constaté, mais certains NFT ont une grande
                                                 valeur. Plusieurs d’entre eux dépassent les 100000$US sur le marché libre.
                                                 Par exemple, une parcelle de Decentraland s’est vendue 215000US$ en novembre
@@ -271,7 +271,7 @@ course1_chapter2_lesson1 = Lesson.new(title: "Valorisation des tokens",
 course1_chapter2_lesson1.save!
 
 puts "Creating Course 1 Chapter 3 Lesson 1"
-course1_chapter3_lesson1 = Lesson.new(title: "Les portefeuilles", media: "texte",
+course1_chapter3_lesson1 = Lesson.new(title: "Les portefeuilles", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter3.id, content: "Comme nous l’avons évoqué plus
                                          haut, les NFT sont stockés dans des wallets d’actifs numériques compatibles.
                                          Pour les NFT sur Ethereum, MyEtherWallet est l’un des choix les plus
@@ -285,13 +285,13 @@ course1_chapter3_lesson1 = Lesson.new(title: "Les portefeuilles", media: "texte"
 course1_chapter3_lesson1.save!
 
 puts "Creating Course 1 Chapter 3 Lesson 2"
-course1_chapter3_lesson2 = Lesson.new(title: "Guide MyEtherWallet", media: "texte",
+course1_chapter3_lesson2 = Lesson.new(title: "Guide MyEtherWallet", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter3.id, content: "MyEtherWallet dispose d’un guide
                                          complet sur l’utilisation des NFT via son gestionnaire de NFT")
 course1_chapter3_lesson2.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 1"
-course1_chapter4_lesson1 = Lesson.new(title: "Les usages NFT", media: "texte",
+course1_chapter4_lesson1 = Lesson.new(title: "Les usages NFT", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter4.id, content: "Le nombre de cas d’usage
                                          potentiels des NFT ne cesse de croître avec le temps, et des exemples toujours
                                          plus innovants voient régulièrement le jour. Néanmoins, il existe une poignée
