@@ -51,8 +51,8 @@ course1 = Course.new(name: 'Comprendre les NFTs',
                      numériques.
                      Nous examinons ici ce que sont les NFT et leurs cas d’usage actuels.', level: 'débutant',
                      user_id: user1.id)
-# cover1 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/feb1bb9c-d4bb-45be-b997-22069b5bb889/1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153408Z&X-Amz-Expires=86400&X-Amz-Signature=fc77682a444b731d2d4ef761944a4c335881fd2ec3771a5a92d2d2c439cde85b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%221.png%22&x-id=GetObject")
-cover1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/1_nkgsfe.png")
+cover1 = URI.open("https://images.unsplash.com/photo-1642525027649-00d7397a6d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80")
+# cover1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/1_nkgsfe.png")
 course1.photo.attach(io: cover1, filename: "Cours 1", content_type: "image/jpg")
 course1.save!
 
@@ -61,8 +61,8 @@ course2 = Course.new(name: 'Comprendre la blockchain?',
                      description: "Ce cours a pour but de faire comprendre de manière simple ce qu'est la blockchain
                      et ses usages.", level: 'débutant',
                      user_id: user1.id)
-# cover2 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d98d18ca-6e39-4871-ba46-5ef979ddb349/2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153450Z&X-Amz-Expires=86400&X-Amz-Signature=1cdc01488405df0ce912f6b759d323635eb027d18fd45b93bf333039777ed583&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%222.png%22&x-id=GetObject")
-cover2 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/2_xrhauk.png")
+cover2 = URI.open("https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80")
+# cover2 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/2_xrhauk.png")
 course2.photo.attach(io: cover2, filename: "Cours 2", content_type: "image/jpg")
 course2.save!
 
@@ -71,10 +71,75 @@ course3 = Course.new(name: 'Introduction à Ethereum',
                      description: "Comprendre ce qu'est Ethereum, comment cette blockchain fonctionne et les différentes
                      technologies et fonctionnalités qui y sont attachées.", level: 'débutant',
                      user_id: user1.id)
-# cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
-cover3 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/3_hd5nja.png")
+cover3 = URI.open("https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80")
+# cover3 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/3_hd5nja.png")
 course3.photo.attach(io: cover3, filename: "Cours 3", content_type: "image/jpg")
 course3.save!
+
+puts "Creating course 4"
+course4 = Course.new(name: 'Trading de cryptomonnaies',
+                     description: "Comprendre plus en détail le fonctionnement des cryptomonnaies et leurs échanges.", level: 'intermediaire',
+                     user_id: user1.id)
+cover4 = URI.open("https://images.unsplash.com/photo-1640826514546-7d2eab70a4e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80")
+# cover4 = URI.open("https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
+course4.photo.attach(io: cover4, filename: "Cours 4", content_type: "image/jpg")
+course4.save!
+
+puts "Creating course 5"
+course5 = Course.new(name: 'Qu’est-ce qu’un stablecoin?',
+                     description: "Le stablecoin, une nouvelle alternative régulée aux cryptomonnaies", level: 'intermediaire',
+                     user_id: user1.id)
+# cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
+cover5 = URI.open("https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
+course5.photo.attach(io: cover5, filename: "Cours 5", content_type: "image/jpg")
+course5.save!
+
+puts "Creating course 6"
+course6 = Course.new(name: "Qu'est-ce que Metamask?",
+                     description: "Une alternative à moindre côut au ledger", level: 'intermediaire',
+                     user_id: user1.id)
+# cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
+cover6 = URI.open("https://i0.wp.com/financededemain.com/wp-content/uploads/2022/05/metamask-image-cryptoast.webp?resize=1140%2C600&ssl=1")
+course6.photo.attach(io: cover6, filename: "Cours 6", content_type: "image/jpg")
+course6.save!
+
+puts "Creating course 7"
+course7 = Course.new(name: "Cryptokitties",
+                     description: "Le premier jeu articulé autour des NFT", level: 'débutant',
+                     user_id: user1.id)
+# cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
+cover7 = URI.open("https://cdn.consensys.net/uploads/1jbaJS-72rAbw5jKR4BmGVA-1920x998.png")
+course7.photo.attach(io: cover7, filename: "Cours 7", content_type: "image/jpg")
+course7.save!
+
+puts "Creating course 8"
+course8 = Course.new(name: "Les SBT, une nouvelle révolution?",
+                     description: "Découvrez les SoulBound Tokens et leurs futurs usages.", level: 'intermédiaire',
+                     user_id: user1.id)
+# cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
+cover8 = URI.open("https://cdn.consensys.net/uploads/1jbaJS-72rAbw5jKR4BmGVA-1920x998.png")
+course8.photo.attach(io: cover8, filename: "Cours 8", content_type: "image/jpg")
+course8.save!
+
+puts "Creating course 9"
+course9 = Course.new(name: "Apprendre à coder vos NFT en solidity",
+                     description: "Les bases pour coder vos premier smart contracts en Solidity", level: 'avancé',
+                     user_id: user1.id)
+# cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
+cover9 = URI.open("https://academy.bit2me.com/wp-content/uploads/2019/12/solidity-logo.jpg")
+course9.photo.attach(io: cover9, filename: "Cours 9", content_type: "image/jpg")
+course9.save!
+
+puts "Creating course 10"
+course10 = Course.new(name: "Que sont les gas-fees?",
+                     description: "Un point en détail sur ce que sont les fameux gas-fees et comment les réduire", level: 'avancé',
+                     user_id: user1.id)
+# cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
+cover10 = URI.open("https://academy.bit2me.com/wp-content/uploads/2019/12/solidity-logo.jpg")
+course10.photo.attach(io: cover10, filename: "Cours 10", content_type: "image/jpg")
+course10.save!
+
+
 puts "All courses created"
 
 puts "Creating chapters..."
