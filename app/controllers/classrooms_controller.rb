@@ -47,8 +47,8 @@ class ClassroomsController < ApplicationController
   def quizz_submit
     @classroom = Classroom.find(params[:id])
     @course = @classroom.course
-    @user_answers = params[:user_answers].values.map { |hash| hash.key("1") }.join(',')
-    @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
+    @user_answers = params["user_answers"].values.map { |hash| hash.key("1") }.join(',')
+    @lecture = Lecture.find_by(classroom_id: @classroom.id, status: "ongoing")
     @lecture.update!(user_answers: @user_answers)
     @lesson = @lecture.lesson
     authorize @classroom
