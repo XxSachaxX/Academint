@@ -39,7 +39,7 @@ class ClassroomsController < ApplicationController
   end
 
   def quizz
-    @classroom = Lecture.find(params[:id]).classroom
+    @classroom = Classroom.find(params[:id])
     @course = @classroom.course
     @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
     authorize @classroom
