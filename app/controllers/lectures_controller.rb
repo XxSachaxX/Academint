@@ -78,5 +78,4 @@ class LecturesController < ApplicationController
     end
     @success_rate = (@counter * 100) / user_answers_array.length
   end
-
 end
