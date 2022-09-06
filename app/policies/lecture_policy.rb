@@ -10,6 +10,10 @@ class LecturePolicy < ApplicationPolicy
     true
   end
 
+  def next?
+    true
+  end
+
   def show?
     true
   end

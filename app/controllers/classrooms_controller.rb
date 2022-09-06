@@ -24,20 +24,6 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
-  def next
-    @classroom = Classroom.find(params[:id])
-    @lecture = @classroom.lectures.find_by(status: 'ongoing')
-    @lecture.done! if @lecture
-    @next_lecture = Lecture.find_by(status: "pending", classroom: @classroom)
-    if @next_lecture
-      @next_lecture.ongoing!
-      redirect_to course_classroom_lecture_path(@classroom.course, @classroom, @next_lecture)
-    else
-      redirect_to mint_nft_path
-    end
-    authorize @classroom
-  end
-
   def mint_nft
     @classroom = Lecture.find(params[:id]).classroom
     authorize @classroom
