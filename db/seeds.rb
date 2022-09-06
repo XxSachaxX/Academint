@@ -49,7 +49,7 @@ course1 = Course.new(name: 'Apprendre à coder en Ruby (1ère partie)',
                      user_id: user1.id)
 
 # cover1 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/feb1bb9c-d4bb-45be-b997-22069b5bb889/1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153408Z&X-Amz-Expires=86400&X-Amz-Signature=fc77682a444b731d2d4ef761944a4c335881fd2ec3771a5a92d2d2c439cde85b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%221.png%22&x-id=GetObject")
-cover1 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1200px-Ruby_logo.svg.png")
+cover1 = URI.open("https://stackify.com/wp-content/uploads/2018/09/Learn-Ruby-Tutorial.jpg")
 
 course1.photo.attach(io: cover1, filename: "Cours 1", content_type: "image/jpg")
 course1.save!
