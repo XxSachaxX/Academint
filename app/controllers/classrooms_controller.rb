@@ -39,7 +39,7 @@ class ClassroomsController < ApplicationController
   end
 
   def quizz
-    @classroom = Classroom.find(params[:id])
+    @classroom = Lecture.find(params[:id]).classroom
     @course = @classroom.course
     authorize @classroom
   end
@@ -73,6 +73,11 @@ class ClassroomsController < ApplicationController
       end
     end
     @success_rate = (@counter * 100) / user_answers_array.length
+  end
+
+  def mint_nft
+    @classroom = Lecture.find(params[:id]).classroom
+    authorize @classroom
   end
 
   private

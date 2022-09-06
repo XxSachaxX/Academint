@@ -17,6 +17,7 @@ class LecturesController < ApplicationController
     @classroom = Classroom.find(params[:classroom_id])
     @course = Course.find(params[:course_id])
     @last_course = @classroom.lectures.last == @lecture
+    @last_lecture = @classroom.lectures.last
     @skip_footer = true
     authorize @lecture
   end
