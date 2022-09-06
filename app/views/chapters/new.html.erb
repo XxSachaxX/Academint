@@ -1,2 +1,24 @@
-<h1>Chapters#new</h1>
-<p>Find me in app/views/chapters/new.html.erb</p>
+<div class="container">
+  <div>
+    <%= simple_form_for [@course, @chapter] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+
+  <div>
+    <% @course.chapters.each do |chapter| %>
+        <h4><%= chapter.name %> || <%= link_to "Ajouter une lesson", new_course_chapter_lesson_path(@course, chapter), class:"btn-secondary-fill"  %></h4>
+        <% chapter.lessons.each do |lesson| %>
+          <div class="lesson-tabs">
+            <p><i class="fa-solid <%= lesson.display_media %>"></i> <%= lesson.title%></p>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to "Ajouter un chapitre", new_course_chapter_path(@course), class:"btn-secondary-fill"  %>
+  </div>
+</div>

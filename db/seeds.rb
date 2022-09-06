@@ -52,7 +52,7 @@ course1 = Course.new(name: 'Comprendre les NFTs',
                      Nous examinons ici ce que sont les NFT et leurs cas d’usage actuels.', level: 'débutant',
                      user_id: user1.id)
 # cover1 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/feb1bb9c-d4bb-45be-b997-22069b5bb889/1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153408Z&X-Amz-Expires=86400&X-Amz-Signature=fc77682a444b731d2d4ef761944a4c335881fd2ec3771a5a92d2d2c439cde85b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%221.png%22&x-id=GetObject")
-cover1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/1_nkgsfe.png")
+cover1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662363782/production/88purusahsfgb6tnwkz9nvlhk1kn.png")
 course1.photo.attach(io: cover1, filename: "Cours 1", content_type: "image/jpg")
 course1.save!
 
@@ -62,7 +62,7 @@ course2 = Course.new(name: 'Comprendre la blockchain?',
                      et ses usages.", level: 'débutant',
                      user_id: user1.id)
 # cover2 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d98d18ca-6e39-4871-ba46-5ef979ddb349/2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153450Z&X-Amz-Expires=86400&X-Amz-Signature=1cdc01488405df0ce912f6b759d323635eb027d18fd45b93bf333039777ed583&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%222.png%22&x-id=GetObject")
-cover2 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/2_xrhauk.png")
+cover2 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662363783/production/f39cirw4i8q2sa2dwfnaitum12gu.png")
 course2.photo.attach(io: cover2, filename: "Cours 2", content_type: "image/jpg")
 course2.save!
 
@@ -72,7 +72,7 @@ course3 = Course.new(name: 'Introduction à Ethereum',
                      technologies et fonctionnalités qui y sont attachées.", level: 'débutant',
                      user_id: user1.id)
 # cover3 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b17c8e8c-01a2-471f-be55-4c56d3d160b8/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153742Z&X-Amz-Expires=86400&X-Amz-Signature=8133c797a89915a03e0c877573182eddfa7e4943f5131cb153ae6f7fd41fd686&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%223.png%22&x-id=GetObject")
-cover3 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662024827/development/3_hd5nja.png")
+cover3 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662363783/production/zi583w0qg0zt5g9qyed3jn4dwib4.png")
 course3.photo.attach(io: cover3, filename: "Cours 3", content_type: "image/jpg")
 course3.save!
 puts "All courses created"
