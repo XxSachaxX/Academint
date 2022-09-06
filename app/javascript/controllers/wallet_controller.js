@@ -79,7 +79,6 @@ export default class extends Controller {
         await nftTxn.wait();
         this.ongoingTarget.classList.add("d-none")
         this.doneTarget.classList.remove("d-none")
-        this.doneTarget.innerHTML = `<a href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/1" target="_blank">Retrouve ta certification NFT sur la plateforme OpenSea</a>`
 
       } else {
         alert('wallet not connected');

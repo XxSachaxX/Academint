@@ -19,7 +19,13 @@
         </div>
       -->
         <div class="card-level">
-          <button class="badge badge-beginner"><%= course.level.capitalize %></button>
+          <% if course.level == 'débutant' %>
+            <button class="badge badge-beginner"><%= course.level.capitalize %></button>
+          <% elsif course.level == 'intermédiaire' %>
+            <button class="badge badge-intermediate"><%= course.level.capitalize %></button>
+          <% elsif course.level == 'expert' %>
+            <button class="badge badge-expert"><%= course.level.capitalize %></button>
+          <% end %>
         </div>
       </div>
     </div>

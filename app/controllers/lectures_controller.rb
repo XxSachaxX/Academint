@@ -12,12 +12,71 @@ class LecturesController < ApplicationController
     authorize @lecture
   end
 
+  def next
+    @lecture = Lecture.find(params[:id])
+    @classroom = @lecture.classroom
+    if @lecture.done?
+      redirect_to course_classroom_lecture_path(@classroom.course, @classroom, Lecture.find(@lecture.id + 1))
+    else
+      @lecture.done!
+      @next_lecture = Lecture.find_by(status: "pending", classroom: @classroom)
+      if @next_lecture
+        @next_lecture.ongoing!
+        redirect_to course_classroom_lecture_path(@classroom.course, @classroom, @next_lecture)
+      end
+    end
+    authorize @classroom
+  end
+
   def show
     @lecture = Lecture.find(params[:id])
     @classroom = Classroom.find(params[:classroom_id])
     @course = Course.find(params[:course_id])
     @last_course = @classroom.lectures.last == @lecture
+    @last_lecture = @classroom.lectures.last
     @skip_footer = true
     authorize @lecture
   end
+
+  def quizz
+    @lecture = Lecture.find(params[:id])
+    @classroom = @lecture.classroom
+    @course = @classroom.course
+    authorize @lecture
+  end
+
+  def quizz_submit
+    @lecture = Lecture.find(params[:id])
+    @classroom = @lecture.classroom
+    @course = @classroom.course
+    @user_answers = params[:user_answers].values.map { |hash| hash.key("1") }.join(',')
+    @lecture.update!(user_answers: @user_answers)
+    @lesson = @lecture.lesson
+    authorize @lecture
+    compare_answers(@course, @classroom, @lecture)
+  end
+
+  def compare_answers(course, classroom, lecture)
+    if success_rate < 90
+      redirect_to quizz_course_classroom_lecture_path, notice: "Vous n'avez obtenu que #{success_rate}% de bonnes réponses. Essayez encore pour atteindre les 90% de bonnes réponses et valider le quizz!"
+    else
+      @lesson.update(content: "Félicitations, vous avez réussi le test avec brio. Vous pouvez dès maintenant obtenir votre
+         NFT pour certifier que vous avez bien acquis toutes ces connaissances")
+      @lecture.done!
+      redirect_to course_classroom_lecture_path(course, classroom, classroom.lectures.last), notice: "Félicitations, vous avez obtenu #{success_rate}% de bonnes réponses!"
+    end
+  end
+
+  def success_rate
+    user_answers_array = @lecture.user_answers.split(",")
+    quizz_answers_array = @lesson.quizz_answers.split(",")
+    @counter = 0
+    user_answers_array.each_with_index do |user_answer, index|
+      if user_answers_array[index] == quizz_answers_array[index]
+        @counter += 1
+      end
+    end
+    @success_rate = (@counter * 100) / user_answers_array.length
+  end
+
 end

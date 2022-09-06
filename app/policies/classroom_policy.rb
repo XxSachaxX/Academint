@@ -18,11 +18,7 @@ class ClassroomPolicy < ApplicationPolicy
     true
   end
 
-  def quizz?
-    true
-  end
-
-  def quizz_submit?
+  def mint_nft?
     true
   end
 end

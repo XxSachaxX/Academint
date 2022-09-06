@@ -50,7 +50,7 @@ gem "sassc-rails"
 gem "image_processing", "~> 1.2"
 
 gem "devise"
-
+gem 'omniauth-google-oauth2'
 
 gem "pg_search"
 

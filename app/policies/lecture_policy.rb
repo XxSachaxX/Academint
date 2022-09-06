@@ -10,7 +10,19 @@ class LecturePolicy < ApplicationPolicy
     true
   end
 
+  def next?
+    true
+  end
+
   def show?
+    true
+  end
+
+  def quizz?
+    true
+  end
+
+  def quizz_submit?
     true
   end
 end

@@ -1,0 +1,29 @@
+<div class="container" data-controller="wallet">
+  <div class="minting">
+    <%= image_tag "background_image_login.svg", alt: "image de fond" %>
+
+    <div class="container-mint-process">
+      <div class="interact-wallet" data-wallet-target="connect">
+        <div class="header-connect">
+          <h2><%= @classroom.course.name %></h2>
+          <i class="fa-solid fa-circle-check done-lesson-classroom"></i>
+        </div>
+        <p class="medium-paragraph">Connectez votre portefeuille pour recevoir votre certificat Academint.</p>
+        <button class="btn-main clickable" data-action="click->wallet#connectWallet">Connectez votre portefeuille</button>
+      </div>
+      <div class="interact-wallet" data-wallet-target="mintNFT">
+        <h2>Préparez votre transaction</h2>
+        <p class="medium-paragraph">Procédez à la transaction pour récupérer votre certificat Academint.</p>
+        <button class="btn-main clickable" data-action="click->wallet#askContractToMintNft">Obtenir la certification</button>
+      </div>
+      <div class="interact-wallet d-none" data-wallet-target="ongoing">
+        <h2>Création en cours..</h2>
+        <div class="lds-ripple"><div></div><div></div></div>
+      </div>
+      <div class="interact-wallet d-none" data-wallet-target="done">
+        <h2>Votre certificat est dans votre portefeuille !</h2>
+        <i class="fa-solid fa-circle-check done-lesson-classroom"></i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     @course.user = current_user
     if @course.save
-      redirect_to new_course_chapter_path(@course), notice: "Cours créé, poursuivez"
+      redirect_to new_course_chapter_path(@course), notice: "Votre cours est maintenant créé, vous pouvez ajouter vos chapitres et vos leçons"
     else
       render :new, status: :unprocessable_entity
     end

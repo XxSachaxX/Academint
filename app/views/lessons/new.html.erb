@@ -1,7 +1,7 @@
 <div class="container">
   <%= simple_form_for [@course, @chapter, @lesson] do |f| %>
     <%= f.input :title %>
-    <%= f.input :media, as: :select, collection: [ "podcast", "video", "texte"]  %>
+    <%= f.input :media, as: :select, collection: [ "podcast", "video", "texte", "texte enrichi" ]  %>
     <%= f.input :content %>
     <%= f.rich_text_area :enriched_content %>
     <%= f.button :submit %>

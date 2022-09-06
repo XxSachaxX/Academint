@@ -6,112 +6,200 @@ $scale: 1;
 $duration: 3s;
 $timingFunction: ease;
 
+.minting {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    position: absolute;
+    margin: auto;
+    z-index: -1;
+    object-fit: cover;
+    top: -5rem;
+    left: -10rem;
+  }
+}
+
 .container-mint-process {
-  height: 70vh;
+  width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  h3 {
-    color: $primary-violet;
+  background-color: rgba($color: $secondary-dark-hover, $alpha: 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: $border-radius-main;
+  box-shadow: $elevation-200;
+  h2 {
+    color: $neutral-0;
+  }
+  p {
+    color: $neutral-0;
+    margin: 1.5rem 0;
   }
 }
 
-.mint-ongoing {
-  padding: 3rem;
+.interact-wallet {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  margin: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
-.opensea-link {
-  a {
+.header-connect {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  h2 {
+    margin-right: 1rem;
+  }
+  i {
     font-size: 24px;
-    line-height:32px;
-    letter-spacing: -0.03rem;
-    color: $primary-violet;
-    font-weight: 700;
+    color: $green-100;
   }
 }
 
-.container-animation {
-  margin: 0 auto;
-  position:relative;
-  height:200px;
-  width:86px;
-  transform:scale(#{$scale * .5});
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-
-.cube {
-  position:absolute;
-  width:86px;
-  height:100px;
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
-
-.right {
-  background:$rightFace;
-  transform: rotate(-30deg) skewX(-30deg) translate(49px, 65px) scaleY(0.86);
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
 }
-
-.left {
-  background:$leftFace;
-  transform: rotate(90deg) skewX(-30deg) scaleY(0.86) translate(25px, -50px);
-}
-
-.top {
-  background:$topFace;
-  transform: rotate(210deg) skew(-30deg) translate(-75px, -22px) scaleY(0.86);
-  z-index:2;
-}
-
-.face {
-  height:50px;
-  width:50px;
-  position:absolute;
-  transform-origin: 0 0;
-}
-
-@mixin slice($h, $w, $l) {
-  .h#{$h}.w#{$w}.l#{$l} {
-    z-index: (-#{$h});
-    animation-name: h#{$h}w#{$w}l#{$l};
-    animation-timing-function: $timingFunction;
-    animation-duration: $duration;
-    animation-iteration-count: infinite;
-    }
-  @keyframes h#{$h}w#{$w}l#{$l} {
-    0% {
-      transform:translate(($w * -50% - 50%) + ($l * 50% + 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 25 + 25%));
-    }
-    14% {
-      transform:translate(($w * -50% - 50%) + ($l * 100% - 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 50 - 25%));
-    }
-    28% {
-      transform:translate(($w * -100% + 50%) + ($l * 100% - 50%), ($h * 50 - 200%) + ($w * 50% - 75%) + ($l * 50 - 25%));
-    }
-    43% {
-      transform:translate(($w * -100% - 100%) + ($l * 100% + 100%), ($h * 100 - 400%) + ($w * 50% - 50%) + ($l * 50 + 50%));
-    }
-    57% {
-      transform:translate(($w * -100% - 100%) + ($l * 50% + 200%), ($h * 100 - 400%) + ($w * 50% - 50%) + ($l * 25 + 100%));
-    }
-    71% {
-      transform:translate(($w * -50% - 200%) + ($l * 50% + 200%), ($h * 100 - 375%) + ($w * 25% - 25%) + ($l * 25 + 100%));
-    }
-    85% {
-      transform:translate(($w * -50% - 50%) + ($l * 50% + 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 25 + 25%));
-    }
-    100% {
-      transform:translate(($w * -50% - 50%) + ($l * 50% + 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 25 + 25%));
-    }
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
   }
 }
 
-@mixin generateSlice() {
-  @for $i from 1 to 4 {
-    @for $j from 1 to 4 {
-      @for $k from 1 to 4 {
-        @include slice($i, $j, $k);
-      }
-    }
-  }
-}
 
-@include generateSlice();
+
+
+
+// Animation cube
+
+// .container-animation {
+//   margin: 0 auto;
+//   position:relative;
+//   height:200px;
+//   width:86px;
+//   transform:scale(#{$scale * .5});
+// }
+
+// .cube {
+//   position:absolute;
+//   width:86px;
+//   height:100px;
+// }
+
+// .right {
+//   background:$rightFace;
+//   transform: rotate(-30deg) skewX(-30deg) translate(49px, 65px) scaleY(0.86);
+// }
+
+// .left {
+//   background:$leftFace;
+//   transform: rotate(90deg) skewX(-30deg) scaleY(0.86) translate(25px, -50px);
+// }
+
+// .top {
+//   background:$topFace;
+//   transform: rotate(210deg) skew(-30deg) translate(-75px, -22px) scaleY(0.86);
+//   z-index:2;
+// }
+
+// .face {
+//   height:50px;
+//   width:50px;
+//   position:absolute;
+//   transform-origin: 0 0;
+// }
+
+// @mixin slice($h, $w, $l) {
+//   .h#{$h}.w#{$w}.l#{$l} {
+//     z-index: (-#{$h});
+//     animation-name: h#{$h}w#{$w}l#{$l};
+//     animation-timing-function: $timingFunction;
+//     animation-duration: $duration;
+//     animation-iteration-count: infinite;
+//     }
+//   @keyframes h#{$h}w#{$w}l#{$l} {
+//     0% {
+//       transform:translate(($w * -50% - 50%) + ($l * 50% + 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 25 + 25%));
+//     }
+//     14% {
+//       transform:translate(($w * -50% - 50%) + ($l * 100% - 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 50 - 25%));
+//     }
+//     28% {
+//       transform:translate(($w * -100% + 50%) + ($l * 100% - 50%), ($h * 50 - 200%) + ($w * 50% - 75%) + ($l * 50 - 25%));
+//     }
+//     43% {
+//       transform:translate(($w * -100% - 100%) + ($l * 100% + 100%), ($h * 100 - 400%) + ($w * 50% - 50%) + ($l * 50 + 50%));
+//     }
+//     57% {
+//       transform:translate(($w * -100% - 100%) + ($l * 50% + 200%), ($h * 100 - 400%) + ($w * 50% - 50%) + ($l * 25 + 100%));
+//     }
+//     71% {
+//       transform:translate(($w * -50% - 200%) + ($l * 50% + 200%), ($h * 100 - 375%) + ($w * 25% - 25%) + ($l * 25 + 100%));
+//     }
+//     85% {
+//       transform:translate(($w * -50% - 50%) + ($l * 50% + 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 25 + 25%));
+//     }
+//     100% {
+//       transform:translate(($w * -50% - 50%) + ($l * 50% + 50%), ($h * 50 - 200%) + ($w * 25% - 25%) + ($l * 25 + 25%));
+//     }
+//   }
+// }
+
+// @mixin generateSlice() {
+//   @for $i from 1 to 4 {
+//     @for $j from 1 to 4 {
+//       @for $k from 1 to 4 {
+//         @include slice($i, $j, $k);
+//       }
+//     }
+//   }
+// }
+
+// @include generateSlice();

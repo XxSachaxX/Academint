@@ -12,11 +12,10 @@ class LessonsController < ApplicationController
     @course = Course.find(params[:course_id])
     @lesson.chapter = @chapter
     if @lesson.save
-      redirect_to new_course_chapter_path(@course), notice: "Lesson créé, voici votre cours"
+      redirect_to new_course_chapter_path(@course), notice: "Leçon créé, voici votre cours"
     else
       render :new, status: :unprocessable_entity
     end
-
     authorize @lesson
   end
 
