@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/quizz_submit" do |form| %>
+  <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/lectures/#{@lecture.id}/quizz_submit" do |form| %>
     <div class="quizz-container">
       <% Answer.all.each do |answer| %>
       <p class="large-paragraph"><%= answer.question.content %></h3>

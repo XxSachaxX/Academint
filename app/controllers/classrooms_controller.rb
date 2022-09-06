@@ -38,44 +38,6 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
-  def quizz
-    @classroom = Classroom.find(params[:id])
-    @course = @classroom.course
-    @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
-    authorize @classroom
-  end
-
-  def quizz_submit
-    @classroom = Classroom.find(params[:id])
-    @course = @classroom.course
-    @user_answers = params[:user_answers].values.map { |hash| hash.key("1") }.join(',')
-    @lecture = Lecture.find_by(classroom: params[:id], status: "ongoing")
-    @lecture.update!(user_answers: @user_answers)
-    @lesson = @lecture.lesson
-    authorize @classroom
-    compare_answers
-  end
-
-  def compare_answers
-    if success_rate < 90
-      redirect_to quizz_course_classroom_path, notice: "Vous n'avez obtenu que #{success_rate}% de bonnes réponses. Essayez encore pour atteindre les 90% de bonnes réponses et valider le quizz!"
-    else
-      redirect_to "/mint_nft", notice: "Félicitations, vous avez obtenu #{success_rate}% de bonnes réponses!"
-    end
-  end
-
-  def success_rate
-    user_answers_array = @lecture.user_answers.split(",")
-    quizz_answers_array = @lesson.quizz_answers.split(",")
-    @counter = 0
-    user_answers_array.each_with_index do |user_answer, index|
-      if user_answers_array[index] == quizz_answers_array[index]
-        @counter += 1
-      end
-    end
-    @success_rate = (@counter * 100) / user_answers_array.length
-  end
-
   def mint_nft
     @classroom = Lecture.find(params[:id]).classroom
     authorize @classroom

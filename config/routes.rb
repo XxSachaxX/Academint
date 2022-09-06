@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   resources :courses do
     resources :classrooms, only: %i[new create show] do
       member do
-        get :quizz
-        post :quizz_submit
         get :mint_nft
       end
-      resources :lectures, only: %i[new create show]
-      member do
-        get :next
+      resources :lectures, only: %i[new create show] do
+        member do
+          get :next
+          get :quizz
+          post :quizz_submit
+        end
       end
     end
     resources :chapters, only: %i[new create edit destroy] do

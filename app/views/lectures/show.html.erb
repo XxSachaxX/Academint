@@ -42,7 +42,7 @@
       <% if @last_lecture.status == 'done' %>
         <%= link_to 'Obtiens ton NFT', mint_nft_course_classroom_path, class: 'btn-main'%>
       <% else %>
-        <%= link_to 'Faire le quizz', quizz_course_classroom_path, class: 'btn-main' %>
+        <%= link_to 'Faire le quizz', quizz_course_classroom_lecture_path, class: 'btn-main' %>
       <% end %>
     <% else %>
       <%= link_to next_course_classroom_path(@classroom.course, @classroom),
