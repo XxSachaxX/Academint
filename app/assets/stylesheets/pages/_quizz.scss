@@ -1,11 +1,21 @@
+.spacing-quizz {
+  height: 2rem;
+}
+
 .quizz-container {
+  margin-top: 2rem;
   width: 50%;
   margin: auto;
   padding: 1.5rem;
-  background-color: $neutral-100-violet;
+  background-color: $primary-violet;
   border-radius: 20px;
   p {
-    color: $neutral-1000;
+    color: $neutral-0;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    color: $neutral-0;
   }
   box-shadow: $elevation-200;
 }
@@ -28,12 +38,19 @@
   font-size: 14px;
   border-radius: 20px;
   border: none;
-  color: $primary-violet;
-  background-color: #e1e0ff;
-  border: 1px solid $primary-violet;
+  color: $neutral-800;
+  background-color: $neutral-100;
+  border: 1px solid $neutral-800;
 }
 
 .input-quizz:checked + label {
   color: $neutral-0;
-  background-color: $primary-violet;
+  background-color:   $secondary-dark;
+}
+
+.submit-quizz {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

@@ -1,6 +1,9 @@
 <div class="container">
-  <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/lectures/#{@lecture.id}/quizz_submit" do |form| %>
-    <div class="quizz-container">
+  <div class="spacing-quizz">
+  </div>
+  <div class="quizz-container">
+    <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/lectures/#{@lecture.id}/quizz_submit" do |form| %>
+      <h3>Quizz: <%= @course.name %></h3>
       <% Answer.all.each do |answer| %>
       <p class="large-paragraph"><%= answer.question.content %></h3>
       <% answer.content.split(',').each_with_index do |word, index| %>
@@ -10,7 +13,9 @@
       </div>
         <% end %>
       <% end %>
-    </div>
-    <%= form.submit "Validate your answers" %>
-  <% end %>
+      <div class="submit-quizz">
+        <%= form.submit "Valider les réponses", class:"btn-secondary-fill clickable" %>
+      </div>
+    <% end %>
+  </div>
 </div>
