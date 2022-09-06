@@ -2,14 +2,16 @@
   width: 50%;
   margin: auto;
   padding: 1.5rem;
-  background-color: $secondary-dark-hover;
+  background-color: $neutral-100-violet;
   border-radius: 20px;
   p {
-    color: $neutral-0;
+    color: $neutral-1000;
   }
+  box-shadow: $elevation-200;
 }
 
 .answers-quizz {
+  margin: 0 0 1.5rem 0;
   display: inline-block;
 }
 

@@ -1,12 +1,16 @@
 <div class="container">
   <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/quizz_submit" do |form| %>
-    <% Answer.all.each do |answer| %>
-    <h3><%= answer.question.content %></h3>
-    <% answer.content.split(',').each_with_index do |word, index| %>
-      <%= form.check_box :"user_answers[#{answer.id}][#{index + 1}]"%>
-      <%= form.label :"user_answers[#{answer.id}][#{index + 1}]", word %>
+    <div class="quizz-container">
+      <% Answer.all.each do |answer| %>
+      <p class="large-paragraph"><%= answer.question.content %></h3>
+      <% answer.content.split(',').each_with_index do |word, index| %>
+      <div class="answers-quizz">
+        <%= form.check_box :"user_answers[#{answer.id}][#{index + 1}]", class: "input-quizz"%>
+        <%= form.label :"user_answers[#{answer.id}][#{index + 1}]", word %>
+      </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
     <%= form.submit "Validate your answers" %>
   <% end %>
 </div>
