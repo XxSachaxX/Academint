@@ -15,3 +15,5 @@ addEventListener("trix-attachment-add", event => {
     upload.start()
   }
 })
+import "trix"
+import "@rails/actiontext"
