@@ -285,7 +285,7 @@ course1_chapter3_lesson1 = Lesson.new(title: "Les portefeuilles", media: "texte"
 course1_chapter3_lesson1.save!
 
 puts "Creating Course 1 Chapter 3 Lesson 2"
-course1_chapter3_lesson2 = Lesson.new(title: "Guide MyEtherWallet", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
+course1_chapter3_lesson2 = Lesson.new(title: "Guide MyEtherWallet", media: "texte", quizz_answers: "3,2,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter3.id, content: "MyEtherWallet dispose d’un guide
                                          complet sur l’utilisation des NFT via son gestionnaire de NFT")
 course1_chapter3_lesson2.save!
