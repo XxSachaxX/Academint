@@ -24,7 +24,13 @@
               <p class="label"><%= course.user.username.capitalize %></p>
             </div>
             <div>
-              <button class="badge badge-beginner"><%= course.level %></button>
+              <% if course.level == 'débutant' %>
+                <button class="badge badge-beginner"><%= course.level.capitalize %></button>
+              <% elsif course.level == 'intermédiaire' %>
+                <button class="badge badge-intermediate"><%= course.level.capitalize %></button>
+              <% elsif course.level == 'expert' %>
+                <button class="badge badge-expert"><%= course.level.capitalize %></button>
+              <% end %>
             </div>
           </div>
         </div>
