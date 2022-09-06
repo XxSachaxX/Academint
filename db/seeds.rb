@@ -44,7 +44,7 @@ puts "All users created"
 
 puts "Creating courses..."
 puts "Creating course 1"
-course1 = Course.new(name: 'Apprendre à coder en Ruby(première partie)',
+course1 = Course.new(name: 'Apprendre à coder en Ruby (1ère partie)',
                      description: "Tout ce qu'il faut savoir pour pouvoir créer vos propres applications web en Ruby", level: 'Intermédiaire',
                      user_id: user1.id)
 
