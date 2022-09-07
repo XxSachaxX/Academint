@@ -7,7 +7,7 @@
         <p class="large-paragraph"><%= @course.description %></p>
       </div>
       <% @course.chapters.each_with_index do |chapter, index| %>
-        <h4 class="clickable" data-action="click->collapse#open" data-collapse-index-param="<%= index %>" data-collapse-target="chapter"><%= chapter.name %></h5>
+        <h4 class="clickable" data-action="click->collapse#open" data-collapse-index-param="<%= index %>" data-collapse-target="chapter"><%= chapter.name %> - <%= pluralize(chapter.lessons.size, "Leçon") %></h5>
           <div class="d-none" data-collapse-target="lesson">
             <% chapter.lessons.each do |lesson| %>
               <div class="lesson-tabs">
