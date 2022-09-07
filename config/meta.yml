@@ -1,0 +1,5 @@
+meta_product_name: "Academint"
+meta_title: "Academint - Certifiez vos compétences sur la blockchain"
+meta_description: "Academint est une plateforme de contenus éducatifs qui certifie vos compétences en vous délivrant un NFT pour chaque formation que vous avez suivie."
+meta_image: "meta-academint.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
