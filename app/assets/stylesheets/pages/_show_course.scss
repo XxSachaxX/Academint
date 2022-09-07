@@ -101,7 +101,7 @@
   display: flex;
   align-items: center;
   i {
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
   }
   p {
     margin: 0.5rem 0;
@@ -119,4 +119,18 @@
 
 .congrats-strong {
   color: $green-100;
+}
+
+.course-video {
+  width: 100%;
+  video {
+    width: 100%;
+  }
+}
+
+.tab-icon {
+  padding: 5px 0px 5px 14px;
+  color: $neutral-800;
+  border-left: solid 2px $neutral-800;
+  margin-left: 5px;
 }
