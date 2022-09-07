@@ -30,7 +30,8 @@ class ClassroomsController < ApplicationController
   end
 
   def minted
-    classroom.minted = true
+    @classroom = Classroom.find(params[:id])
+    @classroom.update(minted: true)
   end
 
   private

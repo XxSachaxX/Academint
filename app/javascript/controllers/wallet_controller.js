@@ -69,7 +69,9 @@ export default class extends Controller {
     }
   }
 
-  async askContractToMintNft() {
+  async askContractToMintNft(evt) {
+    evt.preventDefault();
+
     try {
     if (web3auth.provider) {
         const provider = new ethers.providers.Web3Provider(web3auth.provider)

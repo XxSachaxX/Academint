@@ -22,6 +22,14 @@
   text-decoration: none;
 }
 
+.done-certificate {
+  color: $green-100;
+}
+
+.undone-certificate {
+  color: $neutral-800; 
+}
+
 // .card-main-img {
 //   height: 50%;
 //   img {
