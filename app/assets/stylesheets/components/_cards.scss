@@ -182,3 +182,30 @@
     padding-right: 1rem;
   }
 }
+
+// Cards certificate
+
+.card-certificate {
+  background-color: $neutral-100-violet;
+  box-shadow: $elevation-100;
+  border-radius: $border-radius-main;
+  .label {
+    color: $primary-violet;
+    margin: 0;
+  }
+  .text-ellipsis--2 {
+    margin: 0.5rem 0;
+  }
+  overflow: hidden;
+}
+
+.card-certificate-text {
+  padding: 0.5rem;
+}
+
+.card-certificate-img {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
