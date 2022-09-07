@@ -77,6 +77,7 @@ export default class extends Controller {
         const provider = new ethers.providers.Web3Provider(web3auth.provider)
         const signer = provider.getSigner()
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, AcademintNFT.abi, signer);
+        const csrfToken = document.querySelector("[name='csrf-token']").content
 
         let nftTxn = await connectedContract.makeAnEpicNFT();
         this.mintNFTTarget.classList.add("d-none")
@@ -89,6 +90,13 @@ export default class extends Controller {
         fetch(this.urlValue, {
           method: "GET",
           headers: { "Accept": "text/plain"}
+        })
+
+        fetch("/certifications", {
+          method: "POST",
+          headers: {
+            "X-CSRF-Token": csrfToken,
+            "Accept": "text/plain"},
         })
 
       } else {

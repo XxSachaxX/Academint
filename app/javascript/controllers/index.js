@@ -16,5 +16,8 @@ application.register("dropdown", DropdownController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import TabDashboardController from "./tab_dashboard_controller"
+application.register("tab-dashboard", TabDashboardController)
+
 import WalletController from "./wallet_controller"
 application.register("wallet", WalletController)

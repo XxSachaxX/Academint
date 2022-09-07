@@ -1,42 +1,60 @@
 <div class="container">
   <div class="dashboard-container">
     <h1>Bienvenue <%= current_user.username.capitalize %> !</h1>
-    <%# <p class="paragraph-large">Tu peux retrouver toutes les informations sur tes cours et tes certifications ici.</p> %>
-    <div class="dashboard">
+    <div class="dashboard" data-controller="tab-dashboard">
       <div class="tabs-dashboard">
         <ul>
-          <li class="active-tab">Mes cours</li>
-          <li>Certifications NFT</li>
+          <li class="active-tab" data-tab-dashboard-target="courses" data-action="click->tab-dashboard#showCourses">Mes cours</li>
+          <li data-tab-dashboard-target="certificates" data-action="click->tab-dashboard#showCertificates">Certifications NFT</li>
         </ul>
       </div>
-      <div class="non-finished-courses">
-        <p class="large-paragraph">Mes cours en progression <strong><em>(<%= @count_unfinished %>)</em></strong></p>
-        <% if @count_unfinished == 0 %>
-          <p><em>Vous n'avez pas encore de cours en progression.</em></p>
-          <%= link_to 'Découvrir nos cours', courses_path, class: 'btn-secondary-fill' %>
-        <% else %>
-        <div class="display-cards-dashboard">
-          <% current_user.classrooms.each do |classroom| %>
-            <% unless classroom.finished? %>
-              <%= render "shared/card_dashboard_unfinished", course: classroom.course, classroom: classroom %>
-            <% end %>
-          <% end %>
-        </div>
-        <% end %>
-      </div>
-      <div class="finished-courses">
-        <p class="large-paragraph">Mes cours terminés <strong><em>(<%= @count_finished %>)</em></strong></p>
-        <% if @count_finished == 0 %>
-          <p><em>Vous n'avez pas encore terminé de cours</em></p>
-        <% else %>
+      <div data-tab-dashboard-target="dashboardCourses">
+        <div class="non-finished-courses">
+          <p class="large-paragraph">Mes cours en progression <strong><em>(<%= @count_unfinished %>)</em></strong></p>
+          <% if @count_unfinished == 0 %>
+            <p><em>Vous n'avez pas encore de cours en progression.</em></p>
+            <%= link_to 'Découvrir nos cours', courses_path, class: 'btn-secondary-fill' %>
+          <% else %>
           <div class="display-cards-dashboard">
             <% current_user.classrooms.each do |classroom| %>
-              <% if classroom.finished? %>
-                <%= render "shared/card_dashboard_finished", course: classroom.course, classroom: classroom %>
+              <% unless classroom.finished? %>
+                <%= render "shared/card_dashboard_unfinished", course: classroom.course, classroom: classroom %>
               <% end %>
             <% end %>
           </div>
-        <% end %>
+          <% end %>
+        </div>
+        <div class="finished-courses">
+          <p class="large-paragraph">Mes cours terminés <strong><em>(<%= @count_finished %>)</em></strong></p>
+          <% if @count_finished == 0 %>
+            <p><em>Vous n'avez pas encore terminé de cours</em></p>
+          <% else %>
+            <div class="display-cards-dashboard">
+              <% current_user.classrooms.each do |classroom| %>
+                <% if classroom.finished? %>
+                  <%= render "shared/card_dashboard_finished", course: classroom.course, classroom: classroom %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="certificates-display d-none" data-tab-dashboard-target="dashboardCertificates">
+      <% current_user.certifications.reverse.each do |certificate| %>
+        <div class="card-certificate">
+          <div class="card-certificate-img">
+            <%= cl_image_tag(certificate.photo.key) %>
+          </div>
+          <div class="card-certificate-text">
+            <p class="label">
+              <%= certificate.name %>
+            </p>
+            <p class="text-ellipsis--2">
+              <%= certificate.description %>
+            </p>
+          </div>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>
