@@ -6,12 +6,16 @@
     <div class="trix-content">
       <%= lesson.enriched_content %>
     </div>
-  <% else %>
-    <p class="medium-paragraph justify-text"><%= lesson.content %></p>
+  <% elsif lesson.media == "quizz" %>
     <% if @last_lecture.status == 'done' %>
+      <p class="congrats" ><strong class="congrats-strong">Felicitation !!!</strong> Vous avez fini votre test et obtenu votre certification, récupérez votre NFT sur le cours '<strong><%= classroom.course.name %></strong>' !  </p>
       <div class="img-congrats">
         <%= image_tag "congrats.gif", style:'object-fit: scale-down', height:'360px' %>
       </div>
+    <% else %>
+      <p class="medium-paragraph justify-text"><%= lesson.content %></p>
     <% end %>
+  <% else %>
+    <p class="medium-paragraph justify-text"><%= lesson.content %></p>
   <% end %>
 </div>
