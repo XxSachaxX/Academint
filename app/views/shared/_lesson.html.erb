@@ -7,7 +7,7 @@
       <%= lesson.enriched_content %>
     </div>
   <% else %>
-    <p class="medium-paragraph-congrats justify-text"><%= lesson.content %></p>
+    <p class="medium-paragraph justify-text"><%= lesson.content %></p>
     <% if @last_lecture.status == 'done' %>
       <div class="img-congrats">
         <%= image_tag "congrats.gif", style:'object-fit: scale-down', height:'360px' %>
