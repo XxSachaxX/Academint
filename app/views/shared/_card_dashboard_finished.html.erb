@@ -13,6 +13,11 @@
         <button class="badge badge-expert"><%= course.level.capitalize %></button>
       <% end %>
       <p class="green">Terminé à <strong><%= (classroom.completed_percentage * 100).round %>%</strong></p>
+      <% if classroom.minted %>
+        <p>hello</p>
+      <% else %>
+        <p>salut</p>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -29,6 +29,10 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
+  def minted
+    classroom.minted = true
+  end
+
   private
 
   def create_lectures
