@@ -4,13 +4,15 @@
   <div class="quizz-container">
     <%= form_with url: "/courses/#{@course.id}/classrooms/#{@classroom.id}/lectures/#{@lecture.id}/quizz_submit" do |form| %>
       <h3>Quizz: <%= @course.name %></h3>
-      <% Answer.all.each do |answer| %>
-      <p class="large-paragraph"><%= answer.question.content %></h3>
-      <% answer.content.split(',').each_with_index do |word, index| %>
+      <% @lecture.lesson.questions.each do |question| %>
+      <p class="large-paragraph"><%= question.content %></h3>
+      <% question.answers.each do |answer|  %>
+        <% answer.content.split(',').each_with_index do |word, index| %>
       <div class="answers-quizz">
         <%= form.check_box :"user_answers[#{answer.id}][#{index + 1}]", class: "input-quizz"%>
         <%= form.label :"user_answers[#{answer.id}][#{index + 1}]", word %>
       </div>
+          <% end %>
         <% end %>
       <% end %>
       <div class="submit-quizz">
