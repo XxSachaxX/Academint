@@ -300,36 +300,8 @@ course1_chapter3_lesson2 = Lesson.new(title: "Inhéritance et 'Self'", media: "t
 course1_chapter3_lesson2.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 1"
-course1_chapter4_lesson1 = Lesson.new(title: "Controlleurs, vues et routes, un premier aperçu de Rails", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
-                                         chapter_id: course1_chapter4.id, content: "Le nombre de cas d’usage
-                                         potentiels des NFT ne cesse de croître avec le temps, et des exemples toujours
-                                         plus innovants voient régulièrement le jour. Néanmoins, il existe une poignée
-                                         de cas d’usage particulièrement populaires. En voici quelques-uns :
-
-                                         **Actifs in-game :les NFT peuvent représenter des éléments de jeu , tels que
-                                         des armes, des bonus, des véhicules, des personnages, etc. L’utilisation de
-                                         l’élément durant le jeu peut brûler (détruire) le NFT ou le verrouiller avec
-                                         un délai de refroidissement associé, jusqu’à ce qu’il puisse être réutilisable.
-                                         **Cartes à collectionner / collectors: actuellement, une grande partie des NFT
-                                         représente des collectors crypto tels que les CryptoKitties, les Axies
-                                         (Axie Infinity), les CryptoPunks et les cartes à collectionner de sport.
-
-                                         **Propriété foncière: dans Decentraland, les NFT représentent des parcelles
-                                         de terrain dans différents quartiers du monde virtuel du jeu.
-                                         Les propriétaires de LAND peuvent construire et monétiser leur parcelle,
-                                         par exemple en la louant à d’autres joueurs ou en l’utilisant pour la publicité
-
-                                         **Noms de domaine: les NFT sont actuellement utilisés comme domaines sur la
-                                         blockchain. Ces tokens représentent essentiellement la propriété d’un domaine
-                                         de cryptos particulier, comme nom.eth ou token.crypto.
-
-                                         **Œuvres d’art: les NFT peuvent représenter des œuvres d’art individuelles
-                                         qui ont été tokenisées et qui sont maintenant représentées par un token unique.
-                                          Posséder le NFT équivaut à posséder l’œuvre d’art correspondante.
-                                          Comme les actifs numériques standards, les NFT sont également utilisés comme
-                                          instruments d’investissements spéculatifs. Ils sont échangés sur des marchés
-                                          de NFT tels que OpenSea et The Sandbox, généralement par des traders et des
-                                          investisseurs expérimentés.")
+course1_chapter4_lesson1 = Lesson.new(title: "Controlleurs, vues et routes, un premier aperçu de Rails", media: "video", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
+                                         chapter_id: course1_chapter4.id, content: "Apprendre_Ruby_on_Rails_15_30___Vues_Helpers_gz1i9x")
 course1_chapter4_lesson1.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 2"
