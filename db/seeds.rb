@@ -17,9 +17,9 @@ user1.photo.attach(io: avatar1, filename: 'John Webber', content_type: "image/jp
 user1.save!
 
 puts "Creating user 2"
-user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'B.PONCET')
+user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'Arnaud')
 avatar2 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
-user2.photo.attach(io: avatar2, filename: 'Baptiste Poncet', content_type: "image/jpg")
+user2.photo.attach(io: avatar2, filename: 'Arnaud', content_type: "image/jpg")
 user2.save!
 
 puts "Creating user 3"
@@ -681,3 +681,19 @@ course3_chapter4_lesson3 = Lesson.new(title: "Réseaux privés", media: "texte",
                                         Si un réseau public Ethereum est comme l'Internet public, vous pouvez considérer
                                          un réseau de consortium comme un intranet privé.")
 course3_chapter4_lesson3.save!
+
+puts "Creating certifications"
+
+puts "Creating certification 1 for user2"
+certification1 = Certification.new(name: "Comprendre la blockchain", description: "Certifie des connaissances sur le
+                                   fonctionnement et l'usage de la blockchain.", user_id: user2.id)
+certif1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662548352/NFT_Academint_blockchain_tkrngz.svg")
+certification1.photo.attach(io: certif1, filename: 'certif1', content_type: "image/jpg")
+certification1.save!
+
+puts "Creating certification 2 for user2"
+certification2 = Certification.new(name: "Introduction à Ethereum", description: "Certifie des connaissances sur le
+                                   fonctionnement d'Ethereum.", user_id: user2.id)
+certif2 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662548352/NFT_Academint_ethereum_oflkmz.svg")
+certification2.photo.attach(io: certif2, filename: 'certif2', content_type: "image/jpg")
+certification2.save!
