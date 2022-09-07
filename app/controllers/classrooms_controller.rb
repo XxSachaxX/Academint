@@ -29,6 +29,11 @@ class ClassroomsController < ApplicationController
     authorize @classroom
   end
 
+  def minted
+    @classroom = Classroom.find(params[:id])
+    @classroom.update(minted: true)
+  end
+
   private
 
   def create_lectures

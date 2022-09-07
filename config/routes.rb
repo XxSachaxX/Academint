@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :classrooms, only: %i[new create show] do
       member do
         get :mint_nft
+        get :minted
       end
       resources :lectures, only: %i[new create show] do
         member do
