@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :lessons, through: :chapters
   has_many :designed_chapters, through: :designed_courses, source: :chapters
   has_many :designed_lessons, through: :designed_chapters, source: :lessons
+  has_many :certifications, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
