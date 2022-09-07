@@ -1,9 +1,9 @@
 class LecturePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 
   def create?
@@ -11,18 +11,18 @@ class LecturePolicy < ApplicationPolicy
   end
 
   def next?
-    true
+    record.classroom.user == user
   end
 
   def show?
-    true
+    record.classroom.user == user
   end
 
   def quizz?
-    true
+    record.classroom.user == user
   end
 
   def quizz_submit?
-    true
+    record.classroom.user == user
   end
 end

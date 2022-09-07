@@ -1,9 +1,9 @@
 class ClassroomPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 
   def create?
@@ -11,14 +11,14 @@ class ClassroomPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.user == user
   end
 
   def next?
-    true
+    record.user == user
   end
 
   def mint_nft?
-    true
+    record.user == user
   end
 end
