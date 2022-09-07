@@ -22,14 +22,6 @@
   text-decoration: none;
 }
 
-.done-certificate {
-  color: $green-100;
-}
-
-.undone-certificate {
-  color: $neutral-800; 
-}
-
 // .card-main-img {
 //   height: 50%;
 //   img {
@@ -137,6 +129,7 @@
   box-shadow: $elevation-100;
   padding: 1rem;
   transition: 0.2 ease-in-out;
+  height: 10rem;
   h3 {
     color: $neutral-0;
     margin: 0;
@@ -155,6 +148,10 @@
   box-shadow: $elevation-100;
   padding: 1rem;
   transition: 0.2 ease-in-out;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .green {
     color: $green-300;
   }
@@ -167,6 +164,18 @@
   }
 }
 
-.test {
-  color: red;
+.done-certificate {
+  color: $green-100;
+}
+
+.undone-certificate {
+  color: $neutral-300;
+}
+
+.checked-progress-finished-card {
+  display: flex;
+  align-items: center;
+  p {
+    padding-right: 1rem;
+  }
 }
