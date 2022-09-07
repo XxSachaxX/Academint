@@ -25,7 +25,7 @@ class ClassroomsController < ApplicationController
   end
 
   def mint_nft
-    @classroom = Lecture.find(params[:id]).classroom
+    @classroom = Classroom.find(params[:id])
     authorize @classroom
   end
 
