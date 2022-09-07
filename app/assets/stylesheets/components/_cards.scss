@@ -1,7 +1,7 @@
 // Card homepage
 
 .card-main {
-  height: 10rem;
+  height: 11rem;
   width: 100%;
   box-shadow: $elevation-100;
   border-radius: $border-radius-main;
@@ -20,6 +20,14 @@
 }
 .link-card {
   text-decoration: none;
+}
+
+.done-certificate {
+  color: $green-100;
+}
+
+.undone-certificate {
+  color: $neutral-800; 
 }
 
 // .card-main-img {

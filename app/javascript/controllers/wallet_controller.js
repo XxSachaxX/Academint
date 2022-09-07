@@ -3,11 +3,12 @@ import { ethers } from "ethers";
 import AcademintNFT from '.././utils/AcademintNFT.json';
 
 let web3auth = null;
-const CONTRACT_ADDRESS = '0x4E6d218794432aFce479d51e6091916BC309D51F';
+const CONTRACT_ADDRESS = '0xD1F8f44971C2E5a861B1Ec475826a143f57af04f';
 
 // Connects to data-controller="wallet"
 export default class extends Controller {
   static targets = ["connect", "mintNFT", "ongoing", "done", "logout"]
+  static values = {url: String}
 
   connect() {
 
@@ -19,12 +20,14 @@ export default class extends Controller {
       clientId,
       chainConfig: {
         chainNamespace: "eip155",
-        chainId: "0x5",
-        rpcTarget: "https://rpc.ankr.com/eth_goerli",
-        displayName: "Ropsten Testnet",
-        blockExplorer: "https://goerli.etherscan.io",
-        ticker: "ETH",
-        tickerName: "Ethereum",
+        chainId: "0x13881", // hex of 80001, polygon testnet
+        rpcTarget: "https://rpc.ankr.com/polygon_mumbai",
+        // Avoid using public rpcTarget in production.
+        // Use services like Infura, Quicknode etc
+        displayName: "Polygon Mainnet",
+        blockExplorer: "https://mumbai.polygonscan.com/",
+        ticker: "MATIC",
+        tickerName: "Matic",
       },
     });
     await web3auth.initModal();
@@ -40,6 +43,7 @@ export default class extends Controller {
     }
 
     this.doneTarget.classList.add('d-none')
+    console.log(this.urlValue);
   }
 
   async connectWallet() {
@@ -65,7 +69,9 @@ export default class extends Controller {
     }
   }
 
-  async askContractToMintNft() {
+  async askContractToMintNft(evt) {
+    evt.preventDefault();
+
     try {
     if (web3auth.provider) {
         const provider = new ethers.providers.Web3Provider(web3auth.provider)
@@ -79,6 +85,11 @@ export default class extends Controller {
         await nftTxn.wait();
         this.ongoingTarget.classList.add("d-none")
         this.doneTarget.classList.remove("d-none")
+
+        fetch(this.urlValue, {
+          method: "GET",
+          headers: { "Accept": "text/plain"}
+        })
 
       } else {
         alert('wallet not connected');

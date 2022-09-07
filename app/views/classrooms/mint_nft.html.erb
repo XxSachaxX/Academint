@@ -1,4 +1,4 @@
-<div class="container" data-controller="wallet">
+<div class="container" data-controller="wallet" data-wallet-url-value="<%= minted_course_classroom_path(@classroom.course, @classroom) %>">
   <div class="minting">
     <%= image_tag "background_image_login.svg", alt: "image de fond" %>
 
@@ -23,6 +23,7 @@
       <div class="interact-wallet d-none" data-wallet-target="done">
         <h2>Votre certificat est dans votre portefeuille !</h2>
         <i class="fa-solid fa-circle-check done-lesson-classroom"></i>
+        <a href="https://testnets.opensea.io/assets/mumbai/0xd1f8f44971c2e5a861b1ec475826a143f57af04f/0" class="btn-main" target="_blank">Voir sur OpenSea</a>
       </div>
     </div>
   </div>

@@ -12,7 +12,14 @@
       <% elsif course.level == 'expert' %>
         <button class="badge badge-expert"><%= course.level.capitalize %></button>
       <% end %>
-      <p class="green">Terminé à <strong><%= (classroom.completed_percentage * 100).round %>%</strong></p>
-    </div>
+      <p class="green">
+        Terminé à <strong><%= (classroom.completed_percentage * 100).round %>%</strong>
+        <% if classroom.minted %>
+          <i class="fa-solid fa-certificate done-certificate"></i>
+        <% else %>
+          <i class="fa-solid fa-certificate undone-certificate"></i>
+        <% end %>
+      </p>
+    </div>  
   </div>
 <% end %>

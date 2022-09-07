@@ -23,6 +23,8 @@ class LecturesController < ApplicationController
       if @next_lecture
         @next_lecture.ongoing!
         redirect_to course_classroom_lecture_path(@classroom.course, @classroom, @next_lecture)
+      else
+        redirect_to course_classroom_lecture_path(@classroom.course, @classroom, @lecture)
       end
     end
     authorize @classroom
@@ -32,7 +34,7 @@ class LecturesController < ApplicationController
     @lecture = Lecture.find(params[:id])
     @classroom = Classroom.find(params[:classroom_id])
     @course = Course.find(params[:course_id])
-    @last_course = @classroom.lectures.last == @lecture
+    @is_last_lecture = @classroom.lectures.last == @lecture
     @last_lecture = @classroom.lectures.last
     @skip_footer = true
     authorize @lecture
@@ -72,11 +74,14 @@ class LecturesController < ApplicationController
     quizz_answers_array = @lesson.quizz_answers.split(",")
     @counter = 0
     user_answers_array.each_with_index do |user_answer, index|
-      if user_answers_array[index] == quizz_answers_array[index]
+      if user_answer == quizz_answers_array[index]
         @counter += 1
       end
     end
-    @success_rate = (@counter * 100) / user_answers_array.length
+    if user_answers_array.length == 0
+      @success_rate = 0
+    else
+      @success_rate = (@counter * 100) / user_answers_array.length
+    end
   end
-
 end

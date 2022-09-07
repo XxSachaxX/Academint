@@ -18,6 +18,8 @@ class Lesson < ApplicationRecord
       "fa-podcast"
     when "quizz"
       "fa-circle-question"
+    when "texte enrichi"
+      "fa-file-lines"
     else
       self.media
     end

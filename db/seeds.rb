@@ -17,9 +17,9 @@ user1.photo.attach(io: avatar1, filename: 'John Webber', content_type: "image/jp
 user1.save!
 
 puts "Creating user 2"
-user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'B.PONCET')
+user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'Arnaud')
 avatar2 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
-user2.photo.attach(io: avatar2, filename: 'Baptiste Poncet', content_type: "image/jpg")
+user2.photo.attach(io: avatar2, filename: 'Arnaud', content_type: "image/jpg")
 user2.save!
 
 puts "Creating user 3"
@@ -49,7 +49,7 @@ course1 = Course.new(name: 'Apprendre à coder en Ruby (1ère partie)',
                      user_id: user1.id)
 
 # cover1 = URI.open("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/feb1bb9c-d4bb-45be-b997-22069b5bb889/1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220830T153408Z&X-Amz-Expires=86400&X-Amz-Signature=fc77682a444b731d2d4ef761944a4c335881fd2ec3771a5a92d2d2c439cde85b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%221.png%22&x-id=GetObject")
-cover1 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1200px-Ruby_logo.svg.png")
+cover1 = URI.open("https://stackify.com/wp-content/uploads/2018/09/Learn-Ruby-Tutorial.jpg")
 
 course1.photo.attach(io: cover1, filename: "Cours 1", content_type: "image/jpg")
 course1.save!
@@ -300,40 +300,12 @@ course1_chapter3_lesson2 = Lesson.new(title: "Inhéritance et 'Self'", media: "t
 course1_chapter3_lesson2.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 1"
-course1_chapter4_lesson1 = Lesson.new(title: "Controlleurs, vues et routes, un premier aperçu de Rails", media: "texte", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
-                                         chapter_id: course1_chapter4.id, content: "Le nombre de cas d’usage
-                                         potentiels des NFT ne cesse de croître avec le temps, et des exemples toujours
-                                         plus innovants voient régulièrement le jour. Néanmoins, il existe une poignée
-                                         de cas d’usage particulièrement populaires. En voici quelques-uns :
-
-                                         **Actifs in-game :les NFT peuvent représenter des éléments de jeu , tels que
-                                         des armes, des bonus, des véhicules, des personnages, etc. L’utilisation de
-                                         l’élément durant le jeu peut brûler (détruire) le NFT ou le verrouiller avec
-                                         un délai de refroidissement associé, jusqu’à ce qu’il puisse être réutilisable.
-                                         **Cartes à collectionner / collectors: actuellement, une grande partie des NFT
-                                         représente des collectors crypto tels que les CryptoKitties, les Axies
-                                         (Axie Infinity), les CryptoPunks et les cartes à collectionner de sport.
-
-                                         **Propriété foncière: dans Decentraland, les NFT représentent des parcelles
-                                         de terrain dans différents quartiers du monde virtuel du jeu.
-                                         Les propriétaires de LAND peuvent construire et monétiser leur parcelle,
-                                         par exemple en la louant à d’autres joueurs ou en l’utilisant pour la publicité
-
-                                         **Noms de domaine: les NFT sont actuellement utilisés comme domaines sur la
-                                         blockchain. Ces tokens représentent essentiellement la propriété d’un domaine
-                                         de cryptos particulier, comme nom.eth ou token.crypto.
-
-                                         **Œuvres d’art: les NFT peuvent représenter des œuvres d’art individuelles
-                                         qui ont été tokenisées et qui sont maintenant représentées par un token unique.
-                                          Posséder le NFT équivaut à posséder l’œuvre d’art correspondante.
-                                          Comme les actifs numériques standards, les NFT sont également utilisés comme
-                                          instruments d’investissements spéculatifs. Ils sont échangés sur des marchés
-                                          de NFT tels que OpenSea et The Sandbox, généralement par des traders et des
-                                          investisseurs expérimentés.")
+course1_chapter4_lesson1 = Lesson.new(title: "Controlleurs, vues et routes, un premier aperçu de Rails", media: "video", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
+                                         chapter_id: course1_chapter4.id, content: "Apprendre_Ruby_on_Rails_15_30___Vues_Helpers_gz1i9x")
 course1_chapter4_lesson1.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 2"
-course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "1,2,2,2", chapter_id: course1_chapter4.id,
+course1_chapter4_lesson2 = Lesson.new(title: "Quizz", media: "quizz", quizz_answers: "2,2,2,2", chapter_id: course1_chapter4.id,
                                       content: "Vous allez maintenant pouvoir tester vos connaissances sur le langage de
                                        programmation Ruby à travers un cours quizz. Pour le réussir vous devrez valider
                                        90% de bonnes réponses, mais si vous échouez ne vous découragez pas! Révisez
@@ -681,3 +653,19 @@ course3_chapter4_lesson3 = Lesson.new(title: "Réseaux privés", media: "texte",
                                         Si un réseau public Ethereum est comme l'Internet public, vous pouvez considérer
                                          un réseau de consortium comme un intranet privé.")
 course3_chapter4_lesson3.save!
+
+puts "Creating certifications"
+
+puts "Creating certification 1 for user2"
+certification1 = Certification.new(name: "Comprendre la blockchain", description: "Certifie des connaissances sur le
+                                   fonctionnement et l'usage de la blockchain.", user_id: user2.id)
+certif1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662548352/NFT_Academint_blockchain_tkrngz.svg")
+certification1.photo.attach(io: certif1, filename: 'certif1', content_type: "image/jpg")
+certification1.save!
+
+puts "Creating certification 2 for user2"
+certification2 = Certification.new(name: "Introduction à Ethereum", description: "Certifie des connaissances sur le
+                                   fonctionnement d'Ethereum.", user_id: user2.id)
+certif2 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662548352/NFT_Academint_ethereum_oflkmz.svg")
+certification2.photo.attach(io: certif2, filename: 'certif2', content_type: "image/jpg")
+certification2.save!
