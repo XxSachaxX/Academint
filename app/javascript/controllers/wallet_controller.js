@@ -8,6 +8,7 @@ const CONTRACT_ADDRESS = '0xD1F8f44971C2E5a861B1Ec475826a143f57af04f';
 // Connects to data-controller="wallet"
 export default class extends Controller {
   static targets = ["connect", "mintNFT", "ongoing", "done", "logout"]
+  static values = {url: String}
 
   connect() {
 
@@ -42,6 +43,7 @@ export default class extends Controller {
     }
 
     this.doneTarget.classList.add('d-none')
+    console.log(this.urlValue);
   }
 
   async connectWallet() {
@@ -67,7 +69,9 @@ export default class extends Controller {
     }
   }
 
-  async askContractToMintNft() {
+  async askContractToMintNft(evt) {
+    evt.preventDefault();
+
     try {
     if (web3auth.provider) {
         const provider = new ethers.providers.Web3Provider(web3auth.provider)
@@ -81,6 +85,11 @@ export default class extends Controller {
         await nftTxn.wait();
         this.ongoingTarget.classList.add("d-none")
         this.doneTarget.classList.remove("d-none")
+
+        fetch(this.urlValue, {
+          method: "GET",
+          headers: { "Accept": "text/plain"}
+        })
 
       } else {
         alert('wallet not connected');
