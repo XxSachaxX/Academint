@@ -657,15 +657,13 @@ course3_chapter4_lesson3.save!
 puts "Creating certifications"
 
 puts "Creating certification 1 for user2"
-certification1 = Certification.new(name: "Comprendre la blockchain", description: "Certifie des connaissances sur le
-                                   fonctionnement et l'usage de la blockchain.", user_id: user2.id)
+certification1 = Certification.new(name: "Comprendre la blockchain", description: "Certificat délivré par Academint pour le cours Comprendre la blockchain", user_id: user2.id)
 certif1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662548352/NFT_Academint_blockchain_tkrngz.svg")
 certification1.photo.attach(io: certif1, filename: 'certif1', content_type: "image/jpg")
 certification1.save!
 
 puts "Creating certification 2 for user2"
-certification2 = Certification.new(name: "Introduction à Ethereum", description: "Certifie des connaissances sur le
-                                   fonctionnement d'Ethereum.", user_id: user2.id)
+certification2 = Certification.new(name: "Introduction à Ethereum", description: "Certificat délivré par Academint pour le cours Introduction à Ethereum", user_id: user2.id)
 certif2 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662548352/NFT_Academint_ethereum_oflkmz.svg")
 certification2.photo.attach(io: certif2, filename: 'certif2', content_type: "image/jpg")
 certification2.save!
