@@ -1,12 +1,17 @@
 <div class='course-display-content'>
   <h1><%= lesson.title %></h1>
   <% if lesson.media == "video" %>
-    <%= cl_video_tag(lesson.content, :controls => true, :width=>940) %>
+    <%= cl_video_tag(lesson.content, :controls => true, :width=>740) %>
   <% elsif lesson.media == "texte enrichi" %>
     <div class="trix-content">
       <%= lesson.enriched_content %>
     </div>
   <% else %>
     <p class="medium-paragraph justify-text"><%= lesson.content %></p>
+    <% if @last_lecture.status == 'done' %>
+      <div class="img-congrats">
+        <%= image_tag "congrats.gif", style:'object-fit: scale-down', height:'360px' %>
+      </div>
+    <% end %>
   <% end %>
 </div>
