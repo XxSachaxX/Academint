@@ -17,7 +17,8 @@
     </div>
   <% elsif lesson.media == "quizz" %>
     <% if @last_lecture.status == 'done' %>
-      <p class="congrats" ><strong class="congrats-strong">Felicitation !!!</strong> Vous avez fini votre test et obtenu votre certification, récupérez votre NFT sur le cours '<strong><%= classroom.course.name %></strong>' !  </p>
+    <h3>Félicitations !</h3>
+      <p>Vous avez fini votre test, vous pouvez désormais récupérer votre certificat sur le cours '<strong><em><%= classroom.course.name %></em></strong>'</p>
       <div class="img-congrats">
         <%= image_tag "congrats.gif", style:'object-fit: scale-down', height:'360px' %>
       </div>
