@@ -7,7 +7,7 @@ class Classroom < ApplicationRecord
   validates :course_id, uniqueness: { scope: :user_id }
 
   def finished?
-    self.lectures.each do |lecture|
+    lectures.each do |lecture|
       return false unless lecture.done?
     end
     return true

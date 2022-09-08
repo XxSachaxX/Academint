@@ -12,7 +12,8 @@ class ChaptersController < ApplicationController
     @course = Course.find(params[:course_id])
     @chapter.course = @course
     if @chapter.save
-      redirect_to new_course_chapter_path(@course), notice: "Chapitre créé, vous pouvez ajouter vos leçons ou d'autres chapites"
+      redirect_to new_course_chapter_path(@course),
+                  notice: "Chapitre créé, vous pouvez ajouter vos leçons ou d'autres chapites"
     else
       render :new, status: :unprocessable_entity
     end

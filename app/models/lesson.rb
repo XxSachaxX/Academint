@@ -9,7 +9,7 @@ class Lesson < ApplicationRecord
   validates :media, :title, presence: true
 
   def display_media
-    case self.media
+    case media
     when "video"
       "fa-circle-play"
     when "texte"
@@ -23,7 +23,7 @@ class Lesson < ApplicationRecord
     when "texte enrichi + video"
       "fa-circle-play"
     else
-      self.media
+      media
     end
   end
 end
