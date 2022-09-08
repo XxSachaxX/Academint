@@ -20,6 +20,8 @@ class Lesson < ApplicationRecord
       "fa-circle-question"
     when "texte enrichi"
       "fa-file-lines"
+    when "texte enrichi + video"
+      "fa-circle-play"
     else
       self.media
     end
