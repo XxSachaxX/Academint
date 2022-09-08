@@ -322,12 +322,12 @@ course1_chapter4_lesson2_question1_answers = Answer.new(content: "Programmation,
 course1_chapter4_lesson2_question1_answers.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 2"
-course1_chapter4_lesson2_question2 = Question.new(content: "La commande mkdir sert à:",
+course1_chapter4_lesson2_question2 = Question.new(content: "Que va me retourner [1, 51, 22, 33][1] ?",
                                                   lesson_id: course1_chapter4_lesson2.id)
 course1_chapter4_lesson2_question2.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 2 Answers"
-course1_chapter4_lesson2_question2_answers = Answer.new(content: "Créer un nouveau fichier,Créer un nouveau dossier,Se déplacer vers un autre dossier", question_id: course1_chapter4_lesson2_question2.id)
+course1_chapter4_lesson2_question2_answers = Answer.new(content: "1,51,22,33", question_id: course1_chapter4_lesson2_question2.id)
 course1_chapter4_lesson2_question2_answers.save!
 
 puts "Creating course 1 chapter 4 lesson 2 Question 3"
