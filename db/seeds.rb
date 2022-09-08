@@ -17,7 +17,7 @@ user1.photo.attach(io: avatar1, filename: 'John Webber', content_type: "image/jp
 user1.save!
 
 puts "Creating user 2"
-user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'Arnaud Lebogoss')
+user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'Arnaud')
 avatar2 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
 user2.photo.attach(io: avatar2, filename: 'Arnaud Lebogoss', content_type: "image/jpg")
 user2.save!
@@ -300,8 +300,10 @@ course1_chapter3_lesson2 = Lesson.new(title: "Inhéritance et 'Self'", media: "t
 course1_chapter3_lesson2.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 1"
-course1_chapter4_lesson1 = Lesson.new(title: "Controlleurs, vues et routes, un premier aperçu de Rails", media: "video", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
+course1_chapter4_lesson1 = Lesson.new(title: "Modèle-Vue-Contrôleur", media: "texte enrichi + video", quizz_answers: "3,1,3,1,1,1,2,1,4,1",
                                          chapter_id: course1_chapter4.id, content: "Apprendre_Ruby_on_Rails_15_30___Vues_Helpers_gz1i9x")
+
+course1_chapter4_lesson1.enriched_content.body = '<div class="trix-content"><div>Nous allons maintenant rentrer dans le vif du sujet en créant notre première page, ce qui nous permettra de découvrir rapidement le fonctionnement du framework. <br>Le but est d\'avoir un aperçu rapide de la <strong>structure MVC</strong>.<strong><br><br></strong></div></div>'
 course1_chapter4_lesson1.save!
 
 puts "Creating Course 1 Chapter 4 Lesson 2"

@@ -33,3 +33,7 @@
 #lesson_enriched_content {
   min-height: 400px;
 }
+
+.attachment__caption {
+  display: none;
+}
