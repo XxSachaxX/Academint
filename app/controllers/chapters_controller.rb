@@ -27,7 +27,7 @@ class ChaptersController < ApplicationController
   def update
     @course = Course.find(params[:course_id])
     if @chapter.update(chapter_params)
-      redirect_to  edit_course_path(@course), notice: "Chapitre mis à jours"
+      redirect_to  edit_course_path(@course), notice: "Chapitre mis à jour"
     else
       render :new, status: :unprocessable_entity
     end
