@@ -12,7 +12,7 @@ User.destroy_all
 puts "Creating 5 users...."
 puts "Creating user 1"
 user1 = User.new(email: 'academint@gmail.com', password: '123456', username: 'academint')
-avatar1 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
+avatar1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/v1662387291/logo-avatar_lwwxuq.png")
 user1.photo.attach(io: avatar1, filename: 'John Webber', content_type: "image/jpg")
 user1.save!
 
