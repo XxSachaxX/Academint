@@ -15,10 +15,10 @@
                   </div>
                 <% end %>
               <% elsif lecture.status == "pending" %>
-                <div class="lesson-tabs">
-                  <i class="fa-solid fa-lock disabled-link"></i>
+                <div class="lesson-tabs disabled-link">
+                  <i class="fa-solid fa-lock"></i>
                   <i class="fa-solid <%= lecture.lesson.display_media %> tab-icon"></i>
-                  <p class="disabled-link"><%= lecture.lesson.title%></p>
+                  <p><%= lecture.lesson.title%></p>
                 </div>
               <% elsif lecture.status == "ongoing" %>
                 <%= link_to course_classroom_lecture_path(@course, @classroom, lecture), class: "link-card" do %>
