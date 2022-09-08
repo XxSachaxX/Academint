@@ -12,14 +12,14 @@ User.destroy_all
 puts "Creating 5 users...."
 puts "Creating user 1"
 user1 = User.new(email: 'academint@gmail.com', password: '123456', username: 'academint')
-avatar1 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
+avatar1 = URI.open("https://res.cloudinary.com/dunslpwim/image/upload/c_crop,w_350/v1662625264/Logo_square_hf56bj.jpg")
 user1.photo.attach(io: avatar1, filename: 'John Webber', content_type: "image/jpg")
 user1.save!
 
 puts "Creating user 2"
-user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'Arnaud')
+user2 = User.new(email: 'b.poncet@gmail.com', password: '123456', username: 'Arnaud Lebogoss')
 avatar2 = URI.open("https://ca.slack-edge.com/T02NE0241-U03NRPQCG1F-119a57eec9f6-512")
-user2.photo.attach(io: avatar2, filename: 'Arnaud', content_type: "image/jpg")
+user2.photo.attach(io: avatar2, filename: 'Arnaud Lebogoss', content_type: "image/jpg")
 user2.save!
 
 puts "Creating user 3"
