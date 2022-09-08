@@ -18,8 +18,8 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :chapters, only: %i[new create edit destroy] do
-      resources :lessons, only: %i[new create edit destroy]
+    resources :chapters, only: %i[new create edit update destroy] do
+      resources :lessons, only: %i[new create edit update destroy]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

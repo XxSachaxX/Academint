@@ -1,2 +1,25 @@
-<h1>Courses#edit</h1>
-<p>Find me in app/views/courses/edit.html.erb</p>
+<div class="container">
+  <%= simple_form_for @course do |f| %>
+    <div class="input-label">
+      <%= f.input :name, label: 'Nom du cours' %>
+      <%= f.input :description, label: 'Description', placeholder: 'Description du cours' %>
+      <%= f.input :level, collection: [ "débutant", "intermédiaire", "expert"] %>
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+
+  <div>
+    <% @course.chapters.each do |chapter| %>
+        <h4><%= chapter.name %> || <%= link_to "Modifier le chapitre", edit_course_chapter_path(@course, chapter), class:"btn-secondary-fill"  %></h4>
+        <% chapter.lessons.each do |lesson| %>
+          <div class="lesson-tabs">
+            <p><i class="fa-solid <%= lesson.display_media %>"></i> <%= lesson.title %> || <%= link_to "Modifier la leçon", edit_course_chapter_lesson_path(@course, chapter, lesson), class:"btn-secondary-fill"  %></p>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to "Ajouter un chapitre", new_course_chapter_path(@course), class:"btn-secondary-fill"  %>
+  </div>
+</div>
