@@ -32,7 +32,7 @@ class LessonsController < ApplicationController
     @chapter = Chapter.find(params[:chapter_id])
     @course = Course.find(params[:course_id])
     if @lesson.update(lesson_params)
-      redirect_to  edit_course_path(@course), notice: "Leçon mis à jours"
+      redirect_to  edit_course_path(@course), notice: "Leçon mise à jour"
     else
       render :new, status: :unprocessable_entity
     end
