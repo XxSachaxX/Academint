@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -23,10 +26,13 @@ class User < ApplicationRecord
 
     # Uncomment the section below if you want users to be created if they don't exist
     unless user
-        user = User.create(username: data['name'],
+        user = User.new(username: data['name'],
            email: data['email'],
            password: Devise.friendly_token[0,20]
         )
+        avatar = URI.open(data['image'])
+        user.photo.attach(io: avatar, filename: data['name'], content_type: "image/jpg")
+        user.save
     end
     user
   end
