@@ -8,9 +8,13 @@
     </div>
   <% end %>
 
+  <p>
+    <%= link_to "Ajouter un chapitre", new_course_chapter_path(@course), class:"btn-secondary-fill"  %>
+  </p>
+
   <div>
     <% @course.chapters.each do |chapter| %>
-        <h4><%= chapter.name %> || <%= link_to "Modifier le chapitre", edit_course_chapter_path(@course, chapter), class:"btn-secondary-fill"  %></h4>
+        <h4><%= chapter.name %> || <%= link_to "Modifier le chapitre", edit_course_chapter_path(@course, chapter), class:"btn-secondary-fill"  %> || <%= link_to "Ajouter une lesson", new_course_chapter_lesson_path(@course, chapter), class:"btn-secondary-fill"  %></h4>
         <% chapter.lessons.each do |lesson| %>
           <div class="lesson-tabs">
             <p><i class="fa-solid <%= lesson.display_media %>"></i> <%= lesson.title %> || <%= link_to "Modifier la leçon", edit_course_chapter_lesson_path(@course, chapter, lesson), class:"btn-secondary-fill"  %></p>
@@ -19,7 +23,4 @@
     <% end %>
   </div>
 
-  <div>
-    <%= link_to "Ajouter un chapitre", new_course_chapter_path(@course), class:"btn-secondary-fill"  %>
-  </div>
 </div>
