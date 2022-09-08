@@ -47,6 +47,11 @@ class CoursesController < ApplicationController
 
   def update
     authorize @course
+    if @course.update(course_params)
+      redirect_to  edit_course_path(@course), notice: "Cours mis à jour"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy

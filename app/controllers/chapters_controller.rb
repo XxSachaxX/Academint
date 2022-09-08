@@ -20,10 +20,17 @@ class ChaptersController < ApplicationController
   end
 
   def edit
+    @course = Course.find(params[:course_id])
     authorize @chapter
   end
 
   def update
+    @course = Course.find(params[:course_id])
+    if @chapter.update(chapter_params)
+      redirect_to  edit_course_path(@course), notice: "Chapitre mis à jour"
+    else
+      render :new, status: :unprocessable_entity
+    end
     authorize @chapter
   end
 

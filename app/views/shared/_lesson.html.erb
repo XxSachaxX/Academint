@@ -8,6 +8,13 @@
     <div class="trix-content">
       <%= lesson.enriched_content %>
     </div>
+  <% elsif lesson.media == "texte enrichi + video" %>
+    <div class="trix-content">
+      <%= lesson.enriched_content %>
+    </div>
+    <div class="course-video">
+      <%= cl_video_tag(lesson.content, :controls => true) %>
+    </div>
   <% elsif lesson.media == "quizz" %>
     <% if @last_lecture.status == 'done' %>
     <h3>Félicitations !</h3>

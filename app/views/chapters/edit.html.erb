@@ -1,2 +1,7 @@
-<h1>Chapters#edit</h1>
-<p>Find me in app/views/chapters/edit.html.erb</p>
+<div class="container">
+  <%= simple_form_for [@course, @chapter] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
