@@ -82,7 +82,12 @@
 }
 
 .disabled-link {
-  color: $neutral-300;
+  i {
+    color: $neutral-300;
+  }
+  p {
+    color: $neutral-300;
+  }
 }
 
 .ongoing-lesson-classroom {
