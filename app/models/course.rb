@@ -7,10 +7,10 @@ class Course < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :name, :description ], associated_against: {
-      chapters: [ :name, :description ],
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+                  against: %i[name description], associated_against: {
+                                                   chapters: %i[name description]
+                                                 },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

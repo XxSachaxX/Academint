@@ -58,12 +58,14 @@ class LecturesController < ApplicationController
     compare_answers(@course, @classroom, @lecture)
   end
 
-  def compare_answers(course, classroom, lecture)
+  def compare_answers(course, classroom, _lecture)
     if success_rate < 90
-      redirect_to quizz_course_classroom_lecture_path, notice: "Vous n'avez obtenu que #{success_rate}% de bonnes réponses. Essayez encore pour atteindre les 90% de bonnes réponses et valider le quizz!"
+      redirect_to quizz_course_classroom_lecture_path,
+                  notice: "Vous n'avez obtenu que #{success_rate}% de bonnes réponses. Essayez encore pour atteindre les 90% de bonnes réponses et valider le quizz!"
     else
       @lecture.done!
-      redirect_to course_classroom_lecture_path(course, classroom, classroom.lectures.last), notice: "Félicitations, vous avez obtenu #{success_rate}% de bonnes réponses!"
+      redirect_to course_classroom_lecture_path(course, classroom, classroom.lectures.last),
+                  notice: "Félicitations, vous avez obtenu #{success_rate}% de bonnes réponses!"
     end
   end
 
@@ -72,11 +74,9 @@ class LecturesController < ApplicationController
     quizz_answers_array = @lesson.quizz_answers.split(",")
     @counter = 0
     user_answers_array.each_with_index do |user_answer, index|
-      if user_answer == quizz_answers_array[index]
-        @counter += 1
-      end
+      @counter += 1 if user_answer == quizz_answers_array[index]
     end
-    if user_answers_array.length == 0
+    if user_answers_array.length.zero?
       @success_rate = 0
     else
       @success_rate = (@counter * 100) / user_answers_array.length

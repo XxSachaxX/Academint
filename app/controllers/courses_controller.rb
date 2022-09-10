@@ -1,14 +1,12 @@
 class CoursesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: %i[show index]
   before_action :set_course, only: %i[show edit update destroy]
 
   def index
     @courses = policy_scope(Course)
     if params[:query].present?
       @courses = Course.global_search(params[:query])
-      if @courses.empty?
-        flash.notice = "Aucun cours ne correspond à votre recherche"
-      end
+      flash.notice = "Aucun cours ne correspond à votre recherche" if @courses.empty?
     else
       @courses = Course.all
     end
@@ -34,7 +32,8 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     @course.user = current_user
     if @course.save
-      redirect_to new_course_chapter_path(@course), notice: "Votre cours est maintenant créé, vous pouvez ajouter vos chapitres et vos leçons"
+      redirect_to new_course_chapter_path(@course),
+                  notice: "Votre cours est maintenant créé, vous pouvez ajouter vos chapitres et vos leçons"
     else
       render :new, status: :unprocessable_entity
     end

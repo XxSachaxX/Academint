@@ -12,7 +12,8 @@ class ClassroomsController < ApplicationController
     if @classroom.save
       create_lectures
       start_course
-      redirect_to course_classroom_lecture_path(@course, @classroom, @classroom.ongoing_lecture), notice: "#{@course.name} a été ajouté à vos cours !"
+      redirect_to course_classroom_lecture_path(@course, @classroom, @classroom.ongoing_lecture),
+                  notice: "#{@course.name} a été ajouté à vos cours !"
     end
     authorize @classroom
   end

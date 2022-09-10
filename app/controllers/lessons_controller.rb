@@ -1,4 +1,3 @@
-
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[edit update destroy]
 
